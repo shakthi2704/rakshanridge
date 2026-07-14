@@ -1,0 +1,161 @@
+{
+    "navigation": {
+        "properties": "Properties",
+        "experiences": "Experiences",
+        "about": "About",
+        "consulting": "Consulting",
+        "contact": "Contact",
+        "bookNow": "Book Now",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu"
+    },
+    "hero": {
+        "eyebrow": "Sri Lanka",
+        "headlineLine1": "Experience Authentic",
+        "headlineLine2": "Sri Lankan Hospitality",
+        "subheadline": "Crafting unforgettable stays through genuine hospitality, personalized service, and curated experiences",
+        "exploreProperties": "Explore Properties",
+        "bookYourStay": "Book Your Stay"
+    },
+    "brandStory": {
+        "eyebrow": "Our Story",
+        "heading": "It Was Never About the Room",
+        "quote": "It's the sound of rain on a clay roof, the warmth of a stranger who becomes a friend, the stillness of a hillside at dawn.",
+        "body": "We don't design stays around amenities — we design them around moments. A cup of tea handed to you at exactly the right time. A quiet path only the staff know about. The kind of hospitality that isn't performed, but felt.",
+        "cta": "Discover Our Story"
+    },
+    "featuredProperties": {
+        "eyebrow": "Our Collection",
+        "heading": "A Curated Selection, Not a Catalog",
+        "subheading": "Every property in the Raksha & Ridge collection is chosen for character. These are two of our current favorites.",
+        "viewProperty": "View Property",
+        "viewAllCard": "Explore the full Raksha & Ridge collection",
+        "viewAllProperties": "View All Properties",
+        "items": {
+            "kandyRetreat": {
+                "name": "Kandy Retreat",
+                "location": "Kandy, Central Highlands",
+                "tagline": "A hillside sanctuary above the sacred city"
+            },
+            "galleEscape": {
+                "name": "Galle Escape",
+                "location": "Galle, Southern Coast",
+                "tagline": "Colonial elegance where the coastline meets the fort"
+            }
+        }
+    },
+    "experiences": {
+        "eyebrow": "Experiences",
+        "heading": "Moments Beyond the Stay",
+        "subheading": "Curated ways to experience the island — woven into every stay across the Raksha & Ridge collection.",
+        "viewAll": "View All Experiences",
+        "items": {
+            "ceylonTeaTrails": {
+                "title": "Ceylon Tea Trails",
+                "description": "Wander through mist-covered hillside estates and learn the centuries-old craft behind the world's finest tea."
+            },
+            "coastalExcursions": {
+                "title": "Coastal Excursions",
+                "description": "Sail the southern coastline at sunrise, from hidden coves to centuries-old fishing villages."
+            },
+            "culinaryJourneys": {
+                "title": "Culinary Journeys",
+                "description": "Sri Lankan cuisine reimagined through private chef tables and spice garden foraging walks."
+            }
+        }
+    },
+    "whyChooseUs": {
+        "eyebrow": "Why Raksha & Ridge",
+        "heading": "Hospitality, Considered Down to the Detail",
+        "reasons": {
+            "personalizedService": {
+                "title": "Personalized Service",
+                "description": "Every stay is shaped around you — from arrival preferences to quiet requests only a dedicated host would notice."
+            },
+            "authenticExperiences": {
+                "title": "Authentic Experiences",
+                "description": "No generic itineraries. Every excursion is rooted in real Sri Lankan culture, craft, and place."
+            },
+            "bestRateDirect": {
+                "title": "Best Rate, Direct",
+                "description": "Booking with us directly always guarantees our best available rate — no third-party markup, ever."
+            },
+            "consideredCollection": {
+                "title": "A Considered Collection",
+                "description": "Every property is chosen for character, not scale — each one distinct, each one unmistakably ours."
+            }
+        }
+    },
+    "testimonials": {
+        "items": {
+            "lindqvist": {
+                "quote": "From the moment we arrived, it felt less like a hotel stay and more like being welcomed into someone's home — every detail considered, nothing overdone.",
+                "name": "Amara & Josef Lindqvist",
+                "origin": "Stockholm, Sweden"
+            },
+            "nair": {
+                "quote": "We've stayed at properties across Southeast Asia, but the warmth here was different. Genuinely personal, never performative.",
+                "name": "Priya Nair",
+                "origin": "Singapore"
+            },
+            "reid": {
+                "quote": "The staff remembered things we hadn't even mentioned twice. That kind of attentiveness is rare, and it made the entire trip feel effortless.",
+                "name": "Thomas Reid",
+                "origin": "London, United Kingdom"
+            }
+        }
+    },
+    "specialOffers": {
+        "eyebrow": "Special Offers",
+        "heading": "Curated Stays, Thoughtfully Priced",
+        "viewOffer": "View Offer",
+        "viewAllOffers": "View All Offers",
+        "items": {
+            "earlySeasonEscape": {
+                "title": "Early Season Escape",
+                "property": "Kandy Retreat",
+                "description": "Three nights among the hills, with every detail arranged so all that's left to do is arrive.",
+                "includes": [
+                    "Private tea-trail excursion for two",
+                    "Daily breakfast on the terrace",
+                    "Late checkout, subject to availability"
+                ],
+                "validity": "Valid through 30 September"
+            },
+            "extendedCoastalStay": {
+                "title": "Extended Coastal Stay",
+                "property": "Galle Escape",
+                "description": "Five nights or more by the coast, with a morning at sea included for every stay.",
+                "includes": [
+                    "Sunrise sailing excursion for two",
+                    "Daily breakfast on the terrace",
+                    "One complimentary spa treatment"
+                ],
+                "validity": "Valid through 15 November"
+            }
+        }
+    },
+    "consulting": {
+        "eyebrow": "Raksha & Ridge Consulting",
+        "heading": "Advisory Services for Independent Hospitality Owners",
+        "body": "We partner with property owners across Sri Lanka to bring the same standard of hospitality to their own operations — from brand positioning to guest experience design.",
+        "cta": "Learn More"
+    },
+    "finalCta": {
+        "eyebrow": "Your Journey Awaits",
+        "heading": "Begin Your Sri Lankan Story",
+        "body": "Reserve directly with us for our best available rate, and let every detail of your stay be shaped around you.",
+        "cta": "Book Your Stay"
+    },
+    "footer": {
+        "brandBlurb": "Exceptional hotel, resort, and villa experiences rooted in genuine Sri Lankan hospitality.",
+        "exploreHeading": "Explore",
+        "propertiesHeading": "Our Properties",
+        "contactHeading": "Contact",
+        "whatsappUs": "WhatsApp Us",
+        "addressCity": "Colombo, Sri Lanka",
+        "copyright": "© {year} Raksha & Ridge (Pvt) Ltd. All rights reserved.",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfService": "Terms of Service"
+    }
+}
