@@ -64,14 +64,14 @@ export default async function WhyChooseUs() {
                             {t("heading")}
                         </h2>
 
-                        <dl className="mt-12 divide-y divide-navy/10 border-t border-navy/10">
+                        <div className="mt-12 divide-y divide-navy/10 border-t border-navy/10">
                             {reasons.map((reason) => (
                                 <div key={reason.key} className="flex gap-6 py-7">
-                                    <dt className="font-serif text-2xl font-light text-navy/40">
+                                    <dt className="font-serif text-4xl font-light text-charcoal">
                                         {reason.number}
                                     </dt>
                                     <div>
-                                        <dt className="font-serif text-3xl font-normal text-ink">
+                                        <dt className="font-serif text-3xl font-normal text-ink ">
                                             {t(`reasons.${reason.key}.title`)}
                                         </dt>
                                         <dd className="mt-2 font-sans text-sm leading-relaxed text-charcoal">
@@ -80,7 +80,7 @@ export default async function WhyChooseUs() {
                                     </div>
                                 </div>
                             ))}
-                        </dl>
+                        </div>
                     </div>
                 </div>
             </Container>

@@ -35,17 +35,19 @@ export default function Testimonials() {
     const [active, setActive] = useState(0);
 
     return (
-        <section className="bg-ink py-24 lg:py-32">
+        <section className="relative overflow-hidden bg-ink py-24 lg:py-32">
+
             <Container size="narrow">
                 <div className="flex flex-col items-center text-center">
-                    <span className="font-serif text-6xl leading-none text-white/20">
+                    {/* <span className="font-serif text-6xl leading-none text-white/20">
                         &ldquo;
-                    </span>
+                    </span> */}
 
-                    <p className="mt-2 min-h-[9rem] font-serif text-2xl leading-relaxed font-light text-white sm:text-3xl">
+                    <p className="font-serif text-2xl font-light italic leading-relaxed text-white sm:text-3xl">
+                        <span className="mr-1 align-top text-6xl leading-none text-white/30">&ldquo;</span>
                         {t(`items.${testimonials[active].key}.quote`)}
+                        <span className="ml-1 align-bottom text-6xl leading-none text-white/30">&rdquo;</span>
                     </p>
-
                     <div className="mt-8">
                         <p className="font-sans text-sm tracking-[0.1em] text-white uppercase">
                             {t(`items.${testimonials[active].key}.name`)}

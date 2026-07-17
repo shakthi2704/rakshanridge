@@ -18,20 +18,20 @@ const navLinks = [
     { labelKey: "contact", href: "/contact" },
 ];
 
-function Monogram() {
-    return (
-        <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/70 font-serif text-sm text-white">
-                R&amp;R
-            </span>
-            <span className="leading-tight">
-                <span className="block font-serif text-base tracking-[0.08em] text-white">
-                    RAKSHA &amp; RIDGE
-                </span>
-            </span>
-        </div>
-    );
-}
+// function Monogram() {
+//     return (
+//         <div className="flex items-center gap-3">
+//             <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/70 font-serif text-sm text-white">
+//                 R&amp;R
+//             </span>
+//             <span className="leading-tight">
+//                 <span className="block font-serif text-base tracking-[0.08em] text-white">
+//                     RAKSHA &amp; RIDGE
+//                 </span>
+//             </span>
+//         </div>
+//     );
+// }
 
 export default function Navbar() {
     const t = useTranslations("navigation");
@@ -57,14 +57,21 @@ export default function Navbar() {
             <header
                 className={cn(
                     "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-                    scrolled ? "bg-black/50 shadow-lg backdrop-blur-md" : "bg-black/10 backdrop-blur-md"
+                    scrolled ? "bg-black/70 shadow-lg backdrop-blur-md" : "bg-black/50 backdrop-blur-md"
                 )}
             >
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/10 z-20" />
                 <Container className="relative flex h-24 items-center justify-between">
                     <div className="flex-shrink-0">
                         <Link href="/" onClick={() => setMenuOpen(false)}>
-                            <Monogram />
+                            <Image
+                                src="/logo/logo-3.png" // or "/logo.svg"
+                                alt="Raksha & Ridge"
+                                width={180}
+                                height={60}
+                                priority
+                                className="h-16 w-auto"
+                            />
                         </Link>
                     </div>
 

@@ -100,7 +100,7 @@ export default async function Experiences() {
                     <div className="flex flex-col gap-6 lg:col-span-5">
                         {rest.map((exp, index) => (
                             <Reveal key={exp.key} delay={(index + 1) * 150} className="flex-1">
-                                <div className="group relative flex h-full min-h-[15rem] w-full overflow-hidden shadow-md transition-shadow duration-500 hover:shadow-2xl">
+                                <div className="group relative  rounded-sm flex h-full min-h-[15rem] w-full overflow-hidden shadow-md transition-shadow duration-500 hover:shadow-2xl">
                                     <Image
                                         src={exp.image}
                                         alt={t(`items.${exp.key}.title`)}

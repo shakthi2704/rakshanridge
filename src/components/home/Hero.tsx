@@ -33,22 +33,23 @@ export default async function Hero() {
                     </span>
                     <span className="h-px w-10 bg-white/50" />
                 </div>
-
-                <h1 className="mt-6 font-display text-4xl leading-[1.2] tracking-wide text-white sm:text-5xl lg:text-6xl">
+                {/* 
+                <h1 className="mt-6 font-display text-4xl leading-[1.15] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-6xl  xl:text-7xl 2xl:text-8xl"> */}
+                <h1 className="   mt-6 font-display text-[clamp(2.5rem,5vw,5.8rem)] leading-[1.1] tracking-wide text-white">
                     {t("headlineLine1")}
                     <br />
                     {t("headlineLine2")}
                 </h1>
 
-                <p className="mt-6 max-w-xl font-sans text-base font-light leading-relaxed text-white/85 sm:text-lg">
+                <p className="mt-6 max-w-2xl font-serif text-[clamp(1.5rem,2.6vw,1.65rem)] font-light italic leading-relaxed text-white/85">
                     {t("subheadline")}
                 </p>
 
                 <div className="mt-9 flex flex-wrap justify-center gap-4">
-                    <Link href="/properties" className={buttonVariants({ variant: "ink", size: "sm" })}>
+                    <Link href="/properties" className={buttonVariants({ variant: "ink", size: "md" })}>
                         {t("exploreProperties")}
                     </Link>
-                    <Link href="/book" className={buttonVariants({ variant: "outline-white", size: "sm" })}>
+                    <Link href="/book" className={buttonVariants({ variant: "outline-white", size: "md" })}>
                         {t("bookYourStay")}
                     </Link>
                 </div>
@@ -59,6 +60,7 @@ export default async function Hero() {
                 <span className="font-sans text-[0.65rem] tracking-[0.3em] uppercase">Scroll</span>
                 <span className="h-10 w-px animate-pulse bg-white/50" />
             </div> */}
-        </section>
+            <div className="bg-ink border-y overflow-hidden py-1 group" />
+        </section >
     );
 }

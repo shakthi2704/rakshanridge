@@ -88,6 +88,9 @@
     }
   },
   "testimonials": {
+    "eyebrow": "Guest Experiences",
+    "heading": "Stories From Those Who Stayed",
+    "subheading": "Every stay is shaped by thoughtful hospitality, genuine care, and unforgettable moments. Discover what our guests have shared about their Raksha & Ridge experience.",
     "items": {
       "lindqvist": {
         "quote": "From the moment we arrived, it felt less like a hotel stay and more like being welcomed into someone's home — every detail considered, nothing overdone.",
@@ -154,7 +157,7 @@
     "propertiesHeading": "Our Properties",
     "contactHeading": "Contact",
     "whatsappUs": "WhatsApp Us",
-    "addressCity": "Colombo, Sri Lanka",
+    "addressCity": "No 318/1 Dutugamunu Mw, Enderamulla Wattala",
     "copyright": "© {year} Raksha & Ridge (Pvt) Ltd. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
