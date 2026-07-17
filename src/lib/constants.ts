@@ -12,7 +12,7 @@ export const CONTACT_EMAIL = 'info@rakshanridge.com';
 //     whatsapp: `https://wa.me/${CONTACT_WHATSAPP.replace('+', '')}`,
 // } as const;
 
-export const LOCALES = ['en', 'de', 'fr', 'es'] as const;
+export const LOCALES = ['en', 'ru'] as const;
 export const DEFAULT_LOCALE = 'en' as const;
 
 export type Locale = typeof LOCALES[number];

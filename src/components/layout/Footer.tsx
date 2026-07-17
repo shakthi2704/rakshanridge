@@ -1,38 +1,37 @@
 import Link from "next/link";
+import { Link as LocaleLink } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import { Mail, Phone, MessageCircle, MapPin } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { InstagramIcon, FacebookIcon } from '@/components/ui/SocialIcons';
-import {
-    SITE_NAME,
-    CONTACT_EMAIL,
-    CONTACT_WHATSAPP,
-} from "@/lib/constants";
 import { SOCIAL_LINKS } from '@/lib/constants';
 const exploreLinks = [
-    { label: "Properties", href: "/properties" },
-    { label: "Experiences", href: "/experiences" },
-    { label: "Offers", href: "/offers" },
-    { label: "About", href: "/about" },
-    { label: "Consulting", href: "/consulting" },
+    { labelKey: "properties", href: "/properties" },
+    { labelKey: "experiences", href: "/experiences" },
+    { labelKey: "offers", href: "/offers" },
+    { labelKey: "about", href: "/about" },
+    { labelKey: "consulting", href: "/consulting" },
 ];
 
 const propertyLinks = [
-    { label: "Kandy Retreat", href: "/properties/kandy-retreat" },
-    { label: "Galle Escape", href: "/properties/galle-escape" },
+    { key: "kandyRetreat", href: "/properties/kandy-retreat" },
+    { key: "galleEscape", href: "/properties/galle-escape" },
 ];
 
 const legalLinks = [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
-];
-
+    { labelKey: "privacyPolicy", href: "/privacy" },
+    { labelKey: "termsOfService", href: "/terms" },
+]
 
 const SOCIAL = [
     { Icon: InstagramIcon, href: SOCIAL_LINKS.instagram, label: 'Instagram' },
     { Icon: FacebookIcon, href: SOCIAL_LINKS.facebook, label: 'Facebook' },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+    const t = await getTranslations("footer");
+    const tNav = await getTranslations("navigation");
+    const tProperties = await getTranslations("featuredProperties");
     return (
         <footer className="overflow-hidden bg-black pt-20">
             <div aria-hidden className="pointer-events-none select-none pb-20">
@@ -53,8 +52,7 @@ export default function Footer() {
                             </span>
                         </div>
                         <p className="mt-5 max-w-xs font-sans text-sm leading-relaxed text-white/70">
-                            Exceptional hotel, resort, and villa experiences rooted in
-                            genuine Sri Lankan hospitality.
+                            {t("brandBlurb")}
                         </p>
 
                         <div className="mt-6 flex items-center gap-4">
@@ -76,17 +74,17 @@ export default function Footer() {
                     {/* Explore */}
                     <div>
                         <h3 className="font-sans text-xs tracking-[0.2em] text-white/50 uppercase">
-                            Explore
+                            {t("exploreHeading")}
                         </h3>
                         <ul className="mt-5 flex flex-col gap-3">
                             {exploreLinks.map((link) => (
                                 <li key={link.href}>
-                                    <Link
+                                    <LocaleLink
                                         href={link.href}
                                         className="font-sans text-sm text-white/80 transition-colors hover:text-white"
                                     >
-                                        {link.label}
-                                    </Link>
+                                        {tNav(link.labelKey)}
+                                    </LocaleLink>
                                 </li>
                             ))}
                         </ul>
@@ -95,17 +93,17 @@ export default function Footer() {
                     {/* Properties */}
                     <div>
                         <h3 className="font-sans text-xs tracking-[0.2em] text-white/50 uppercase">
-                            Our Properties
+                            {t("propertiesHeading")}
                         </h3>
                         <ul className="mt-5 flex flex-col gap-3">
                             {propertyLinks.map((link) => (
                                 <li key={link.href}>
-                                    <Link
+                                    <LocaleLink
                                         href={link.href}
                                         className="font-sans text-sm text-white/80 transition-colors hover:text-white"
                                     >
-                                        {link.label}
-                                    </Link>
+                                        {tProperties(`items.${link.key}.name`)}
+                                    </LocaleLink>
                                 </li>
                             ))}
                         </ul>
@@ -114,7 +112,7 @@ export default function Footer() {
                     {/* Contact */}
                     <div>
                         <h3 className="font-sans text-xs tracking-[0.2em] text-white/50 uppercase">
-                            Contact
+                            {t("contactHeading")}
                         </h3>
                         <ul className="mt-5 flex flex-col gap-3 font-sans text-sm text-white/80">
                             <li>
@@ -141,12 +139,12 @@ export default function Footer() {
                                     className="flex items-center gap-2.5 transition-colors hover:text-white"
                                 >
                                     <MessageCircle className="h-4 w-4 shrink-0" strokeWidth={1.5} />
-                                    WhatsApp Us
+                                    {t("whatsappUs")}
                                 </Link>
                             </li>
                             <li className="flex items-center gap-2.5 pt-1 text-white/60">
                                 <MapPin className="h-4 w-4 shrink-0" strokeWidth={1.5} />
-                                Colombo, Sri Lanka
+                                {t("addressCity")}
                             </li>
                         </ul>
                     </div>
@@ -155,24 +153,23 @@ export default function Footer() {
                 {/* Bottom bar */}
                 <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 py-8 sm:flex-row">
                     <p className="font-sans text-xs text-white/50">
-                        © {new Date().getFullYear()} Raksha &amp; Ridge (Pvt) Ltd. All
-                        rights reserved.
+                        {t("copyright", { year: new Date().getFullYear() })}
                     </p>
                     <div className="flex gap-6">
                         {legalLinks.map((link) => (
-                            <Link
+                            <LocaleLink
                                 key={link.href}
                                 href={link.href}
                                 className="font-sans text-xs text-white/50 transition-colors hover:text-white"
                             >
-                                {link.label}
-                            </Link>
+                                {t(link.labelKey)}
+                            </LocaleLink>
                         ))}
                     </div>
                 </div>
             </Container>
 
 
-        </footer>
+        </footer >
     );
 }

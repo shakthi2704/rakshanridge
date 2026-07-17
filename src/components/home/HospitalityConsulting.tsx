@@ -1,14 +1,16 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
 import { buttonVariants } from "@/components/ui/Button";
 
-export default function HospitalityConsulting() {
+export default async function HospitalityConsulting() {
+    const t = await getTranslations("consulting");
     return (
         <section className=" border-y border-navy/10 bg-mist py-16 lg:py-20">
             <Container size="narrow">
                 <div className="flex flex-col items-center gap-6 text-center">
                     <span className="font-sans text-xs tracking-[0.3em] text-slate uppercase">
-                        Raksha &amp; Ridge Consulting
+                        {t("eyebrow")}
                     </span>
                     <div className="flex justify-center mb-6">
                         <svg
@@ -24,20 +26,18 @@ export default function HospitalityConsulting() {
                         </svg>
                     </div>
                     <h2 className="max-w-lg font-serif text-3xl leading-snug font-medium text-ink sm:text-4xl">
-                        Advisory Services for Independent Hospitality Owners
+                        {t("heading")}
                     </h2>
 
                     <p className="max-w-md font-sans text-sm leading-relaxed text-charcoal">
-                        We partner with property owners across Sri Lanka to bring the
-                        same standard of hospitality to their own operations —
-                        from brand positioning to guest experience design.
+                        {t("body")}
                     </p>
 
                     <Link
                         href="/consulting"
                         className={buttonVariants({ variant: "ink", size: "sm" })}
                     >
-                        Learn More
+                        {t("cta")}
                     </Link>
                 </div>
             </Container>

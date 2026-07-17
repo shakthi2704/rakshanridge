@@ -2,12 +2,12 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import { buttonVariants } from "@/components/ui/Button";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { cn } from "@/lib/utils";
 
-export default function Hero() {
+export default async function Hero() {
 
-    const t = useTranslations("hero");
+    const t = await getTranslations("hero");
     return (
         <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
             <Image
@@ -46,10 +46,10 @@ export default function Hero() {
 
                 <div className="mt-9 flex flex-wrap justify-center gap-4">
                     <Link href="/properties" className={buttonVariants({ variant: "ink", size: "sm" })}>
-                        Explore Properties
+                        {t("exploreProperties")}
                     </Link>
                     <Link href="/book" className={buttonVariants({ variant: "outline-white", size: "sm" })}>
-                        Book Your Stay
+                        {t("bookYourStay")}
                     </Link>
                 </div>
             </Container>

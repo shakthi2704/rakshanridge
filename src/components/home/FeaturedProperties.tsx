@@ -1,7 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import { Link } from "@/i18n/navigation";
+import { getTranslations } from "next-intl/server";
 
 // `featured: true` controls homepage visibility — this list will grow to
 // ~50 properties over time, but only ones flagged featured ever show here.
@@ -9,23 +10,21 @@ import Reveal from "@/components/ui/Reveal";
 const properties = [
     {
         slug: "kandy-retreat",
-        name: "Kandy Retreat",
-        location: "Kandy, Central Highlands",
-        tagline: "A hillside sanctuary above the sacred city",
+        key: "kandyRetreat",
         image: "/images/property2.webp",
         featured: true,
     },
     {
         slug: "galle-escape",
-        name: "Galle Escape",
-        location: "Galle, Southern Coast",
-        tagline: "Colonial elegance where the coastline meets the fort",
+        key: "galleEscape",
         image: "/images/property1.webp",
         featured: true,
     },
 ];
 
-export default function FeaturedProperties() {
+export default async function FeaturedProperties() {
+    const t = await getTranslations("featuredProperties");
+
     const featured = properties.filter((p) => p.featured).slice(0, 2);
 
     return (
@@ -36,16 +35,15 @@ export default function FeaturedProperties() {
                         <div className="flex items-center gap-4 text-slate">
                             <span className="h-px w-10 bg-navy/40" />
                             <span className="font-sans text-xs tracking-[0.35em] text-navy uppercase">
-                                Our Collection
+                                {t("eyebrow")}
                             </span>
                             <span className="h-px w-10 bg-navy/40" />
                         </div>
                         <h2 className="mt-6 max-w-2xl font-serif text-3xl leading-[1.25] font-medium text-ink sm:text-4xl lg:text-[2.75rem]">
-                            A Curated Selection, Not a Catalog
+                            {t("heading")}
                         </h2>
                         <p className="mt-5 max-w-lg font-sans text-base leading-relaxed text-charcoal">
-                            Every property in the Raksha &amp; Ridge collection is chosen
-                            for character. These are two of our current favorites.
+                            {t("subheading")}
                         </p>
                     </div>
                 </Reveal>
@@ -57,7 +55,7 @@ export default function FeaturedProperties() {
                                 <div className="relative aspect-[4/3] w-full overflow-hidden shadow-md transition-shadow duration-500 group-hover:shadow-2xl">
                                     <Image
                                         src={property.image}
-                                        alt={property.name}
+                                        alt={t(`items.${property.key}.name`)}
                                         fill
                                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                     />
@@ -66,17 +64,17 @@ export default function FeaturedProperties() {
 
                                 <div className="mt-6">
                                     <span className="font-sans text-xs tracking-[0.2em] text-slate uppercase">
-                                        {property.location}
+                                        {t(`items.${property.key}.location`)}
                                     </span>
                                     <h3 className="mt-2 font-serif text-2xl font-light text-ink">
-                                        {property.name}
+                                        {t(`items.${property.key}.name`)}
                                     </h3>
                                     <p className="mt-2 font-sans text-sm leading-relaxed text-charcoal">
-                                        {property.tagline}
+                                        {t(`items.${property.key}.tagline`)}
                                     </p>
 
                                     <span className="mt-4 inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] text-navy uppercase transition-colors group-hover:text-navy/70">
-                                        View Property
+                                        {t("viewProperty")}
                                         <span className="transition-transform duration-300 group-hover:translate-x-1">
                                             →
                                         </span>
@@ -98,10 +96,10 @@ export default function FeaturedProperties() {
                                 +
                             </span>
                             <span className="max-w-[14rem] font-sans text-sm leading-relaxed text-charcoal">
-                                Explore the full Raksha &amp; Ridge collection
+                                {t("viewAllCard")}
                             </span>
                             <span className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] text-navy uppercase transition-colors group-hover:text-navy/70">
-                                View All Properties
+                                {t("viewAllProperties")}
                                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                                     →
                                 </span>
