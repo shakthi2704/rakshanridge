@@ -16,7 +16,7 @@ export default async function BrandStory() {
                 aria-hidden="true"
                 width={500}
                 height={650}
-                className="pointer-events-none absolute right-0 bottom-0 z-0 w-64 opacity-50 sm:w-80 lg:w-[28rem]"
+                className="pointer-events-none absolute right-0 bottom-0 z-0 w-64 opacity-30 sm:w-80 lg:w-[28rem]"
             />
             <Container>
                 <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-24">

@@ -162,5 +162,172 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "offers": "Offers"
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "Our Story",
+      "heading": "Hospitality Rooted in Place",
+      "subheading": "Raksha & Ridge was born from a simple belief — that true luxury lies in genuine connection to a place, its people, and its rhythms."
+    },
+    "ourStory": {
+      "eyebrow": "The Narrative",
+      "heading": "From Humble Beginnings to Considered Luxury",
+      "paragraphs": [
+        "Raksha & Ridge began not as a business plan, but as a promise — to share Sri Lanka not as a postcard, but as it truly is: layered, generous, and alive with stories worth slowing down for.",
+        "What started with a single restored planter's bungalow in the hill country grew, one considered property at a time, into a collection defined less by scale and more by character. Each address we add carries the same intention: a sense of place you can feel the moment you arrive.",
+        "We are hoteliers, yes — but first, we are hosts. Every detail, from the tea on arrival to the route of a sunrise walk, is shaped by people who call this island home."
+      ],
+      "quote": "Luxury, to us, has never been about excess. It's about attention.",
+      "stat": {
+        "number": "10+",
+        "label": "Years of Considered Hospitality"
+      }
+    },
+    "philosophy": {
+      "eyebrow": "Crafting the Extraordinary",
+      "heading": "The Raksha & Ridge Philosophy",
+      "cards": {
+        "precision": {
+          "title": "Bespoke Precision",
+          "description": "No two travelers are alike, and no two journeys should be. We curate every detail to align with your personal definition of discovery."
+        },
+        "sustainability": {
+          "title": "Deep Sustainability",
+          "description": "Our legacy is tied to the land. We partner exclusively with eco-conscious properties and local artisans to preserve the wild beauty of Sri Lanka for generations."
+        },
+        "immersive": {
+          "title": "Truly Immersive",
+          "description": "Beyond the tourist trail lies the soul of the island. We grant access to private estates, local legend-led tours, and hidden sanctuaries unknown to the world.",
+          "cta": "Explore Experiences"
+        }
+      }
+    },
+    "team": {
+      "eyebrow": "The People Behind It",
+      "heading": "Meet the Team",
+      "subheading": "A small group of hoteliers, hosts, and locals who shape every stay behind the scenes.",
+      "members": {
+        "founder": {
+          "name": "Ayesha Ranatunga",
+          "role": "Founder & Creative Director",
+          "bio": "Sets the tone for every property in the collection, from architecture to arrival experience."
+        },
+        "operations": {
+          "name": "Dinesh Fernando",
+          "role": "Head of Operations",
+          "bio": "Keeps every property running with the quiet precision guests never have to think about."
+        },
+        "guestExperience": {
+          "name": "Nadia Perera",
+          "role": "Guest Experience Lead",
+          "bio": "Designs the small, personal touches that turn a stay into a memory."
+        }
+      }
+    },
+    "milestones": {
+      "eyebrow": "Our Journey",
+      "heading": "Milestones",
+      "subheading": "A gradual collection, built one property and one relationship at a time.",
+      "items": {
+        "founding": {
+          "year": "2016",
+          "title": "The First Bungalow",
+          "description": "A single restored planter's bungalow in the hill country opens its doors, built on a promise of genuine hospitality."
+        },
+        "expansion": {
+          "year": "2019",
+          "title": "The Collection Grows",
+          "description": "Three more properties join, each chosen for character rather than scale — coastal villas and a highland retreat."
+        },
+        "consulting": {
+          "year": "2022",
+          "title": "Hospitality Consulting Launches",
+          "description": "We begin advising independent property owners across Sri Lanka on building distinctive, guest-first experiences."
+        },
+        "today": {
+          "year": "2026",
+          "title": "A Considered Portfolio",
+          "description": "Today, Raksha & Ridge is a growing collection of hotels, resorts, and villas united by one philosophy: attention over excess."
+        }
+      }
+    }
+  },
+  "properties": {
+    "eyebrow": "The Full Collection",
+    "heading": "Every Address, Chosen with Intention",
+    "subheading": "From hillside hotels to private villas, each property in the Raksha & Ridge collection is selected for character, not scale.",
+    "types": {
+      "hotel": "Hotel",
+      "resort": "Resort",
+      "villa": "Villa"
+    },
+    "regions": {
+      "central-highlands": "Central Highlands",
+      "southern-coast": "Southern Coast",
+      "colombo": "Colombo",
+      "cultural-triangle": "Cultural Triangle"
+    },
+    "items": {
+      "kandyRetreat": {
+        "name": "Kandy Retreat",
+        "location": "Kandy, Central Highlands",
+        "tagline": "A hillside sanctuary above the sacred city"
+      },
+      "galleEscape": {
+        "name": "Galle Escape",
+        "location": "Galle, Southern Coast",
+        "tagline": "Colonial elegance where the coastline meets the fort"
+      },
+      "colomboResidence": {
+        "name": "Colombo Residence",
+        "location": "Colombo",
+        "tagline": "A quiet address in the heart of the capital"
+      },
+      "teaCountryResort": {
+        "name": "Tea Country Resort",
+        "location": "Nuwara Eliya, Central Highlands",
+        "tagline": "Misted hills and the scent of fresh-picked leaf"
+      },
+      "mirissaBayResort": {
+        "name": "Mirissa Bay Resort",
+        "location": "Mirissa, Southern Coast",
+        "tagline": "Ocean-facing suites above a whale-watching bay"
+      },
+      "sigiriyaWildernessResort": {
+        "name": "Sigiriya Wilderness Resort",
+        "location": "Sigiriya, Cultural Triangle",
+        "tagline": "Ancient rock fortress views from a private terrace"
+      },
+      "ellaHillsideVilla": {
+        "name": "Ella Hillside Villa",
+        "location": "Ella, Central Highlands",
+        "tagline": "A private villa suspended above the valley"
+      },
+      "tangallePrivateVilla": {
+        "name": "Tangalle Private Villa",
+        "location": "Tangalle, Southern Coast",
+        "tagline": "Secluded beachfront, yours alone for the stay"
+      }
+    },
+    "filters": {
+      "typeLabel": "Type",
+      "regionLabel": "Region",
+      "priceLabel": "Price",
+      "allTypes": "All Types",
+      "allRegions": "All Regions",
+      "anyPrice": "Any Price",
+      "priceUnder300": "Under $300",
+      "price300to450": "$300 – $450",
+      "price450plus": "$450+",
+      "clearFilters": "Clear Filters",
+      "resultsCount": "{count} Properties",
+      "currencyLabel": "Currency"
+    },
+    "groups": {
+      "hotel": "Hotels",
+      "resort": "Resorts",
+      "villa": "Villas"
+    },
+    "noResults": "No properties match these filters. Try adjusting or clearing them."
   }
 }

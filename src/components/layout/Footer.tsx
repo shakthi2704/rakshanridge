@@ -46,7 +46,7 @@ export default async function Footer() {
                 aria-hidden="true"
                 width={500}
                 height={650}
-                className="pointer-events-none absolute right-0 -bottom-20 z-0 hidden w-64 opacity-60 sm:block lg:w-[28rem]"
+                className="pointer-events-none absolute right-0 -bottom-20 z-0 hidden w-64 opacity-70 sm:block lg:w-[28rem]"
             />
             <Image
                 src="/images/brand-story-mask-2.png"
@@ -54,7 +54,7 @@ export default async function Footer() {
                 aria-hidden="true"
                 width={500}
                 height={650}
-                className="pointer-events-none absolute left-0 -bottom-20 z-0 hidden w-64 -scale-x-100 opacity-60 lg:block lg:w-[28rem]"
+                className="pointer-events-none absolute left-0 -bottom-20 z-0 hidden w-64 -scale-x-100 opacity-70 lg:block lg:w-[28rem]"
             />
 
             <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/75 via-black/85 to-black" />

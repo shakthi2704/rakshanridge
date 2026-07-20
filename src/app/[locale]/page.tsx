@@ -3,7 +3,7 @@ import Experiences from "@/components/home/Experiences";
 import FeaturedProperties from "@/components/home/FeaturedProperties";
 import Hero from "@/components/home/Hero";
 import HospitalityConsulting from "@/components/home/HospitalityConsulting";
-import MainCta from "@/components/home/MainCta";
+import MainCta from "@/components/ui/MainCta";
 import SpecialOffers from "@/components/home/SpecialOffers";
 import Testimonials from "@/components/home/Testimonials";
 import WhyChooseUs from "@/components/home/WhyChooseUs";

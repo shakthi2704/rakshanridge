@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
 
-export type ButtonVariant = "primary" | "outline-white" | "outline-navy" | "ghost" | "ink" | "outline-ink";
+export type ButtonVariant = "primary" | "outline-white" | "outline-navy" | "ghost" | "ink" | "outline-ink" | "black-white-border" | "white";
 export type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonVariantsProps {
@@ -33,6 +33,11 @@ export function buttonVariants({
         "bg-ink text-white shadow-md hover:bg-ink/90 hover:-translate-y-0.5 hover:shadow-lg",
         variant === "outline-ink" &&
         "border border-ink text-ink bg-transparent backdrop-blur-sm hover:bg-ink hover:text-white hover:-translate-y-0.5 hover:shadow-lg",
+        variant === "black-white-border" &&
+        "bg-black text-white border border-white shadow-md hover:bg-black/90 hover:-translate-y-0.5 hover:shadow-lg",
+
+        variant === "white" &&
+        "bg-white text-black border border-white shadow-md hover:bg-gray-100 hover:-translate-y-0.5 hover:shadow-lg",
         // Sizes
         size === "sm" && "text-xs px-5 py-2.5",
         size === "md" && "text-sm px-8 py-3.5",

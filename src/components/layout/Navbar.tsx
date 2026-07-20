@@ -57,7 +57,7 @@ export default function Navbar() {
             <header
                 className={cn(
                     "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-                    scrolled ? "bg-black/70 shadow-lg backdrop-blur-md" : "bg-black/50 backdrop-blur-md"
+                    scrolled ? "bg-black shadow-lg backdrop-blur-md" : "bg-black/50 backdrop-blur-md"
                 )}
             >
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/10 z-20" />
@@ -65,12 +65,12 @@ export default function Navbar() {
                     <div className="flex-shrink-0">
                         <Link href="/" onClick={() => setMenuOpen(false)}>
                             <Image
-                                src="/logo/logo-3.png" // or "/logo.svg"
+                                src="/logo/logo-6.png" // or "/logo.svg"
                                 alt="Raksha & Ridge"
                                 width={180}
                                 height={60}
                                 priority
-                                className="h-16 w-auto"
+                                className="h-28 w-auto"
                             />
                         </Link>
                     </div>
@@ -95,7 +95,7 @@ export default function Navbar() {
                     <div className="flex items-center justify-end gap-4">
                         <Link
                             href="/book"
-                            className={cn(buttonVariants({ variant: "ink", size: "sm" }), "hidden lg:inline-flex")}
+                            className={cn(buttonVariants({ variant: "white", size: "sm" }), "hidden lg:inline-flex")}
                         >
                             {t("bookNow")}
                         </Link>

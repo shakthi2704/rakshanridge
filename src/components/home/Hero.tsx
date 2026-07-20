@@ -26,11 +26,26 @@ export default async function Hero() {
             />
 
             <Container className="relative z-10 flex flex-col items-center text-center">
-                <div className="flex items-center gap-4 text-white/80">
+                {/* <div className="flex items-center gap-4 text-white/80">
                     <span className="h-px w-10 bg-white/50" />
                     <span className={cn("font-sans text-xs tracking-[0.35em] uppercase")}>
                         {t("eyebrow")}
                     </span>
+                    <span className="h-px w-10 bg-white/50" />
+                </div> */}
+
+                <div className="flex items-center gap-4 text-white/80">
+                    <span className="h-px w-10 bg-white/50" />
+
+                    <Image
+                        src="/logo/logo-3.png"
+                        alt="Logo"
+                        width={56}
+                        height={56}
+                        priority
+                        className="h-auto w-12 sm:w-14 md:w-16"
+                    />
+
                     <span className="h-px w-10 bg-white/50" />
                 </div>
                 {/* 
