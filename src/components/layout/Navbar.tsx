@@ -65,7 +65,7 @@ export default function Navbar() {
                     <div className="flex-shrink-0">
                         <Link href="/" onClick={() => setMenuOpen(false)}>
                             <Image
-                                src="/logo/logo-6.png" // or "/logo.svg"
+                                src="/logo/logo-8.png" // or "/logo.svg"
                                 alt="Raksha & Ridge"
                                 width={180}
                                 height={60}

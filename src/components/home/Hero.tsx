@@ -33,17 +33,16 @@ export default async function Hero() {
                     </span>
                     <span className="h-px w-10 bg-white/50" />
                 </div> */}
-
                 <div className="flex items-center gap-4 text-white/80">
                     <span className="h-px w-10 bg-white/50" />
 
                     <Image
                         src="/logo/logo-3.png"
                         alt="Logo"
-                        width={56}
-                        height={56}
+                        width={96}
+                        height={96}
                         priority
-                        className="h-auto w-12 sm:w-14 md:w-16"
+                        className="h-auto w-20 sm:w-24 md:w-28"
                     />
 
                     <span className="h-px w-10 bg-white/50" />
