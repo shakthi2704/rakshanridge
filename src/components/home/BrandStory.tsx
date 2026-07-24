@@ -51,7 +51,7 @@ export default async function BrandStory() {
                         </Reveal>
 
                         <Reveal delay={100}>
-                            <h2 className="mt-6 font-serif text-3xl leading-[1.3] font-bold text-ink sm:text-4xl">
+                            <h2 className="mt-6 font-serif text-3xl leading-[1.3] font-medium  text-ink sm:text-4xl">
                                 {t("heading")}
                             </h2>
                         </Reveal>

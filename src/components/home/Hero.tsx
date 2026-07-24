@@ -74,7 +74,7 @@ export default async function Hero() {
                 <span className="font-sans text-[0.65rem] tracking-[0.3em] uppercase">Scroll</span>
                 <span className="h-10 w-px animate-pulse bg-white/50" />
             </div> */}
-            <div className="bg-ink border-y overflow-hidden py-1 group" />
+
         </section >
     );
 }

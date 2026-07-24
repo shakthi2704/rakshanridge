@@ -65,7 +65,7 @@ export default async function Experiences() {
                             </span>
                             <span className="h-px w-10 bg-navy/40" />
                         </div>
-                        <h2 className="mt-6 max-w-2xl font-serif text-3xl leading-[1.25] font-light text-ink sm:text-4xl lg:text-[2.75rem]">
+                        <h2 className="mt-6 max-w-2xl font-serif text-3xl leading-[1.25] font-medium text-ink sm:text-4xl lg:text-[2.75rem]">
                             {t("heading")}
                         </h2>
                         <p className="mt-5 max-w-xl font-sans text-base leading-relaxed text-charcoal">

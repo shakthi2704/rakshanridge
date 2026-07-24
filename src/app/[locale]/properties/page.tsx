@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import PropertiesHeader from "@/components/properties/PropertiesHeader";
-import PropertyFilters from "@/components/properties/PropertyFilters";
-import PropertiesGrid from "@/components/properties/PropertiesGrid";
-import Container from "@/components/ui/Container";
-
-type Props = {
-    searchParams: Promise<{ type?: string; region?: string; price?: string }>;
-};
+import PropertiesHero from "@/components/properties/PropertiesHero";
+import PropertiesIntro from "@/components/properties/PropertiesIntro";
+import PropertyCategoryBrowser from "@/components/properties/PropertyCategoryBrowser";
+import PropertyEssentials from "@/components/properties/PropertyEssentials";
+import MainCta from "@/components/ui/MainCta";
 
 export async function generateMetadata(): Promise<Metadata> {
     const t = await getTranslations("properties");
@@ -18,20 +15,18 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-export default async function Properties({ searchParams }: Props) {
-    const params = await searchParams;
-
+export default async function Properties() {
     return (
         <main className="flex flex-1 flex-col">
-            <PropertiesHeader />
+            <PropertiesHero />
 
-            <div className="bg-paper pt-4">
-                <Container>
-                    <PropertyFilters />
-                </Container>
-            </div>
+            <PropertiesIntro />
 
-            <PropertiesGrid searchParams={params} />
+            <PropertyCategoryBrowser />
+
+            <PropertyEssentials />
+
+            <MainCta />
         </main>
     );
 }

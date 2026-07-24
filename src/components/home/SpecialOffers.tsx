@@ -69,7 +69,7 @@ export default async function SpecialOffers() {
                             </span>
                             <span className="h-px w-10 bg-navy/40" />
                         </div>
-                        <h2 className="mt-6 max-w-2xl font-serif text-3xl leading-[1.25] font-light text-ink sm:text-4xl lg:text-[2.75rem]">
+                        <h2 className="mt-6 max-w-2xl font-serif text-3xl leading-[1.25] font-medium text-ink sm:text-4xl lg:text-[2.75rem]">
                             {t("heading")}
                         </h2>
                     </div>
@@ -113,6 +113,12 @@ export default async function SpecialOffers() {
                                                     {item}
                                                 </span>
                                             </li>
+                                            // <li key={item} className="flex items-start gap-3">
+                                            //     <span className="mt-3 h-px w-4 shrink-0 bg-navy" />
+                                            //     <span className="font-sans text-sm text-charcoal">
+                                            //         {item}
+                                            //     </span>
+                                            // </li>
                                         ))}
                                     </ul>
 

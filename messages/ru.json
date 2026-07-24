@@ -268,42 +268,122 @@
       "kandyRetreat": {
         "name": "Kandy Retreat",
         "location": "Канди, Центральное нагорье",
-        "tagline": "Уединённый уголок на склоне холма над священным городом"
+        "tagline": "Уединённый уголок на склоне холма над священным городом",
+        "description": "Set on a hillside above the sacred city, Kandy Retreat pairs colonial-era architecture with quiet, considered service. Mornings begin with mist rolling off the surrounding hills; evenings end on a verandah overlooking the temple lights below.",
+        "rooms": {
+          "gardenSuite": {
+            "name": "Garden Suite",
+            "description": "A ground-floor suite opening directly onto the terraced garden, with a private sitting area."
+          },
+          "hillsideResidence": {
+            "name": "Hillside Residence",
+            "description": "A two-bedroom residence with its own plunge pool and uninterrupted views over the valley."
+          }
+        }
       },
       "galleEscape": {
         "name": "Galle Escape",
         "location": "Галле, Южное побережье",
-        "tagline": "Колониальная элегантность там, где побережье встречается с фортом"
+        "tagline": "Колониальная элегантность там, где побережье встречается с фортом",
+        "description": "Behind the ramparts of Galle Fort, this restored colonial townhouse opens onto a courtyard pool and, beyond it, the Indian Ocean. Every room keeps its original teak and stone, updated only where comfort demanded it.",
+        "rooms": {
+          "courtyardRoom": {
+            "name": "Courtyard Room",
+            "description": "A ground-floor room facing the private courtyard pool, framed by original fort-era stonework."
+          },
+          "oceanSuite": {
+            "name": "Ocean Suite",
+            "description": "A top-floor suite with a private balcony looking straight out over the rampart wall to open sea."
+          }
+        }
       },
       "colomboResidence": {
         "name": "Colombo Residence",
         "location": "Коломбо",
-        "tagline": "Тихий адрес в самом сердце столицы"
+        "tagline": "Тихий адрес в самом сердце столицы",
+        "description": "A discreet address in the city's diplomatic quarter, built for travellers who want the capital without the noise of it — considered interiors, a rooftop pool, and a five-minute reach to Colombo's best tables.",
+        "rooms": {
+          "executiveRoom": {
+            "name": "Executive Room",
+            "description": "A quiet, city-facing room designed for longer stays, with a proper desk and reading corner."
+          },
+          "cityViewSuite": {
+            "name": "City View Suite",
+            "description": "A corner suite with wraparound windows over the Colombo skyline and a separate lounge area."
+          }
+        }
       },
       "teaCountryResort": {
         "name": "Tea Country Resort",
         "location": "Нувара-Элия, Центральное нагорье",
-        "tagline": "Туманные холмы и аромат свежесобранного чая"
+        "tagline": "Туманные холмы и аромат свежесобранного чая",
+        "description": "Surrounded by working tea estates above Nuwara Eliya, this resort was built into the hillside rather than onto it. Fires are lit each evening; the air carries the scent of fresh-picked leaf year-round.",
+        "rooms": {
+          "plantersCottage": {
+            "name": "Planter's Cottage",
+            "description": "A self-contained cottage in the estate style, with a wood-burning fireplace and private veranda."
+          },
+          "hillsideVilla": {
+            "name": "Hillside Villa",
+            "description": "A multi-bedroom villa set apart from the main lodge, with its own kitchen, lounge, and terraced garden."
+          }
+        }
       },
       "mirissaBayResort": {
         "name": "Mirissa Bay Resort",
         "location": "Мирисса, Южное побережье",
-        "tagline": "Люксы с видом на океан над бухтой для наблюдения за китами"
+        "tagline": "Люксы с видом на океан над бухтой для наблюдения за китами",
+        "description": "Perched above Mirissa's whale-watching bay, every suite here faces the water. Days are spent between the infinity pool and the beach path below; evenings are for watching the fishing boats come in.",
+        "rooms": {
+          "bayViewRoom": {
+            "name": "Bay View Room",
+            "description": "A room facing directly out over the bay, with a private balcony ideal for morning coffee."
+          },
+          "beachfrontSuite": {
+            "name": "Beachfront Suite",
+            "description": "A ground-level suite with direct beach access and an outdoor rain shower."
+          }
+        }
       },
       "sigiriyaWildernessResort": {
         "name": "Sigiriya Wilderness Resort",
         "location": "Сигирия, Культурный треугольник",
-        "tagline": "Вид на древнюю скальную крепость с частной террасы"
+        "tagline": "Вид на древнюю скальную крепость с частной террасы",
+        "description": "Set within the tree line facing Sigiriya rock, this resort keeps its footprint deliberately light — raised timber walkways, open-air pavilions, and views of the ancient fortress from nearly every room.",
+        "rooms": {
+          "jungleChalet": {
+            "name": "Jungle Chalet",
+            "description": "An elevated timber chalet framed by forest canopy, with a private deck facing the rock."
+          },
+          "wildernessSuite": {
+            "name": "Wilderness Suite",
+            "description": "A larger pavilion-style suite with an outdoor bath and uninterrupted views of Sigiriya."
+          }
+        }
       },
       "ellaHillsideVilla": {
         "name": "Ella Hillside Villa",
         "location": "Элла, Центральное нагорье",
-        "tagline": "Частная вилла, возвышающаяся над долиной"
+        "tagline": "Частная вилла, возвышающаяся над долиной",
+        "description": "Suspended on a ridge above Ella's valley, this private villa is let one party at a time. A resident housekeeper and cook can be arranged on request; otherwise, the villa and its views are entirely yours.",
+        "rooms": {
+          "wholeVilla": {
+            "name": "The Whole Villa",
+            "description": "Three bedrooms, a private infinity-edge pool, and a wraparound deck facing the valley — booked in full, for one party at a time."
+          }
+        }
       },
       "tangallePrivateVilla": {
         "name": "Tangalle Private Villa",
         "location": "Тангалле, Южное побережье",
-        "tagline": "Уединённый пляж только для вас на время отдыха"
+        "tagline": "Уединённый пляж только для вас на время отдыха",
+        "description": "A walled beachfront villa on a quiet stretch of Tangalle coast, with direct, private sand access. No shared walls, no other guests — just the villa, the garden, and the sea.",
+        "rooms": {
+          "wholeVilla": {
+            "name": "The Whole Villa",
+            "description": "Four bedrooms, a beachfront garden, and a private pool steps from the sand — booked in full, for one party at a time."
+          }
+        }
       }
     },
     "filters": {
@@ -325,6 +405,36 @@
       "resort": "Курорты",
       "villa": "Виллы"
     },
-    "noResults": "Нет объектов, соответствующих выбранным фильтрам. Попробуйте изменить или сбросить фильтры."
+    "noResults": "Нет объектов, соответствующих выбранным фильтрам. Попробуйте изменить или сбросить фильтры.",
+    "amenities": {
+      "pool": "Private Pool",
+      "wifi": "High-Speed WiFi",
+      "breakfast": "Daily Breakfast",
+      "spa": "Spa & Wellness",
+      "airportTransfer": "Airport Transfer",
+      "mountainView": "Mountain View",
+      "oceanView": "Ocean View",
+      "privateButler": "Private Butler",
+      "ecoCertified": "Eco-Certified"
+    },
+    "detail": {
+      "amenitiesHeading": "Amenities",
+      "roomsHeading": "Rooms & Suites",
+      "locationHeading": "Location",
+      "fromPerNight": "From {price} / night",
+      "bookThisProperty": "Enquire to Book",
+      "backToProperties": "Back to Properties",
+      "occupancy": "Sleeps {count}",
+      "galleryImageAlt": "{name} — image {index}",
+      "bookNow": "Book Now"
+    },
+    "showcase": {
+      "eyebrow": "Featured Stay"
+    },
+    "essentials": {
+      "eyebrow": "The Essentials",
+      "heading": "Every stay comes with the essentials, considered.",
+      "subheading": "Across every property in the collection, a consistent standard of comfort and care — regardless of which one you choose."
+    }
   }
 }
