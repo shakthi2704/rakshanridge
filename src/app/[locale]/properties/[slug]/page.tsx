@@ -43,7 +43,10 @@ export default async function PropertyDetailPage({ params }: Props) {
     const description = t(`items.${property.key}.description`);
     const region = t(`regions.${property.region}`);
 
-    const amenities = property.amenityKeys.map((key) => t(`amenities.${key}`));
+    const amenities = property.amenityKeys.map((key) => ({
+        name: t(`amenities.${key}.name`),
+        description: t(`amenities.${key}.description`),
+    }));
 
     const rooms = property.rooms.map((room) => ({
         key: room.key,
