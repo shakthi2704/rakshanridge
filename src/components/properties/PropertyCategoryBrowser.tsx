@@ -23,7 +23,7 @@ export default function PropertyCategoryBrowser() {
         <section className="bg-paper py-20 lg:py-28">
             <Container>
                 {/* Category tabs */}
-                <div className="flex items-center justify-center gap-8 border-b border-navy/10 sm:gap-14">
+                <div className="flex items-center justify-center gap-8 border-b border-ink/10 sm:gap-14">
                     {PROPERTY_TYPES.map((type) => (
                         <button
                             key={type}
@@ -36,7 +36,7 @@ export default function PropertyCategoryBrowser() {
                         >
                             {tTypes(type)}
                             {activeType === type && (
-                                <span className="absolute inset-x-0 -bottom-px h-px bg-navy" />
+                                <span className="absolute inset-x-0 -bottom-px h-px bg-ink" />
                             )}
                         </button>
                     ))}
@@ -65,7 +65,7 @@ export default function PropertyCategoryBrowser() {
                             </div>
 
                             <div className="flex flex-col justify-center">
-                                <span className="font-sans text-xs tracking-[0.35em] text-navy uppercase">
+                                <span className="font-sans text-xs tracking-[0.35em] text-ink uppercase">
                                     {t("showcase.eyebrow")}
                                 </span>
                                 <h3 className="mt-4 font-serif text-3xl font-medium text-ink sm:text-4xl">

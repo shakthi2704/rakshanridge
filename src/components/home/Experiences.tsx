@@ -59,11 +59,11 @@ export default async function Experiences() {
                 <Reveal>
                     <div className="flex flex-col items-center text-center">
                         <div className="flex items-center gap-4 text-slate">
-                            <span className="h-px w-10 bg-navy/40" />
-                            <span className="font-sans text-xs tracking-[0.35em] text-navy uppercase">
+                            <span className="h-px w-10 bg-ink/40" />
+                            <span className="font-sans text-xs tracking-[0.35em] text-ink uppercase">
                                 {t("eyebrow")}
                             </span>
-                            <span className="h-px w-10 bg-navy/40" />
+                            <span className="h-px w-10 bg-ink/40" />
                         </div>
                         <h2 className="mt-6 max-w-2xl font-serif text-3xl leading-[1.25] font-medium text-ink sm:text-4xl lg:text-[2.75rem]">
                             {t("heading")}

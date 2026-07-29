@@ -1,74 +1,92 @@
-import { Link } from "@/i18n/navigation";
+import { MapPin, Phone, Mail } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import { buttonVariants } from "@/components/ui/Button";
-
-type AmenityDisplay = {
-    name: string;
-    description: string;
-};
 
 export default function PropertyOverview({
+    eyebrow,
+    heading,
     description,
-    amenities,
-    amenitiesHeading,
-    priceLabel,
-    bookLabel,
+    addressLabel,
+    address,
+    phoneLabel,
+    phone,
+    emailLabel,
+    email,
 }: {
+    eyebrow: string;
+    heading: string;
     description: string;
-    amenities: AmenityDisplay[];
-    amenitiesHeading: string;
-    priceLabel: string;
-    bookLabel: string;
+    addressLabel: string;
+    address: string;
+    phoneLabel: string;
+    phone: string;
+    emailLabel: string;
+    email: string;
 }) {
     return (
         <section className="bg-paper py-20 lg:py-28">
             <Container>
-                <div className="grid gap-14 lg:grid-cols-3 lg:gap-20">
-                    <div className="lg:col-span-2">
+                <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
+                    {/* Left — text */}
+                    <div className="lg:col-span-3">
                         <Reveal>
-                            <p className="max-w-2xl font-sans text-base leading-relaxed text-charcoal">
-                                {description}
-                            </p>
+                            <div className="flex items-center gap-4">
+                                <span className="h-px w-8 bg-ink" />
+                                <span className="font-sans text-xs tracking-[0.2em] text-ink uppercase">
+                                    {eyebrow}
+                                </span>
+                            </div>
+                            <h2 className="mt-4 font-serif text-3xl font-medium text-ink sm:text-4xl">
+                                {heading}
+                            </h2>
                         </Reveal>
 
                         <Reveal delay={100}>
-                            <div className="mt-12">
-                                <h2 className="font-serif text-xl font-medium text-ink">
-                                    {amenitiesHeading}
-                                </h2>
-                                <ul className="mt-6 grid gap-x-10 gap-y-6 sm:grid-cols-2">
-                                    {amenities.map((amenity) => (
-                                        <li key={amenity.name} className="flex items-start gap-3">
-                                            <span className="mt-3 h-px w-4 shrink-0 bg-navy" />
-                                            <div>
-                                                <span className="font-sans text-sm font-medium text-ink">
-                                                    {amenity.name}
-                                                </span>
-                                                <p className="mt-1 font-sans text-sm leading-relaxed text-charcoal">
-                                                    {amenity.description}
-                                                </p>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                            <p className="mt-8 font-serif text-lg leading-relaxed text-charcoal first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-6xl first-letter:font-medium first-letter:leading-[0.85] first-letter:text-slate">
+                                {description}
+                            </p>
                         </Reveal>
                     </div>
 
-                    {/* Sticky booking card */}
-                    <div className="lg:col-span-1">
-                        <Reveal delay={200}>
-                            <div className="sticky top-28 border border-navy/15 bg-mist p-8">
-                                <span className="font-sans text-xs tracking-[0.2em] text-slate uppercase">
-                                    {priceLabel}
-                                </span>
-                                <Link
-                                    href="/book"
-                                    className={buttonVariants({ variant: "ink", size: "md", className: "mt-6 w-full" })}
-                                >
-                                    {bookLabel}
-                                </Link>
+                    {/* Right — contact panel */}
+                    <div className="lg:col-span-2">
+                        <Reveal delay={150}>
+                            <div className="flex flex-col gap-8 bg-ink p-8 lg:p-10">
+                                <div className="flex items-start gap-4">
+                                    <MapPin className="h-5 w-5 shrink-0 text-white/60" />
+                                    <div>
+                                        <span className="font-sans text-xs tracking-[0.15em] text-white/50 uppercase">
+                                            {addressLabel}
+                                        </span>
+                                        <p className="mt-1 font-sans text-sm text-white">
+                                            {address}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <Phone className="h-5 w-5 shrink-0 text-white/60" />
+                                    <div>
+                                        <span className="font-sans text-xs tracking-[0.15em] text-white/50 uppercase">
+                                            {phoneLabel}
+                                        </span>
+                                        <p className="mt-1 font-sans text-sm text-white">
+                                            {phone}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <Mail className="h-5 w-5 shrink-0 text-white/60" />
+                                    <div>
+                                        <span className="font-sans text-xs tracking-[0.15em] text-white/50 uppercase">
+                                            {emailLabel}
+                                        </span>
+                                        <p className="mt-1 font-sans text-sm text-white">
+                                            {email}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </Reveal>
                     </div>

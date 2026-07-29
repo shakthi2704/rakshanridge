@@ -33,11 +33,11 @@ export default async function FeaturedProperties() {
                 <Reveal>
                     <div className="flex flex-col items-center text-center">
                         <div className="flex items-center gap-4 text-slate">
-                            <span className="h-px w-10 bg-navy/40" />
-                            <span className="font-sans text-xs tracking-[0.35em] text-navy uppercase">
+                            <span className="h-px w-10 bg-ink/40" />
+                            <span className="font-sans text-xs tracking-[0.35em] text-ink uppercase">
                                 {t("eyebrow")}
                             </span>
-                            <span className="h-px w-10 bg-navy/40" />
+                            <span className="h-px w-10 bg-ink/40" />
                         </div>
                         <h2 className="mt-6 max-w-2xl font-serif text-3xl leading-[1.25] font-medium text-ink sm:text-4xl lg:text-[2.75rem]">
                             {t("heading")}
@@ -73,7 +73,7 @@ export default async function FeaturedProperties() {
                                         {t(`items.${property.key}.tagline`)}
                                     </p>
 
-                                    <span className="mt-4 inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] text-navy uppercase transition-colors group-hover:text-navy/70">
+                                    <span className="mt-4 inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] text-ink uppercase transition-colors group-hover:text-ink/70">
                                         {t("viewProperty")}
                                         <span className="transition-transform duration-300 group-hover:translate-x-1">
                                             →
@@ -90,15 +90,15 @@ export default async function FeaturedProperties() {
 
                         <Link
                             href="/properties"
-                            className="group flex aspect-[4/3] w-full flex-col items-center justify-center gap-4 border border-navy/15 bg-paper text-center shadow-md transition-all duration-500 hover:border-navy/30 hover:shadow-2xl"
+                            className="group flex aspect-[4/3] w-full flex-col items-center justify-center gap-4 border border-ink/15 bg-paper text-center shadow-md transition-all duration-500 hover:border-ink/30 hover:shadow-2xl"
                         >
-                            <span className="font-serif text-4xl font-light text-navy/30 transition-colors group-hover:text-navy/50">
+                            <span className="font-serif text-4xl font-light text-ink/30 transition-colors group-hover:text-ink/50">
                                 +
                             </span>
                             <span className="max-w-[14rem] font-sans text-sm leading-relaxed text-charcoal">
                                 {t("viewAllCard")}
                             </span>
-                            <span className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] text-navy uppercase transition-colors group-hover:text-navy/70">
+                            <span className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] text-ink uppercase transition-colors group-hover:text-ink/70">
                                 {t("viewAllProperties")}
                                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                                     →

@@ -7,32 +7,39 @@ import Container from "@/components/ui/Container";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
 const navLinks = [
+    { labelKey: "about", href: "/about" },
     { labelKey: "properties", href: "/properties" },
     { labelKey: "experiences", href: "/experiences" },
-    { labelKey: "about", href: "/about" },
     { labelKey: "consulting", href: "/consulting" },
     { labelKey: "contact", href: "/contact" },
 ];
 
-// function Monogram() {
-//     return (
-//         <div className="flex items-center gap-3">
-//             <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/70 font-serif text-sm text-white">
-//                 R&amp;R
-//             </span>
-//             <span className="leading-tight">
-//                 <span className="block font-serif text-base tracking-[0.08em] text-white">
-//                     RAKSHA &amp; RIDGE
-//                 </span>
-//             </span>
-//         </div>
-//     );
-// }
+function Monogram() {
+    const t = useTranslations("navigation");
+    return (
+        <div className="flex items-center gap-1">
+            <Image
+                src="/logo/logo-3.png"
+                alt="Raksha & Ridge"
+                width={80}
+                height={80}
+                priority
+                className="h-20 w-20 object-contain"
+            />
 
+            <span className="leading-tight">
+                <span className="block font-display text-[20px] text-white">
+                    {t("logoTitle")}
+                </span>
+            </span>
+        </div>
+    );
+}
 export default function Navbar() {
     const t = useTranslations("navigation");
     const [scrolled, setScrolled] = useState(false);
@@ -57,12 +64,12 @@ export default function Navbar() {
             <header
                 className={cn(
                     "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-                    scrolled ? "bg-black shadow-lg backdrop-blur-md" : "bg-black/50 backdrop-blur-md"
+                    scrolled ? "bg-black/80 shadow-lg backdrop-blur-sm" : "bg-black/10 backdrop-blur-sm"
                 )}
             >
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/10 z-20" />
                 <Container className="relative flex h-24 items-center justify-between">
-                    <div className="flex-shrink-0">
+                    {/* <div className="flex-shrink-0">
                         <Link href="/" onClick={() => setMenuOpen(false)}>
                             <Image
                                 src="/logo/logo-8.png" // or "/logo.svg"
@@ -73,8 +80,24 @@ export default function Navbar() {
                                 className="h-28 w-auto"
                             />
                         </Link>
+                    </div> */}
+                    {/* <div className="flex-shrink-0">
+                        <Link href="/" onClick={() => setMenuOpen(false)}>
+                            <Image
+                                src="/logo/logo-3.png"
+                                alt="Raksha & Ridge"
+                                width={180}
+                                height={60}
+                                priority
+                                className="h-20 w-auto"
+                            />
+                        </Link>
+                    </div> */}
+                    <div className="flex-shrink-0">
+                        <Link href="/" onClick={() => setMenuOpen(false)}>
+                            <Monogram />
+                        </Link>
                     </div>
-
                     <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
                         {navLinks.map((link) => (
                             <Link
@@ -93,13 +116,13 @@ export default function Navbar() {
                     </nav>
 
                     <div className="flex items-center justify-end gap-4">
+
                         <Link
                             href="/book"
-                            className={cn(buttonVariants({ variant: "white", size: "sm" }), "hidden lg:inline-flex")}
+                            className={cn(buttonVariants({ variant: "outline-white", size: "sm" }), "hidden lg:inline-flex")}
                         >
                             {t("bookNow")}
                         </Link>
-
                         <button
                             type="button"
                             aria-label={menuOpen ? t("closeMenu") : t("openMenu")}

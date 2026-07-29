@@ -18,11 +18,11 @@ export default async function Team() {
                 <div className="mx-auto max-w-xl text-center">
                     <Reveal>
                         <div className="flex items-center justify-center gap-4 text-slate">
-                            <span className="h-px w-10 bg-navy/40" />
-                            <span className="font-sans text-xs tracking-[0.35em] text-navy uppercase">
+                            <span className="h-px w-10 bg-ink/40" />
+                            <span className="font-sans text-xs tracking-[0.35em] text-ink uppercase">
                                 {t("eyebrow")}
                             </span>
-                            <span className="h-px w-10 bg-navy/40" />
+                            <span className="h-px w-10 bg-ink/40" />
                         </div>
                     </Reveal>
 
@@ -54,7 +54,7 @@ export default async function Team() {
                                 <h3 className="mt-5 font-serif text-xl font-medium text-ink">
                                     {t(`members.${member.key}.name`)}
                                 </h3>
-                                <p className="mt-1 font-sans text-xs tracking-[0.1em] text-navy uppercase">
+                                <p className="mt-1 font-sans text-xs tracking-[0.1em] text-ink uppercase">
                                     {t(`members.${member.key}.role`)}
                                 </p>
                                 <p className="mt-3 font-sans text-sm leading-relaxed text-charcoal">

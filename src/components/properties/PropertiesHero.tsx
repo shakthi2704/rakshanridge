@@ -1,21 +1,21 @@
 import Image from "next/image";
-import Container from "@/components/ui/Container";
 import { getTranslations } from "next-intl/server";
+import Container from "@/components/ui/Container";
 
 export default async function PropertiesHero() {
     const t = await getTranslations("properties");
 
     return (
-        <section className="relative flex h-[60vh] min-h-[420px] items-center justify-center overflow-hidden bg-ink">
+        <section className="relative flex h-[70vh] min-h-[480px] items-center justify-center overflow-hidden bg-ink">
             <Image
-                src="/images/property2.webp"
-                alt=""
-                aria-hidden="true"
+                src="/images/hero.jpg"
+                alt={t("heading")}
                 fill
                 priority
                 className="object-cover opacity-60"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/30 to-ink/50" />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/30 to-ink/30" />
 
             <Container className="relative z-10 text-center">
                 <div className="flex items-center justify-center gap-4 text-white/70">

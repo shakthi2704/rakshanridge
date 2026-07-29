@@ -43,7 +43,7 @@ export default async function BrandStory() {
 
                         <Reveal>
                             <div className="flex items-center gap-4 text-slate">
-                                <span className="h-px w-10 bg-navy/40" />
+                                <span className="h-px w-10 bg-ink/40" />
                                 <span className="font-sans text-xs tracking-[0.35em] text-ink font-medium uppercase">
                                     {t("eyebrow")}
                                 </span>

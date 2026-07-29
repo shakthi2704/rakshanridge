@@ -9,6 +9,15 @@ export default async function OurStory() {
 
     return (
         <section className="bg-paper py-24 lg:py-32">
+            <Image
+                src="/images/brand-story-mask.png"
+                alt=""
+                aria-hidden="true"
+                width={500}
+                height={650}
+                className="pointer-events-none absolute right-0 bottom-0 z-0 w-64 opacity-30 sm:w-80 lg:w-[28rem]"
+            />
+
             <Container>
                 <div className="grid items-start gap-14 lg:grid-cols-2 lg:gap-24">
                     <Reveal direction="none">
@@ -37,7 +46,7 @@ export default async function OurStory() {
                     <div>
                         <Reveal>
                             <div className="flex items-center gap-4 text-slate">
-                                <span className="h-px w-10 bg-navy/40" />
+                                <span className="h-px w-10 bg-ink/40" />
                                 <span className="font-sans text-xs tracking-[0.35em] text-ink font-medium uppercase">
                                     {t("eyebrow")}
                                 </span>
@@ -61,7 +70,7 @@ export default async function OurStory() {
                         </div>
 
                         <Reveal delay={500}>
-                            <p className="mt-8 border-t border-navy/15 pt-6 font-serif text-xl leading-relaxed text-slate italic">
+                            <p className="mt-8 border-t border-ink/15 pt-6 font-serif text-xl leading-relaxed text-slate italic">
                                 &ldquo;{t("quote")}&rdquo;
                             </p>
                         </Reveal>

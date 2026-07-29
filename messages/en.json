@@ -8,7 +8,8 @@
     "contact": "Contact",
     "bookNow": "Book Now",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "logoTitle": "Raksha & Ridge"
   },
   "hero": {
     "eyebrow": "Sri Lanka",
@@ -252,6 +253,31 @@
           "description": "Today, Raksha & Ridge is a growing collection of hotels, resorts, and villas united by one philosophy: attention over excess."
         }
       }
+    },
+    "visionMission": {
+      "eyebrow": "Vision & Mission",
+      "nameNote": "Raksha and Ridge — Sanskrit for protection, and elevation. The same duality shapes everything below.",
+      "vision": {
+        "heading": "Our Vision",
+        "body": "To be the definitive name in Sri Lankan boutique hospitality — where cultural heritage and modern comfort exist without compromise, and every stay feels less like a transaction and more like an invitation."
+      },
+      "mission": {
+        "heading": "Our Mission",
+        "pillars": {
+          "protection": {
+            "name": "Considered Protection",
+            "description": "Every detail, from staff training to daily upkeep, held to a standard so exacting it becomes invisible."
+          },
+          "culture": {
+            "name": "Cultural Curation",
+            "description": "Sri Lankan heritage woven into the guest experience — not staged, but genuinely present, in craft, in ritual, in welcome."
+          },
+          "service": {
+            "name": "Anticipatory Service",
+            "description": "Hospitality that notices before you ask — the kind of care that can only come from paying attention."
+          }
+        }
+      }
     }
   },
   "properties": {
@@ -278,11 +304,13 @@
         "rooms": {
           "gardenSuite": {
             "name": "Garden Suite",
-            "description": "A ground-floor suite opening directly onto the terraced garden, with a private sitting area."
+            "description": "A ground-floor suite opening directly onto the terraced garden, with a private sitting area.",
+            "longDescription": "Step straight from your room onto the terraced garden that gives this suite its name — a private, ground-floor sitting area shaded by frangipani and areca palm. Inside, high ceilings and original teak floors carry the colonial-era character of the house, softened with quiet, considered furnishings. Mornings here begin with the sound of birdsong and mist lifting off the hills beyond the garden wall."
           },
           "hillsideResidence": {
             "name": "Hillside Residence",
-            "description": "A two-bedroom residence with its own plunge pool and uninterrupted views over the valley."
+            "description": "A two-bedroom residence with its own plunge pool and uninterrupted views over the valley.",
+            "longDescription": "Set apart from the main house, this two-bedroom residence is built around its own plunge pool and an uninterrupted view over the valley below. The layout gives each bedroom its own privacy, while a shared living space opens fully onto the terrace — ideal for families or two couples travelling together who still want room to spread out. Evenings on the terrace catch the last light over the hills."
           }
         }
       },
@@ -294,11 +322,13 @@
         "rooms": {
           "courtyardRoom": {
             "name": "Courtyard Room",
-            "description": "A ground-floor room facing the private courtyard pool, framed by original fort-era stonework."
+            "description": "A ground-floor room facing the private courtyard pool, framed by original fort-era stonework.",
+            "longDescription": "Tucked on the ground floor facing the private courtyard pool, this room keeps its original fort-era stonework exposed on one wall — a quiet reminder of the building's centuries of history. Teak shutters open onto the courtyard, letting in the sound of water and the occasional call of the fort's resident birds. A cool, still retreat from the heat and bustle of the ramparts outside."
           },
           "oceanSuite": {
             "name": "Ocean Suite",
-            "description": "A top-floor suite with a private balcony looking straight out over the rampart wall to open sea."
+            "description": "A top-floor suite with a private balcony looking straight out over the rampart wall to open sea.",
+            "longDescription": "On the top floor, this suite steps out onto a private balcony that looks straight over the rampart wall to open sea — no rooftops, no other buildings, just the fort wall and the Indian Ocean beyond it. Original teak furniture and high ceilings keep the room true to the building's colonial roots, while the balcony makes it the best sunset seat in the house."
           }
         }
       },
@@ -310,11 +340,13 @@
         "rooms": {
           "executiveRoom": {
             "name": "Executive Room",
-            "description": "A quiet, city-facing room designed for longer stays, with a proper desk and reading corner."
+            "description": "A quiet, city-facing room designed for longer stays, with a proper desk and reading corner.",
+            "longDescription": "Designed with longer stays in mind, this quiet, city-facing room includes a proper writing desk and a reading corner tucked by the window — a rare thing to find in a capital-city hotel room. The interiors are deliberately restrained: considered materials, low noise, nothing to distract from either work or rest."
           },
           "cityViewSuite": {
             "name": "City View Suite",
-            "description": "A corner suite with wraparound windows over the Colombo skyline and a separate lounge area."
+            "description": "A corner suite with wraparound windows over the Colombo skyline and a separate lounge area.",
+            "longDescription": "This corner suite wraps around two sides of the building, giving wide, uninterrupted views over the Colombo skyline from a separate lounge area as well as the bedroom. It's built for travellers who want the energy of the capital visible just outside the window, without ever having to step into the noise of it."
           }
         }
       },
@@ -326,11 +358,13 @@
         "rooms": {
           "plantersCottage": {
             "name": "Planter's Cottage",
-            "description": "A self-contained cottage in the estate style, with a wood-burning fireplace and private veranda."
+            "description": "A self-contained cottage in the estate style, with a wood-burning fireplace and private veranda.",
+            "longDescription": "A self-contained cottage built in the style of the estate's original planter's bungalows, complete with a wood-burning fireplace lit fresh each evening. The private veranda looks directly out over rows of tea, with the scent of fresh-picked leaf carried up from the estate below on the morning air."
           },
           "hillsideVilla": {
             "name": "Hillside Villa",
-            "description": "A multi-bedroom villa set apart from the main lodge, with its own kitchen, lounge, and terraced garden."
+            "description": "A multi-bedroom villa set apart from the main lodge, with its own kitchen, lounge, and terraced garden.",
+            "longDescription": "Set apart from the main lodge, this multi-bedroom villa comes with its own kitchen, lounge, and a terraced garden that steps down the hillside. Built for families or groups wanting the resort's setting with the independence of a private home — a resident cook and housekeeper can be arranged on request."
           }
         }
       },
@@ -342,11 +376,13 @@
         "rooms": {
           "bayViewRoom": {
             "name": "Bay View Room",
-            "description": "A room facing directly out over the bay, with a private balcony ideal for morning coffee."
+            "description": "A room facing directly out over the bay, with a private balcony ideal for morning coffee.",
+            "longDescription": "Facing directly out over Mirissa's whale-watching bay, this room's private balcony is the obvious spot for a first coffee of the day — fishing boats setting out at dawn, whales visible further out on a clear morning. Simple, uncluttered interiors keep the focus on the view."
           },
           "beachfrontSuite": {
             "name": "Beachfront Suite",
-            "description": "A ground-level suite with direct beach access and an outdoor rain shower."
+            "description": "A ground-level suite with direct beach access and an outdoor rain shower.",
+            "longDescription": "This ground-level suite opens straight onto the beach path, with an outdoor rain shower tucked into a private garden corner. Falling asleep to the sound of the surf and walking directly onto sand each morning is the entire point of this room — everything else is kept deliberately simple."
           }
         }
       },
@@ -358,11 +394,13 @@
         "rooms": {
           "jungleChalet": {
             "name": "Jungle Chalet",
-            "description": "An elevated timber chalet framed by forest canopy, with a private deck facing the rock."
+            "description": "An elevated timber chalet framed by forest canopy, with a private deck facing the rock.",
+            "longDescription": "Raised on timber stilts within the forest canopy, this chalet keeps its footprint deliberately light on the land around it. A private deck faces Sigiriya rock directly, best appreciated at first light when mist still clings to the base of the ancient fortress."
           },
           "wildernessSuite": {
             "name": "Wilderness Suite",
-            "description": "A larger pavilion-style suite with an outdoor bath and uninterrupted views of Sigiriya."
+            "description": "A larger pavilion-style suite with an outdoor bath and uninterrupted views of Sigiriya.",
+            "longDescription": "A larger, pavilion-style suite with an outdoor bath positioned to take in an uninterrupted view of Sigiriya rock while you soak. Open-air by design, screened rather than walled, it's built for guests who came for the wilderness setting and want to stay close to it, even indoors."
           }
         }
       },
@@ -374,7 +412,8 @@
         "rooms": {
           "wholeVilla": {
             "name": "The Whole Villa",
-            "description": "Three bedrooms, a private infinity-edge pool, and a wraparound deck facing the valley — booked in full, for one party at a time."
+            "description": "Three bedrooms, a private infinity-edge pool, and a wraparound deck facing the valley — booked in full, for one party at a time.",
+            "longDescription": "Let one party at a time, this three-bedroom villa is suspended on a ridge above Ella's valley with a private infinity-edge pool and a wraparound deck that catches the view from almost every angle. A resident housekeeper and cook can be arranged on request, but otherwise the villa, its garden, and its views over the valley are entirely yours for the length of your stay."
           }
         }
       },
@@ -386,7 +425,8 @@
         "rooms": {
           "wholeVilla": {
             "name": "The Whole Villa",
-            "description": "Four bedrooms, a beachfront garden, and a private pool steps from the sand — booked in full, for one party at a time."
+            "description": "Four bedrooms, a beachfront garden, and a private pool steps from the sand — booked in full, for one party at a time.",
+            "longDescription": "This four-bedroom beachfront villa is booked in full, for one party at a time — no shared walls, no other guests. A walled garden leads directly onto a quiet stretch of Tangalle sand, with a private pool just steps from the beach. Built for a family or group who want the coast entirely to themselves."
           }
         }
       }
@@ -411,36 +451,6 @@
       "villa": "Villas"
     },
     "noResults": "No properties match these filters. Try adjusting or clearing them.",
-    "amenities": {
-      "pool": "Private Pool",
-      "wifi": "High-Speed WiFi",
-      "breakfast": "Daily Breakfast",
-      "spa": "Spa & Wellness",
-      "airportTransfer": "Airport Transfer",
-      "mountainView": "Mountain View",
-      "oceanView": "Ocean View",
-      "privateButler": "Private Butler",
-      "ecoCertified": "Eco-Certified"
-    },
-    "detail": {
-      "amenitiesHeading": "Amenities",
-      "roomsHeading": "Rooms & Suites",
-      "locationHeading": "Location",
-      "fromPerNight": "From {price} / night",
-      "bookThisProperty": "Enquire to Book",
-      "backToProperties": "Back to Properties",
-      "occupancy": "Sleeps {count}",
-      "galleryImageAlt": "{name} — image {index}",
-      "bookNow": "Book Now"
-    },
-    "showcase": {
-      "eyebrow": "Featured Stay"
-    },
-    "essentials": {
-      "eyebrow": "The Essentials",
-      "heading": "Every stay comes with the essentials, considered.",
-      "subheading": "Across every property in the collection, a consistent standard of comfort and care — regardless of which one you choose."
-    },
     "amenities": {
       "pool": {
         "name": "Private Pool",
@@ -478,6 +488,43 @@
         "name": "Eco-Certified",
         "description": "Stay with confidence in properties committed to sustainable and environmentally responsible practices."
       }
+    },
+    "detail": {
+      "amenitiesHeading": "Amenities",
+      "roomsHeading": "Rooms & Suites",
+      "locationHeading": "Location",
+      "fromPerNight": "From {price} / night",
+      "bookThisProperty": "Enquire to Book",
+      "backToProperties": "Back to Properties",
+      "occupancy": "Sleeps {count}",
+      "galleryImageAlt": "{name} — image {index}",
+      "bookNow": "Book Now",
+      "overviewEyebrow": "The Property",
+      "beds": "{count} Beds",
+      "bathrooms": "{count} Baths",
+      "similarRoomsEyebrow": "More at This Property",
+      "similarRoomsHeading": "Similar Rooms",
+      "roomSize": "{size} m²",
+      "roomOverviewEyebrow": "The Room",
+      "facilitiesEyebrow": "The Facilities",
+      "facilitiesHeading": "Everything This Property Offers",
+      "overviewHeading": "The Story of This Place",
+      "addressLabel": "Address",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "roomsEyebrow": "Accommodations",
+      "locationEyebrow": "Our Location",
+      "locationBody": "However you arrive, the journey here is part of the experience — mist-covered hills, quiet roads, and a warm welcome waiting at the end of it.",
+      "getDirections": "Get Directions",
+      "reserveYourStay": "Reserve Your Stay"
+    },
+    "showcase": {
+      "eyebrow": "Featured Stay"
+    },
+    "essentials": {
+      "eyebrow": "The Essentials",
+      "heading": "Every stay comes with the essentials, considered.",
+      "subheading": "Across every property in the collection, a consistent standard of comfort and care — regardless of which one you choose."
     }
   }
 }

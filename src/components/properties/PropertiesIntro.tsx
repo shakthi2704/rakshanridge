@@ -11,11 +11,11 @@ export default async function PropertiesIntro() {
                 <div className="mx-auto max-w-2xl text-center">
                     <Reveal>
                         <div className="flex items-center justify-center gap-4 text-slate">
-                            <span className="h-px w-10 bg-navy/40" />
-                            <span className="font-sans text-xs tracking-[0.35em] text-navy uppercase">
+                            <span className="h-px w-10 bg-ink/40" />
+                            <span className="font-sans text-xs tracking-[0.35em] text-ink uppercase">
                                 {t("eyebrow")}
                             </span>
-                            <span className="h-px w-10 bg-navy/40" />
+                            <span className="h-px w-10 bg-ink/40" />
                         </div>
                     </Reveal>
 

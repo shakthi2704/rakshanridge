@@ -54,8 +54,8 @@ export default async function WhyChooseUs() {
                     {/* Content */}
                     <div>
                         <div className="flex items-center gap-4 text-slate">
-                            <span className="h-px w-10 bg-navy/40" />
-                            <span className="font-sans text-xs tracking-[0.35em] text-navy uppercase">
+                            <span className="h-px w-10 bg-ink/40" />
+                            <span className="font-sans text-xs tracking-[0.35em] text-ink uppercase">
                                 {t("eyebrow")}
                             </span>
                         </div>
@@ -64,7 +64,7 @@ export default async function WhyChooseUs() {
                             {t("heading")}
                         </h2>
 
-                        <div className="mt-12 divide-y divide-navy/10 border-t border-navy/10">
+                        <div className="mt-12 divide-y divide-ink/10 border-t border-ink/10">
                             {reasons.map((reason) => (
                                 <div key={reason.key} className="flex gap-6 py-7">
                                     <div className="font-serif text-4xl font-light text-charcoal">

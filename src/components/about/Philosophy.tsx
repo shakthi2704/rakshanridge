@@ -14,11 +14,11 @@ export default async function Philosophy() {
                 <div className="mx-auto max-w-xl text-center">
                     <Reveal>
                         <div className="flex items-center justify-center gap-4 text-slate">
-                            <span className="h-px w-10 bg-navy/40" />
-                            <span className="font-sans text-xs tracking-[0.35em] text-navy uppercase">
+                            <span className="h-px w-10 bg-ink/40" />
+                            <span className="font-sans text-xs tracking-[0.35em] text-ink uppercase">
                                 {t("eyebrow")}
                             </span>
-                            <span className="h-px w-10 bg-navy/40" />
+                            <span className="h-px w-10 bg-ink/40" />
                         </div>
                     </Reveal>
 
@@ -52,7 +52,7 @@ export default async function Philosophy() {
                         </div>
                     </Reveal>
 
-                    {/* Deep Sustainability — solid navy card */}
+                    {/* Deep Sustainability — solid ink card */}
                     <Reveal delay={100}>
                         <div className="flex h-80 flex-col items-center justify-center rounded-sm bg-ink p-8 text-center">
                             <Leaf className="h-8 w-8 text-white/70" strokeWidth={1.25} />

@@ -29,6 +29,18 @@
   --font-serif: var(--font-cormorant);
   --font-sans: var(--font-manrope);
   --font-display: var(--font-playfair-sc);
+
+  --animate-face-fade: fadeFace 1.5s ease-out forwards;
+}
+
+@keyframes fadeFace {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.3;
+  }
 }
 
 body {

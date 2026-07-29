@@ -63,11 +63,11 @@ export default async function SpecialOffers() {
                 <Reveal>
                     <div className="flex flex-col items-center text-center">
                         <div className="flex items-center gap-4 text-slate">
-                            <span className="h-px w-10 bg-navy/40" />
-                            <span className="font-sans text-xs tracking-[0.35em] text-navy uppercase">
+                            <span className="h-px w-10 bg-ink/40" />
+                            <span className="font-sans text-xs tracking-[0.35em] text-ink uppercase">
                                 {t("eyebrow")}
                             </span>
-                            <span className="h-px w-10 bg-navy/40" />
+                            <span className="h-px w-10 bg-ink/40" />
                         </div>
                         <h2 className="mt-6 max-w-2xl font-serif text-3xl leading-[1.25] font-medium text-ink sm:text-4xl lg:text-[2.75rem]">
                             {t("heading")}
@@ -105,20 +105,17 @@ export default async function SpecialOffers() {
                                     <ul className="mt-6 flex flex-col gap-2.5">
                                         {(t.raw(`items.${offer.key}.includes`) as string[]).map((item) => (
                                             <li key={item} className="flex items-start gap-3">
-                                                <Check
-                                                    className="mt-0.5 h-4 w-4 shrink-0 text-navy"
-                                                    strokeWidth={1.5}
+                                                <Image
+                                                    src="/logo/logo.svg"
+                                                    alt=""
+                                                    width={16}
+                                                    height={16}
+                                                    className="mt-0.5 h-4 w-6 shrink-0"
                                                 />
                                                 <span className="font-sans text-sm text-charcoal">
                                                     {item}
                                                 </span>
                                             </li>
-                                            // <li key={item} className="flex items-start gap-3">
-                                            //     <span className="mt-3 h-px w-4 shrink-0 bg-navy" />
-                                            //     <span className="font-sans text-sm text-charcoal">
-                                            //         {item}
-                                            //     </span>
-                                            // </li>
                                         ))}
                                     </ul>
 
