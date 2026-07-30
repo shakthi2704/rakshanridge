@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 
@@ -16,29 +17,38 @@ export default function RoomDetailHero({
     image: string;
 }) {
     return (
-        <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden bg-ink">
+        <section className="relative flex h-[70vh] min-h-[480px] items-center justify-center overflow-hidden bg-ink">
             <Image
                 src={image}
                 alt={roomName}
                 fill
                 priority
-                className="object-cover"
+                className="object-cover opacity-60"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/50" />
 
-            <div className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
-                <div>
-                    <Link
-                        href={`/properties/${propertySlug}`}
-                        className="font-sans text-xs tracking-[0.2em] text-white/70 uppercase underline underline-offset-4 hover:text-white"
-                    >
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/30 to-ink/30" />
+
+            <Container className="relative z-10 text-center">
+                <Link
+                    href={`/properties/${propertySlug}`}
+                    className="inline-flex items-center justify-center gap-4 text-white/70 transition-colors hover:text-white"
+                >
+                    <span className="h-px w-10 bg-white/40" />
+                    <span className="font-sans text-xs tracking-[0.35em] uppercase">
                         {propertyName} — {propertyLocation}
-                    </Link>
-                    <h1 className="mt-4 font-serif text-4xl font-medium text-white sm:text-5xl lg:text-6xl">
-                        {roomName}
-                    </h1>
-                </div>
-            </div>
+                    </span>
+                    <span className="h-px w-10 bg-white/40" />
+                </Link>
+
+                <h1 className="mt-6 font-serif text-4xl font-medium text-white sm:text-5xl lg:text-6xl">
+                    {roomName}
+                </h1>
+            </Container>
+
+            <ChevronDown
+                className="absolute bottom-8 left-1/2 z-10 h-6 w-6 -translate-x-1/2 animate-bounce text-white/70"
+                strokeWidth={1.5}
+            />
         </section>
     );
 }

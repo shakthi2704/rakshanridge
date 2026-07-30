@@ -516,7 +516,13 @@
       "locationEyebrow": "Our Location",
       "locationBody": "However you arrive, the journey here is part of the experience — mist-covered hills, quiet roads, and a warm welcome waiting at the end of it.",
       "getDirections": "Get Directions",
-      "reserveYourStay": "Reserve Your Stay"
+      "reserveYourStay": "Reserve Your Stay",
+      "checkAvailability": "Check Availability",
+      "statGuests": "Guests",
+      "statSize": "Size",
+      "statBeds": "Beds",
+      "statBaths": "Baths",
+      "exploreRoom": "View Room"
     },
     "showcase": {
       "eyebrow": "Featured Stay"

@@ -58,10 +58,7 @@ export default async function RoomDetailPage({ params }: Props) {
     const longDescription = t(
         `items.${property.key}.rooms.${room.key}.longDescription`
     );
-    const occupancyLabel = t("detail.occupancy", { count: room.occupancy });
     const sizeLabel = t("detail.roomSize", { size: room.sizeSqm });
-    const bedsLabel = t("detail.beds", { count: room.beds });
-    const bathroomsLabel = t("detail.bathrooms", { count: room.bathrooms });
     const priceLabel = t("detail.fromPerNight", {
         price: formatPrice(room.priceFrom, currency),
     });
@@ -69,6 +66,9 @@ export default async function RoomDetailPage({ params }: Props) {
     const roomIndex = property.rooms.findIndex((r) => r.key === room.key);
     const roomImage =
         property.gallery[roomIndex % property.gallery.length] ?? property.image;
+    const roomSecondaryImage =
+        property.gallery[(roomIndex + 1) % property.gallery.length] ??
+        property.image;
 
     const amenities = property.amenityKeys.map((key) => ({
         key,
@@ -107,14 +107,20 @@ export default async function RoomDetailPage({ params }: Props) {
                 eyebrow={t("detail.roomOverviewEyebrow")}
                 heading={roomName}
                 description={longDescription}
-                occupancyLabel={occupancyLabel}
+                occupancy={room.occupancy}
                 sizeLabel={sizeLabel}
-                bedsLabel={bedsLabel}
-                bathroomsLabel={bathroomsLabel}
+                beds={room.beds}
+                bathrooms={room.bathrooms}
+                guestsCaption={t("detail.statGuests")}
+                sizeCaption={t("detail.statSize")}
+                bedsCaption={t("detail.statBeds")}
+                bathsCaption={t("detail.statBaths")}
                 priceLabel={priceLabel}
                 bookLabel={t("detail.bookNow")}
+                checkAvailabilityLabel={t("detail.checkAvailability")}
                 roomKey={room.key}
                 image={roomImage}
+                secondaryImage={roomSecondaryImage}
                 roomName={roomName}
             />
             <PropertyFacilities
@@ -126,6 +132,7 @@ export default async function RoomDetailPage({ params }: Props) {
             <SimilarRooms
                 eyebrow={t("detail.similarRoomsEyebrow")}
                 heading={t("detail.similarRoomsHeading")}
+                exploreLabel={t("detail.exploreRoom")}
                 propertySlug={property.slug}
                 rooms={similarRooms}
             />

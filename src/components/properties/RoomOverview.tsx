@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Users, Maximize, BedDouble, Bath } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
@@ -9,90 +8,90 @@ export default function RoomOverview({
     eyebrow,
     heading,
     description,
-    occupancyLabel,
+    occupancy,
     sizeLabel,
-    bedsLabel,
-    bathroomsLabel,
+    beds,
+    bathrooms,
+    guestsCaption,
+    sizeCaption,
+    bedsCaption,
+    bathsCaption,
     priceLabel,
     bookLabel,
+    checkAvailabilityLabel,
     roomKey,
     image,
+    secondaryImage,
     roomName,
 }: {
     eyebrow: string;
     heading: string;
     description: string;
-    occupancyLabel: string;
+    occupancy: number;
     sizeLabel: string;
-    bedsLabel: string;
-    bathroomsLabel: string;
+    beds: number;
+    bathrooms: number;
+    guestsCaption: string;
+    sizeCaption: string;
+    bedsCaption: string;
+    bathsCaption: string;
     priceLabel: string;
     bookLabel: string;
+    checkAvailabilityLabel: string;
     roomKey: string;
     image: string;
+    secondaryImage: string;
     roomName: string;
 }) {
+    const stats = [
+        { value: String(occupancy), caption: guestsCaption },
+        { value: sizeLabel, caption: sizeCaption },
+        { value: String(beds), caption: bedsCaption },
+        { value: String(bathrooms), caption: bathsCaption },
+    ];
+
     return (
         <section className="bg-paper py-20 lg:py-28">
             <Container>
-                <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-                    {/* Left — image */}
-                    <Reveal>
-                        <div className="relative h-80 w-full overflow-hidden lg:h-full lg:min-h-[460px]">
-                            <Image
-                                src={image}
-                                alt={roomName}
-                                fill
-                                className="object-cover"
-                                sizes="(min-width: 1024px) 50vw, 100vw"
-                            />
-                        </div>
-                    </Reveal>
-
-                    {/* Right — text */}
-                    <div className="flex flex-col justify-center">
-                        <Reveal delay={100}>
+                <div className="grid gap-16 lg:grid-cols-2 lg:items-center lg:gap-20">
+                    {/* Left — text */}
+                    <div>
+                        <Reveal>
                             <div className="flex items-center gap-4">
                                 <span className="h-px w-8 bg-navy" />
                                 <span className="font-sans text-xs tracking-[0.2em] text-navy uppercase">
                                     {eyebrow}
                                 </span>
                             </div>
-                            <h2 className="mt-4 font-serif text-3xl font-medium text-ink sm:text-4xl">
+                            <h2 className="mt-4 font-serif text-3xl font-medium text-ink sm:text-4xl lg:text-[2.75rem]">
                                 {heading}
                             </h2>
                         </Reveal>
 
-                        <Reveal delay={150}>
-                            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
-                                <span className="flex items-center gap-2 font-sans text-xs tracking-[0.1em] text-slate uppercase">
-                                    <Users className="h-4 w-4" />
-                                    {occupancyLabel}
-                                </span>
-                                <span className="flex items-center gap-2 font-sans text-xs tracking-[0.1em] text-slate uppercase">
-                                    <Maximize className="h-4 w-4" />
-                                    {sizeLabel}
-                                </span>
-                                <span className="flex items-center gap-2 font-sans text-xs tracking-[0.1em] text-slate uppercase">
-                                    <BedDouble className="h-4 w-4" />
-                                    {bedsLabel}
-                                </span>
-                                <span className="flex items-center gap-2 font-sans text-xs tracking-[0.1em] text-slate uppercase">
-                                    <Bath className="h-4 w-4" />
-                                    {bathroomsLabel}
-                                </span>
-                            </div>
-                        </Reveal>
-
-                        <Reveal delay={200}>
-                            <p className="mt-8 font-serif text-lg leading-relaxed text-charcoal">
+                        <Reveal delay={100}>
+                            <p className="mt-6 font-serif text-lg leading-relaxed text-charcoal">
                                 {description}
                             </p>
                         </Reveal>
 
-                        <Reveal delay={250}>
-                            <div className="mt-9 flex items-center gap-6 border-t border-navy/10 pt-7">
-                                <span className="font-sans text-sm tracking-[0.1em] text-navy uppercase">
+                        <Reveal delay={150}>
+                            <div className="mt-10 flex flex-wrap gap-x-10 gap-y-6 border-t border-navy/10 pt-8">
+                                {stats.map((stat) => (
+                                    <div key={stat.caption}>
+                                        <span className="block font-serif text-3xl text-ink">
+                                            {stat.value}
+                                        </span>
+                                        <span className="mt-1 block font-sans text-xs tracking-[0.15em] text-slate uppercase">
+                                            {stat.caption}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+                        </Reveal>
+
+                        <Reveal delay={200}>
+                            <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-navy/10 pt-8">
+                                <span className="mr-2 font-sans text-sm tracking-[0.1em] text-navy uppercase">
                                     {priceLabel}
                                 </span>
                                 <Link
@@ -101,9 +100,39 @@ export default function RoomOverview({
                                 >
                                     {bookLabel}
                                 </Link>
+                                <Link
+                                    href={`/book?room=${roomKey}`}
+                                    className={buttonVariants({ variant: "outline-ink", size: "md" })}
+                                >
+                                    {checkAvailabilityLabel}
+                                </Link>
                             </div>
                         </Reveal>
                     </div>
+
+                    {/* Right — image collage */}
+                    <Reveal delay={100}>
+                        <div className="relative pb-12 lg:pb-16">
+                            <div className="relative ml-auto aspect-[4/5] w-[82%] overflow-hidden">
+                                <Image
+                                    src={image}
+                                    alt={roomName}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(min-width: 1024px) 45vw, 80vw"
+                                />
+                            </div>
+                            <div className="absolute bottom-0 left-0 aspect-square w-[52%] overflow-hidden border-8 border-paper shadow-xl">
+                                <Image
+                                    src={secondaryImage}
+                                    alt={roomName}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(min-width: 1024px) 25vw, 45vw"
+                                />
+                            </div>
+                        </div>
+                    </Reveal>
                 </div>
             </Container>
         </section>
