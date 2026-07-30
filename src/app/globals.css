@@ -49,6 +49,19 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -59,4 +72,32 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0)
+  }
+
+  to {
+    transform: translateX(-50%)
+  }
+}
+
+[dir="rtl"] .animate-marquee {
+  animation-direction: reverse;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+[dir="rtl"] .marquee-track {
+  animation-direction: reverse;
 }

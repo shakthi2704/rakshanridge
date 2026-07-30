@@ -64,7 +64,7 @@ export default function Navbar() {
             <header
                 className={cn(
                     "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-                    scrolled ? "bg-black/80 shadow-lg backdrop-blur-sm" : "bg-black/10 backdrop-blur-sm"
+                    scrolled ? "bg-black/80 shadow-lg backdrop-blur-sm" : "bg-black/60 backdrop-blur-sm"
                 )}
             >
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/10 z-20" />

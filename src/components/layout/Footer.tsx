@@ -51,7 +51,7 @@ export default async function Footer() {
                     aria-hidden="true"
                     width={500}
                     height={650}
-                    className="absolute left-[-300px] top-1/2 w-[640px] -translate-y-1/2 opacity-10 transition-opacity duration-700 peer-has(a:hover):opacity-30"
+                    className="absolute left-[-300px] top-1/2 hidden w-[640px] -translate-y-1/2 opacity-10 transition-opacity duration-700 peer-has(a:hover):opacity-30 lg:block"
                 />
 
                 {/* Right edge face */}
@@ -61,7 +61,7 @@ export default async function Footer() {
                     aria-hidden="true"
                     width={500}
                     height={650}
-                    className="absolute right-[-300px] top-1/2 w-[640px] -translate-y-1/2 scale-x-[-1] opacity-10 transition-opacity duration-700 group-has(a:hover):opacity-30"
+                    className="absolute right-[-300px] top-1/2 hidden w-[640px] -translate-y-1/2 scale-x-[-1] opacity-10 transition-opacity duration-700 group-has(a:hover):opacity-30 lg:block"
                 />
             </div>
 

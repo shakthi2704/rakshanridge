@@ -6,7 +6,7 @@ import { buttonVariants } from "@/components/ui/Button";
 import Reveal from "../ui/Reveal";
 
 export default async function MainCta() {
-    const t = await getTranslations("finalCta");
+    const t = await getTranslations("mainCta");
     return (
         <section className="relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden py-24">
             <Image
