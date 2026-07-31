@@ -3,8 +3,11 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { experiences, getExperienceBySlug } from "@/lib/experiences";
 import ExperienceDetailHero from "@/components/experiences/ExperienceDetailHero";
-import ExperienceDetailContent from "@/components/experiences/ExperienceDetailContent";
+import ExperienceOverview from "@/components/experiences/ExperienceOverview";
+import ExperienceHighlights from "@/components/experiences/ExperienceHighlights";
+import SimilarExperiences from "@/components/experiences/SimilarExperiences";
 import MainCta from "@/components/ui/MainCta";
+import ExperienceStory from "@/components/experiences/ExperienceStory";
 
 type Props = {
     params: Promise<{ locale: string; slug: string }>;
@@ -36,6 +39,19 @@ export default async function ExperienceDetailPage({ params }: Props) {
     const t = await getTranslations("experiences");
     const title = t(`items.${experience.key}.title`);
     const description = t(`items.${experience.key}.description`);
+    const highlights = t.raw(`items.${experience.key}.highlights`) as string[];
+    const storyOpening = t(`items.${experience.key}.storyOpening`);
+
+    const similar = experiences
+        .filter((exp) => exp.slug !== experience.slug)
+        .slice(0, 2)
+        .map((exp) => ({
+            key: exp.key,
+            slug: exp.slug,
+            title: t(`items.${exp.key}.title`),
+            location: t(`items.${exp.key}.location`),
+            image: exp.image,
+        }));
 
     return (
         <main className="flex flex-1 flex-col">
@@ -45,9 +61,39 @@ export default async function ExperienceDetailPage({ params }: Props) {
                 image={experience.detailImage}
             />
 
-            <ExperienceDetailContent
+            {/* <ExperienceOverview
+                eyebrow={t("eyebrow")}
+                heading={title}
                 description={description}
-                exploreLabel={t("viewAll")}
+                duration={t(`items.${experience.key}.duration`)}
+                location={t(`items.${experience.key}.location`)}
+                durationLabel={t("durationLabel")}
+                locationLabel={t("locationLabel")}
+                image={experience.image}
+                secondaryImage={experience.detailImage}
+                title={title}
+            /> */}
+            <ExperienceStory
+                openingFirstLetter={storyOpening.charAt(0).toUpperCase()}
+                openingRest={storyOpening.slice(1)}
+                quote={t(`items.${experience.key}.storyQuote`)}
+                closing={t(`items.${experience.key}.storyClosing`)}
+                image={experience.detailImage}
+                title={title}
+            />
+
+            <ExperienceHighlights
+                heading={t("highlightsHeading")}
+                highlights={highlights}
+                image={experience.image}
+                title={title}
+            />
+
+            <SimilarExperiences
+                eyebrow={t("eyebrow")}
+                heading={t("similarHeading")}
+                exploreLabel={t("viewDetails")}
+                experiences={similar}
             />
 
             <MainCta />

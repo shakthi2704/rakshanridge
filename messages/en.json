@@ -55,30 +55,100 @@
     "viewDetails": "View Details",
     "loadMore": "Load More",
     "viewAll": "View All",
+    "durationLabel": "Duration",
+    "locationLabel": "Location",
+    "highlightsHeading": "What's Included",
+    "similarHeading": "More Experiences",
     "items": {
       "ceylonTeaTrails": {
         "title": "Ceylon Tea Trails",
-        "description": "Wander through mist-covered hillside estates and learn the centuries-old craft behind the world's finest tea."
+        "description": "Wander through mist-covered hillside estates and learn the centuries-old craft behind the world's finest tea.",
+        "duration": "Half Day",
+        "location": "Hill Country",
+        "highlights": [
+          "Guided walk through working tea estates",
+          "Traditional tea-plucking demonstration",
+          "Tasting session with a resident tea master",
+          "Private transport from your property"
+        ],
+        "storyOpening": "he hills around Nuwara Eliya wake up in mist. Long before the estates open their gates to visitors, workers move through the rows in quiet rhythm, hands moving over leaves that have been picked the same way for generations. This is not a tour of a factory floor — it is a walk through a living tradition, one that shaped the economy and identity of the hill country long before it shaped a cup of tea.",
+        "storyQuote": "Every leaf carries the memory of the hillside it grew on.",
+        "storyClosing": "By the time the tasting begins, the estate has already told its own story — in the terraces, the light, and the slow, unhurried pace of the work. It is a morning that asks little of you except to pay attention."
       },
       "coastalExcursions": {
         "title": "Coastal Excursions",
-        "description": "Sail the southern coastline at sunrise, from hidden coves to centuries-old fishing villages."
+        "description": "Sail the southern coastline at sunrise, from hidden coves to centuries-old fishing villages.",
+        "duration": "Full Day",
+        "location": "Southern Coast",
+        "highlights": [
+          "Sunrise departure by private boat",
+          "Stops at secluded coves and fishing villages",
+          "Light lunch served on board",
+          "Return transfer included"
+        ],
+        "storyOpening": "he southern coastline reveals itself slowly at sunrise, when the water is still and the fishing boats have not yet gone out. Beyond the well-known beaches, hidden coves and quiet villages sit largely untouched by the pace of modern travel — places where the rhythm of the tide still shapes the rhythm of the day.",
+        "storyQuote": "The coast has its own clock, and it does not hurry for anyone.",
+        "storyClosing": "This is coastal Sri Lanka away from the crowds — a slower, more intimate encounter with the sea, the shoreline, and the communities that have called it home for centuries."
       },
       "culinaryJourneys": {
         "title": "Culinary Journeys",
-        "description": "Sri Lankan cuisine reimagined through private chef tables and spice garden foraging walks."
+        "description": "Sri Lankan cuisine reimagined through private chef tables and spice garden foraging walks.",
+        "duration": "Half Day",
+        "location": "Across the Collection",
+        "highlights": [
+          "Guided spice garden foraging walk",
+          "Hands-on cooking session with a private chef",
+          "Multi-course tasting menu",
+          "Pairing notes on regional ingredients"
+        ],
+        "storyOpening": "n the spice gardens, the air itself tells a story — cinnamon bark drying in the sun, cardamom pods split open, curry leaves crushed underfoot. Sri Lankan cooking has always been shaped by what grows nearby, and a walk through these gardens is the clearest way to understand a cuisine built on generations of local knowledge.",
+        "storyQuote": "To understand the food, first understand the land it grows from.",
+        "storyClosing": "What follows at the chef's table is not a performance but a conversation — ingredients explained, techniques shared, and a meal that carries the character of the island in every course."
       },
       "ayurvedicRituals": {
         "title": "Ayurvedic Rituals",
-        "description": "Ancient healing traditions restored for modern life, guided by resident practitioners in open-air pavilions."
+        "description": "Ancient healing traditions restored for modern life, guided by resident practitioners in open-air pavilions.",
+        "duration": "2–3 Hours",
+        "location": "Resort Spa Pavilions",
+        "highlights": [
+          "Consultation with a resident practitioner",
+          "Personalised ritual and oil selection",
+          "Open-air pavilion setting",
+          "Herbal tea served after treatment"
+        ],
+        "storyOpening": "n an open-air pavilion, away from the noise of daily life, Ayurvedic practice begins not with a treatment but with a conversation. Resident practitioners draw on knowledge passed down over centuries, adapting age-old techniques to the needs of each guest rather than offering a one-size-fits-all ritual.",
+        "storyQuote": "Healing, like the island itself, moves at its own unhurried pace.",
+        "storyClosing": "The result is less a spa visit than a quiet recalibration — time set aside, deliberately, to slow down and listen to what the body actually needs."
       },
       "templePilgrimage": {
         "title": "Sacred Temple Pilgrimage",
-        "description": "A guided, unhurried journey through centuries-old temples woven into the hills and forest."
+        "description": "A guided, unhurried journey through centuries-old temples woven into the hills and forest.",
+        "duration": "Full Day",
+        "location": "Central Highlands",
+        "highlights": [
+          "Visits to sacred sites off the tourist trail",
+          "Private guide versed in local history",
+          "Unhurried, reflective pacing",
+          "Modest dress provided where required"
+        ],
+        "storyOpening": "cattered through the hills and forest, centuries-old temples hold a stillness that is easy to miss when moving quickly. A guided pilgrimage through these sites is less about covering distance and more about pace — pausing at each threshold, understanding the history carved into the stone, and allowing the place itself to set the rhythm of the visit.",
+        "storyQuote": "Some places ask to be entered slowly, and these are among them.",
+        "storyClosing": "It is a journey shaped as much by silence as by sights — an unhurried passage through some of the island's most enduring sacred spaces."
       },
       "wildlifeEncounters": {
         "title": "Wildlife Encounters",
-        "description": "Dawn safaris through untouched national parks, tracking leopards, elephants, and native birdlife."
+        "description": "Dawn safaris through untouched national parks, tracking leopards, elephants, and native birdlife.",
+        "duration": "Half Day",
+        "location": "National Parks",
+        "highlights": [
+          "Dawn departure for peak wildlife activity",
+          "Private open-jeep safari vehicle",
+          "Guide specialised in native species",
+          "Light breakfast served en route"
+        ],
+        "storyOpening": "efore the heat of the day sets in, the national parks belong to their oldest residents. Dawn safaris move quietly through untouched terrain, tracking the movements of leopards, elephants, and native birdlife in the hours when the island's wilderness is most alive.",
+        "storyQuote": "The best encounters happen to those willing to wake before the sun.",
+        "storyClosing": "It is a reminder that Sri Lanka's landscapes are as wild and layered as its coastline and hill country — and that the earliest hours often hold the richest rewards."
       }
     }
   },
@@ -549,6 +619,77 @@
       "eyebrow": "The Essentials",
       "heading": "Every stay comes with the essentials, considered.",
       "subheading": "Across every property in the collection, a consistent standard of comfort and care — regardless of which one you choose."
+    }
+  },
+  "consultingPage": {
+    "hero": {
+      "eyebrow": "Consulting",
+      "heading": "Advisory Services for Independent Hospitality Owners",
+      "subheading": "We bring the same standard of considered hospitality we hold ourselves to, to property owners building something distinctive of their own."
+    },
+    "intro": {
+      "eyebrow": "How We Help",
+      "heading": "Five Ways We Partner With Owners",
+      "body": "Every engagement is shaped around the property, not a fixed package. These are the areas where owners most often bring us in."
+    },
+    "services": {
+      "brandPositioning": {
+        "title": "Brand Positioning & Identity",
+        "description": "Defining what makes a property distinct — and making sure that story is felt in every guest-facing detail, not just the marketing."
+      },
+      "guestExperience": {
+        "title": "Guest Experience Design",
+        "description": "Mapping the guest journey end to end, from first enquiry to departure, to find the moments worth investing in and the friction worth removing."
+      },
+      "operationalStandards": {
+        "title": "Operational Standards & Training",
+        "description": "Building the quiet systems and staff training that make exceptional service consistent, not occasional."
+      },
+      "revenueStrategy": {
+        "title": "Revenue & Distribution Strategy",
+        "description": "Advising on direct booking strategy, rate positioning, and channel mix — built around the property's actual guest profile."
+      },
+      "propertyLaunch": {
+        "title": "Property Launch Support",
+        "description": "Hands-on guidance through a property's first season, from pre-opening standards to the early guest feedback that shapes what comes next."
+      }
+    },
+    "cta": "Enquire About Consulting"
+  },
+  "contactPage": {
+    "hero": {
+      "eyebrow": "Get in Touch",
+      "heading": "We'd Love to Hear From You",
+      "subheading": "For reservations, use our booking page. For everything else — questions, consulting enquiries, press, or feedback — reach us here."
+    },
+    "details": {
+      "heading": "Reach Us Directly",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "whatsappLabel": "WhatsApp",
+      "addressLabel": "Address",
+      "hoursLabel": "Office Hours",
+      "hoursValue": "Monday – Saturday, 9:00 AM – 6:00 PM (GMT+5:30)"
+    },
+    "bookingRedirect": {
+      "text": "Looking to reserve a stay?",
+      "cta": "Go to Booking"
+    },
+    "form": {
+      "heading": "Send an Enquiry",
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "topicLabel": "Topic",
+      "topicGeneral": "General Enquiry",
+      "topicConsulting": "Consulting",
+      "topicPress": "Press",
+      "topicOther": "Other",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us how we can help",
+      "submit": "Send Message",
+      "submitted": "Thank you — we'll be in touch shortly."
     }
   }
 }
