@@ -320,5 +320,276 @@
         }
       }
     }
+  },
+  "properties": {
+    "eyebrow": "The Full Collection",
+    "heading": "Every Address, Chosen with Intention",
+    "subheading": "From hillside hotels to private villas, each property in the Raksha & Ridge collection is selected for character, not scale.",
+    "types": {
+      "hotel": "Hotel",
+      "resort": "Resort",
+      "villa": "Villa",
+      "Boutiqu": "Boutique"
+    },
+    "regions": {
+      "central-highlands": "Central Highlands",
+      "southern-coast": "Southern Coast",
+      "colombo": "Colombo",
+      "cultural-triangle": "Cultural Triangle"
+    },
+    "items": {
+      "kandyRetreat": {
+        "name": "Kandy Retreat",
+        "location": "Kandy, Central Highlands",
+        "tagline": "A hillside sanctuary above the sacred city",
+        "description": "Set on a hillside above the sacred city, Kandy Retreat pairs colonial-era architecture with quiet, considered service. Mornings begin with mist rolling off the surrounding hills; evenings end on a verandah overlooking the temple lights below.",
+        "rooms": {
+          "gardenSuite": {
+            "name": "Garden Suite",
+            "description": "A ground-floor suite opening directly onto the terraced garden, with a private sitting area.",
+            "longDescription": "Step straight from your room onto the terraced garden that gives this suite its name — a private, ground-floor sitting area shaded by frangipani and areca palm. Inside, high ceilings and original teak floors carry the colonial-era character of the house, softened with quiet, considered furnishings. Mornings here begin with the sound of birdsong and mist lifting off the hills beyond the garden wall."
+          },
+          "hillsideResidence": {
+            "name": "Hillside Residence",
+            "description": "A two-bedroom residence with its own plunge pool and uninterrupted views over the valley.",
+            "longDescription": "Set apart from the main house, this two-bedroom residence is built around its own plunge pool and an uninterrupted view over the valley below. The layout gives each bedroom its own privacy, while a shared living space opens fully onto the terrace — ideal for families or two couples travelling together who still want room to spread out. Evenings on the terrace catch the last light over the hills."
+          }
+        }
+      },
+      "galleEscape": {
+        "name": "Galle Escape",
+        "location": "Galle, Southern Coast",
+        "tagline": "Colonial elegance where the coastline meets the fort",
+        "description": "Behind the ramparts of Galle Fort, this restored colonial townhouse opens onto a courtyard pool and, beyond it, the Indian Ocean. Every room keeps its original teak and stone, updated only where comfort demanded it.",
+        "rooms": {
+          "courtyardRoom": {
+            "name": "Courtyard Room",
+            "description": "A ground-floor room facing the private courtyard pool, framed by original fort-era stonework.",
+            "longDescription": "Tucked on the ground floor facing the private courtyard pool, this room keeps its original fort-era stonework exposed on one wall — a quiet reminder of the building's centuries of history. Teak shutters open onto the courtyard, letting in the sound of water and the occasional call of the fort's resident birds. A cool, still retreat from the heat and bustle of the ramparts outside."
+          },
+          "oceanSuite": {
+            "name": "Ocean Suite",
+            "description": "A top-floor suite with a private balcony looking straight out over the rampart wall to open sea.",
+            "longDescription": "On the top floor, this suite steps out onto a private balcony that looks straight over the rampart wall to open sea — no rooftops, no other buildings, just the fort wall and the Indian Ocean beyond it. Original teak furniture and high ceilings keep the room true to the building's colonial roots, while the balcony makes it the best sunset seat in the house."
+          }
+        }
+      },
+      "colomboResidence": {
+        "name": "Colombo Residence",
+        "location": "Colombo",
+        "tagline": "A quiet address in the heart of the capital",
+        "description": "A discreet address in the city's diplomatic quarter, built for travellers who want the capital without the noise of it — considered interiors, a rooftop pool, and a five-minute reach to Colombo's best tables.",
+        "rooms": {
+          "executiveRoom": {
+            "name": "Executive Room",
+            "description": "A quiet, city-facing room designed for longer stays, with a proper desk and reading corner.",
+            "longDescription": "Designed with longer stays in mind, this quiet, city-facing room includes a proper writing desk and a reading corner tucked by the window — a rare thing to find in a capital-city hotel room. The interiors are deliberately restrained: considered materials, low noise, nothing to distract from either work or rest."
+          },
+          "cityViewSuite": {
+            "name": "City View Suite",
+            "description": "A corner suite with wraparound windows over the Colombo skyline and a separate lounge area.",
+            "longDescription": "This corner suite wraps around two sides of the building, giving wide, uninterrupted views over the Colombo skyline from a separate lounge area as well as the bedroom. It's built for travellers who want the energy of the capital visible just outside the window, without ever having to step into the noise of it."
+          }
+        }
+      },
+      "teaCountryResort": {
+        "name": "Tea Country Resort",
+        "location": "Nuwara Eliya, Central Highlands",
+        "tagline": "Misted hills and the scent of fresh-picked leaf",
+        "description": "Surrounded by working tea estates above Nuwara Eliya, this resort was built into the hillside rather than onto it. Fires are lit each evening; the air carries the scent of fresh-picked leaf year-round.",
+        "rooms": {
+          "plantersCottage": {
+            "name": "Planter's Cottage",
+            "description": "A self-contained cottage in the estate style, with a wood-burning fireplace and private veranda.",
+            "longDescription": "A self-contained cottage built in the style of the estate's original planter's bungalows, complete with a wood-burning fireplace lit fresh each evening. The private veranda looks directly out over rows of tea, with the scent of fresh-picked leaf carried up from the estate below on the morning air."
+          },
+          "hillsideVilla": {
+            "name": "Hillside Villa",
+            "description": "A multi-bedroom villa set apart from the main lodge, with its own kitchen, lounge, and terraced garden.",
+            "longDescription": "Set apart from the main lodge, this multi-bedroom villa comes with its own kitchen, lounge, and a terraced garden that steps down the hillside. Built for families or groups wanting the resort's setting with the independence of a private home — a resident cook and housekeeper can be arranged on request."
+          }
+        }
+      },
+      "mirissaBayResort": {
+        "name": "Mirissa Bay Resort",
+        "location": "Mirissa, Southern Coast",
+        "tagline": "Ocean-facing suites above a whale-watching bay",
+        "description": "Perched above Mirissa's whale-watching bay, every suite here faces the water. Days are spent between the infinity pool and the beach path below; evenings are for watching the fishing boats come in.",
+        "rooms": {
+          "bayViewRoom": {
+            "name": "Bay View Room",
+            "description": "A room facing directly out over the bay, with a private balcony ideal for morning coffee.",
+            "longDescription": "Facing directly out over Mirissa's whale-watching bay, this room's private balcony is the obvious spot for a first coffee of the day — fishing boats setting out at dawn, whales visible further out on a clear morning. Simple, uncluttered interiors keep the focus on the view."
+          },
+          "beachfrontSuite": {
+            "name": "Beachfront Suite",
+            "description": "A ground-level suite with direct beach access and an outdoor rain shower.",
+            "longDescription": "This ground-level suite opens straight onto the beach path, with an outdoor rain shower tucked into a private garden corner. Falling asleep to the sound of the surf and walking directly onto sand each morning is the entire point of this room — everything else is kept deliberately simple."
+          }
+        }
+      },
+      "sigiriyaWildernessResort": {
+        "name": "Sigiriya Wilderness Resort",
+        "location": "Sigiriya, Cultural Triangle",
+        "tagline": "Ancient rock fortress views from a private terrace",
+        "description": "Set within the tree line facing Sigiriya rock, this resort keeps its footprint deliberately light — raised timber walkways, open-air pavilions, and views of the ancient fortress from nearly every room.",
+        "rooms": {
+          "jungleChalet": {
+            "name": "Jungle Chalet",
+            "description": "An elevated timber chalet framed by forest canopy, with a private deck facing the rock.",
+            "longDescription": "Raised on timber stilts within the forest canopy, this chalet keeps its footprint deliberately light on the land around it. A private deck faces Sigiriya rock directly, best appreciated at first light when mist still clings to the base of the ancient fortress."
+          },
+          "wildernessSuite": {
+            "name": "Wilderness Suite",
+            "description": "A larger pavilion-style suite with an outdoor bath and uninterrupted views of Sigiriya.",
+            "longDescription": "A larger, pavilion-style suite with an outdoor bath positioned to take in an uninterrupted view of Sigiriya rock while you soak. Open-air by design, screened rather than walled, it's built for guests who came for the wilderness setting and want to stay close to it, even indoors."
+          }
+        }
+      },
+      "ellaHillsideVilla": {
+        "name": "Ella Hillside Villa",
+        "location": "Ella, Central Highlands",
+        "tagline": "A private villa suspended above the valley",
+        "description": "Suspended on a ridge above Ella's valley, this private villa is let one party at a time. A resident housekeeper and cook can be arranged on request; otherwise, the villa and its views are entirely yours.",
+        "rooms": {
+          "wholeVilla": {
+            "name": "The Whole Villa",
+            "description": "Three bedrooms, a private infinity-edge pool, and a wraparound deck facing the valley — booked in full, for one party at a time.",
+            "longDescription": "Let one party at a time, this three-bedroom villa is suspended on a ridge above Ella's valley with a private infinity-edge pool and a wraparound deck that catches the view from almost every angle. A resident housekeeper and cook can be arranged on request, but otherwise the villa, its garden, and its views over the valley are entirely yours for the length of your stay."
+          }
+        }
+      },
+      "tangallePrivateVilla": {
+        "name": "Tangalle Private Villa",
+        "location": "Tangalle, Southern Coast",
+        "tagline": "Secluded beachfront, yours alone for the stay",
+        "description": "A walled beachfront villa on a quiet stretch of Tangalle coast, with direct, private sand access. No shared walls, no other guests — just the villa, the garden, and the sea.",
+        "rooms": {
+          "wholeVilla": {
+            "name": "The Whole Villa",
+            "description": "Four bedrooms, a beachfront garden, and a private pool steps from the sand — booked in full, for one party at a time.",
+            "longDescription": "This four-bedroom beachfront villa is booked in full, for one party at a time — no shared walls, no other guests. A walled garden leads directly onto a quiet stretch of Tangalle sand, with a private pool just steps from the beach. Built for a family or group who want the coast entirely to themselves."
+          }
+        }
+      }
+    },
+    "filters": {
+      "typeLabel": "Type",
+      "regionLabel": "Region",
+      "priceLabel": "Price",
+      "allTypes": "All Types",
+      "allRegions": "All Regions",
+      "anyPrice": "Any Price",
+      "priceUnder300": "Under $300",
+      "price300to450": "$300 – $450",
+      "price450plus": "$450+",
+      "clearFilters": "Clear Filters",
+      "resultsCount": "{count} Properties",
+      "currencyLabel": "Currency"
+    },
+    "groups": {
+      "hotel": "Hotels",
+      "resort": "Resorts",
+      "villa": "Villa",
+      "Boutique": "Boutique"
+    },
+    "noResults": "No properties match these filters. Try adjusting or clearing them.",
+    "amenities": {
+      "pool": {
+        "name": "Private Pool",
+        "description": "Relax in a private pool designed for peaceful moments and complete privacy."
+      },
+      "wifi": {
+        "name": "High-Speed WiFi",
+        "description": "Fast and reliable internet access throughout your stay."
+      },
+      "breakfast": {
+        "name": "Daily Breakfast",
+        "description": "Start every morning with a freshly prepared breakfast featuring local and international flavors."
+      },
+      "spa": {
+        "name": "Spa & Wellness",
+        "description": "Rejuvenate with signature spa treatments inspired by Sri Lankan wellness traditions."
+      },
+      "airportTransfer": {
+        "name": "Airport Transfer",
+        "description": "Enjoy seamless airport pick-up and drop-off arranged by our hospitality team."
+      },
+      "mountainView": {
+        "name": "Mountain View",
+        "description": "Wake up to breathtaking views of Sri Lanka's lush highlands."
+      },
+      "oceanView": {
+        "name": "Ocean View",
+        "description": "Take in uninterrupted views of the Indian Ocean from your room or suite."
+      },
+      "privateButler": {
+        "name": "Private Butler",
+        "description": "Experience personalized service with a dedicated butler attending to every detail."
+      },
+      "ecoCertified": {
+        "name": "Eco-Certified",
+        "description": "Stay with confidence in properties committed to sustainable and environmentally responsible practices."
+      }
+    },
+    "detail": {
+      "amenitiesHeading": "Amenities",
+      "roomsHeading": "Rooms & Suites",
+      "locationHeading": "Location",
+      "fromPerNight": "From {price} / night",
+      "bookThisProperty": "Enquire to Book",
+      "backToProperties": "Back to Properties",
+      "occupancy": "Sleeps {count}",
+      "galleryImageAlt": "{name} — image {index}",
+      "bookNow": "Book Now",
+      "overviewEyebrow": "The Property",
+      "beds": "{count} Beds",
+      "bathrooms": "{count} Baths",
+      "similarRoomsEyebrow": "More at This Property",
+      "similarRoomsHeading": "Similar Rooms",
+      "roomSize": "{size} m²",
+      "roomOverviewEyebrow": "The Room",
+      "facilitiesEyebrow": "The Facilities",
+      "facilitiesHeading": "Everything This Property Offers",
+      "overviewHeading": "The Story of This Place",
+      "addressLabel": "Address",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "roomsEyebrow": "Accommodations",
+      "locationEyebrow": "Our Location",
+      "locationBody": "However you arrive, the journey here is part of the experience — mist-covered hills, quiet roads, and a warm welcome waiting at the end of it.",
+      "getDirections": "Get Directions",
+      "reserveYourStay": "Reserve Your Stay",
+      "checkAvailability": "Check Availability",
+      "statGuests": "Guests",
+      "statSize": "Size",
+      "statBeds": "Beds",
+      "statBaths": "Baths",
+      "exploreRoom": "View Room",
+      "exploreProperty": "view Property",
+      "curatedHeading": "Curated for the intentional.",
+      "curatedIntro": "Every detail of your stay is designed to foster ease, comfort, and a deeper sense of place.",
+      "arrivalHeading": "Arrival",
+      "arrivalBody": "Complimentary transfers can be arranged from Colombo International Airport, with private chauffeur service available on request.",
+      "propertyHighlights": {
+        "heading": "Property Highlights",
+        "accommodationLabel": "Accommodation",
+        "accommodationValue": "12 Private Suites",
+        "locationLabel": "Location",
+        "locationValue": "Sri Lankan Hill Country",
+        "experienceLabel": "Experience",
+        "experienceValue": "Heritage · Nature · Wellness",
+        "openingLabel": "Availability",
+        "openingValue": "Open Year-round"
+      }
+    },
+    "showcase": {
+      "eyebrow": "Featured Stay"
+    },
+    "essentials": {
+      "eyebrow": "The Essentials",
+      "heading": "Every stay comes with the essentials, considered.",
+      "subheading": "Across every property in the collection, a consistent standard of comfort and care — regardless of which one you choose."
+    }
   }
 }

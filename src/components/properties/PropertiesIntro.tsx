@@ -12,7 +12,7 @@ export default async function PropertiesIntro() {
                     <Reveal>
                         <div className="flex items-center justify-center gap-4 text-slate">
                             <span className="h-px w-10 bg-ink/40" />
-                            <span className="font-sans text-xs tracking-[0.35em] text-ink uppercase">
+                            <span className="font-sans text-xs tracking-[0.25em] text-ink uppercase">
                                 {t("eyebrow")}
                             </span>
                             <span className="h-px w-10 bg-ink/40" />
@@ -20,7 +20,7 @@ export default async function PropertiesIntro() {
                     </Reveal>
 
                     <Reveal delay={100}>
-                        <h2 className="mt-6 font-serif text-3xl leading-[1.3] font-medium text-ink sm:text-4xl">
+                        <h2 className="mt-6 font-serif text-3xl leading-[1.2] font-semibold text-ink sm:text-5xl">
                             {t("heading")}
                         </h2>
                     </Reveal>

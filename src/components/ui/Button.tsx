@@ -11,7 +11,7 @@ interface ButtonVariantsProps {
 }
 
 export function buttonVariants({
-    variant = "primary",
+    variant = "ink",
     size = "md",
     className,
 }: ButtonVariantsProps = {}) {
@@ -39,6 +39,8 @@ export function buttonVariants({
         "bg-white text-black border border-white shadow-md hover:bg-gray-100 hover:-translate-y-0.5 hover:shadow-lg",
         variant === "underline-ink" &&
         "bg-transparent text-ink underline font-bold underline-offset-8 decoration-1 hover:opacity-80",
+        variant === "ghost" &&
+        "bg-transparent text-papper px-0 hover:bg-ink/5 hover:-translate-y-0.5",
         // Sizes
         size === "sm" && "text-xs px-5 py-2.5",
         size === "md" && "text-sm px-8 py-3.5",
