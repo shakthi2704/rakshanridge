@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { Leaf } from "lucide-react";
+import { Leaf, ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { getTranslations } from "next-intl/server";
+import { Button } from "@/components/ui/Button";
 
 export default async function Philosophy() {
     const t = await getTranslations("about.philosophy");
@@ -14,11 +15,11 @@ export default async function Philosophy() {
                 <div className="mx-auto max-w-xl text-center">
                     <Reveal>
                         <div className="flex items-center justify-center gap-4 text-slate">
-                            <span className="h-px w-10 bg-ink/40" />
-                            <span className="font-sans text-xs tracking-[0.35em] text-ink uppercase">
+
+                            <span className="font-sans text-xs tracking-[0.25em] text-ink uppercase">
                                 {t("eyebrow")}
                             </span>
-                            <span className="h-px w-10 bg-ink/40" />
+
                         </div>
                     </Reveal>
 
@@ -83,11 +84,19 @@ export default async function Philosophy() {
                                 <p className="mt-4 font-sans text-sm leading-relaxed text-white/85">
                                     {t("cards.immersive.description")}
                                 </p>
-                                <Link
-                                    href="/experiences"
-                                    className="mt-6 inline-block font-sans text-xs tracking-[0.2em] text-white uppercase underline underline-offset-4 transition-colors hover:text-white/70"
-                                >
-                                    {t("cards.immersive.cta")} →
+                                <Link href="/experiences">
+                                    <Button
+                                        variant="ghost"
+                                        size="sm"
+                                        className="group mt-6 gap-2 px-0 py-0 text-white hover:-translate-y-0 hover:bg-transparent hover:text-white/70"
+                                    >
+                                        {t("cards.immersive.cta")}
+                                        <ArrowRight
+                                            size={16}
+                                            strokeWidth={1.5}
+                                            className="transition-transform duration-300 group-hover:translate-x-1"
+                                        />
+                                    </Button>
                                 </Link>
                             </div>
                         </div>

@@ -27,11 +27,11 @@ export default async function VisionMission() {
                     <div className="mx-auto max-w-3xl text-center">
                         <Reveal>
                             <div className="flex items-center justify-center gap-4 text-white/60">
-                                <span className="h-px w-10 bg-white/25" />
-                                <span className="font-sans text-xs tracking-[0.35em] text-white/70 uppercase">
+
+                                <span className="font-sans text-xs tracking-[0.25em] text-white/70 uppercase">
                                     {t("eyebrow")}
                                 </span>
-                                <span className="h-px w-10 bg-white/25" />
+
                             </div>
                         </Reveal>
 
@@ -43,7 +43,7 @@ export default async function VisionMission() {
 
                         <Reveal delay={150}>
                             <div className="mt-10">
-                                <p className="font-sans text-xs tracking-[0.35em] text-white/50 uppercase">
+                                <p className="font-sans text-xs tracking-[0.35em] text-white/50 uppercase ">
                                     {t("vision.heading")}
                                 </p>
 
@@ -68,18 +68,20 @@ export default async function VisionMission() {
                         <div className="mt-14 grid gap-12 sm:grid-cols-3 sm:gap-8">
                             {pillarKeys.map((key, index) => (
                                 <Reveal key={key} delay={250 + index * 100}>
-                                    <div className="sm:border-l sm:border-white/10 sm:pl-8 sm:first:border-l-0 sm:first:pl-0">
-                                        <span className="font-serif text-sm text-white/40">
+                                    <div className="relative overflow-visible sm:border-l sm:border-white/10 sm:pl-8 sm:first:border-l-0 sm:first:pl-0">
+                                        <span className="absolute -top-8 -left-2 z-0 font-serif text-[6rem] font-bold leading-none text-white/15 select-none">
                                             0{index + 1}
                                         </span>
 
-                                        <h3 className="mt-4 font-serif text-xl font-medium text-white">
-                                            {t(`mission.pillars.${key}.name`)}
-                                        </h3>
+                                        <div className="relative z-10 pt-8">
+                                            <h3 className="font-serif text-xl font-medium text-white">
+                                                {t(`mission.pillars.${key}.name`)}
+                                            </h3>
 
-                                        <p className="mt-3 font-sans text-sm leading-relaxed text-white/60">
-                                            {t(`mission.pillars.${key}.description`)}
-                                        </p>
+                                            <p className="mt-3 font-sans text-sm leading-relaxed text-white/60">
+                                                {t(`mission.pillars.${key}.description`)}
+                                            </p>
+                                        </div>
                                     </div>
                                 </Reveal>
                             ))}

@@ -43,23 +43,33 @@ export default async function Team() {
                     {members.map((member, i) => (
                         <Reveal key={member.key} delay={300 + i * 100}>
                             <div>
-                                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm shadow-md">
+                                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm shadow-md group">
                                     <Image
                                         src={member.image}
                                         alt={t(`members.${member.key}.name`)}
                                         fill
-                                        className="object-cover"
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
+
+                                    {/* Dark gradient */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+
+                                    {/* Content */}
+                                    <div className="absolute inset-x-0 bottom-0 z-10 p-6">
+                                        <h3 className="font-serif text-4xl font-medium text-white">
+                                            {t(`members.${member.key}.name`)}
+                                        </h3>
+
+                                        <p className="mt-1 font-serif text-md uppercase  text-white/70">
+                                            {t(`members.${member.key}.role`)}
+                                        </p>
+
+                                        <p className="mt-3 font-sans text-sm  text-white/85">
+                                            {t(`members.${member.key}.bio`)}
+                                        </p>
+                                    </div>
                                 </div>
-                                <h3 className="mt-5 font-serif text-xl font-medium text-ink">
-                                    {t(`members.${member.key}.name`)}
-                                </h3>
-                                <p className="mt-1 font-sans text-xs tracking-[0.1em] text-ink uppercase">
-                                    {t(`members.${member.key}.role`)}
-                                </p>
-                                <p className="mt-3 font-sans text-sm leading-relaxed text-charcoal">
-                                    {t(`members.${member.key}.bio`)}
-                                </p>
+
                             </div>
                         </Reveal>
                     ))}
