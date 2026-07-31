@@ -9,8 +9,9 @@ import {
 } from "@/lib/properties";
 import RoomDetailHero from "@/components/properties/RoomDetailHero";
 import RoomOverview from "@/components/properties/RoomOverview";
-import PropertyFacilities from "@/components/properties/PropertyFacilities";
 import SimilarRooms from "@/components/properties/SimilarRooms";
+import RoomExperiences from "@/components/properties/RoomExperiences";
+import RoomArrival from "@/components/properties/RoomArrival";
 import MainCta from "@/components/ui/MainCta";
 
 type Props = {
@@ -50,6 +51,7 @@ export default async function RoomDetailPage({ params }: Props) {
 
     const { property, room } = match;
     const t = await getTranslations("properties");
+    const tExperiences = await getTranslations("experiences");
     const currency = "USD" as const;
 
     const propertyName = t(`items.${property.key}.name`);
@@ -75,6 +77,13 @@ export default async function RoomDetailPage({ params }: Props) {
         name: t(`amenities.${key}.name`),
         description: t(`amenities.${key}.description`),
     }));
+
+    const experienceImageOne =
+        property.gallery[(roomIndex + 2) % property.gallery.length] ??
+        property.image;
+    const experienceImageTwo =
+        property.gallery[(roomIndex + 3) % property.gallery.length] ??
+        property.image;
 
     const similarRooms = property.rooms
         .filter((r) => r.key !== room.key)
@@ -123,18 +132,41 @@ export default async function RoomDetailPage({ params }: Props) {
                 secondaryImage={roomSecondaryImage}
                 roomName={roomName}
             />
-            <PropertyFacilities
-                eyebrow={t("detail.facilitiesEyebrow")}
-                heading={t("detail.facilitiesHeading")}
-                amenities={amenities}
-            />
-
             <SimilarRooms
                 eyebrow={t("detail.similarRoomsEyebrow")}
                 heading={t("detail.similarRoomsHeading")}
                 exploreLabel={t("detail.exploreRoom")}
                 propertySlug={property.slug}
                 rooms={similarRooms}
+            />
+
+            <RoomExperiences
+                heading={t("detail.curatedHeading")}
+                intro={t("detail.curatedIntro")}
+                amenities={amenities}
+                imageOne={experienceImageOne}
+                imageTwo={experienceImageTwo}
+                captionOne={{
+                    title: tExperiences("items.ceylonTeaTrails.title"),
+                    description: tExperiences("items.ceylonTeaTrails.description"),
+                }}
+                captionTwo={{
+                    title: tExperiences("items.coastalExcursions.title"),
+                    description: tExperiences("items.coastalExcursions.description"),
+                }}
+            />
+
+            <RoomArrival
+                heading={t("detail.arrivalHeading")}
+                body={t("detail.arrivalBody")}
+                caption={`${propertyName} · ${propertyLocation}`}
+                address={property.address}
+                phoneLabel={t("detail.phoneLabel")}
+                phone="+94 11 234 5678"
+                emailLabel={t("detail.emailLabel")}
+                email="stay@rakshaandridge.com"
+                directionsLabel={t("detail.getDirections")}
+                name={propertyName}
             />
 
             <MainCta />

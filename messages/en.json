@@ -52,7 +52,9 @@
     "eyebrow": "Experiences",
     "heading": "Moments Beyond the Stay",
     "subheading": "Curated ways to experience the island — woven into every stay across the Raksha & Ridge collection.",
-    "viewAll": "View All Experiences",
+    "viewDetails": "View Details",
+    "loadMore": "Load More",
+    "viewAll": "View All",
     "items": {
       "ceylonTeaTrails": {
         "title": "Ceylon Tea Trails",
@@ -65,6 +67,18 @@
       "culinaryJourneys": {
         "title": "Culinary Journeys",
         "description": "Sri Lankan cuisine reimagined through private chef tables and spice garden foraging walks."
+      },
+      "ayurvedicRituals": {
+        "title": "Ayurvedic Rituals",
+        "description": "Ancient healing traditions restored for modern life, guided by resident practitioners in open-air pavilions."
+      },
+      "templePilgrimage": {
+        "title": "Sacred Temple Pilgrimage",
+        "description": "A guided, unhurried journey through centuries-old temples woven into the hills and forest."
+      },
+      "wildlifeEncounters": {
+        "title": "Wildlife Encounters",
+        "description": "Dawn safaris through untouched national parks, tracking leopards, elephants, and native birdlife."
       }
     }
   },
@@ -522,7 +536,11 @@
       "statSize": "Size",
       "statBeds": "Beds",
       "statBaths": "Baths",
-      "exploreRoom": "View Room"
+      "exploreRoom": "View Room",
+      "curatedHeading": "Curated for the intentional.",
+      "curatedIntro": "Every detail of your stay is designed to foster ease, comfort, and a deeper sense of place.",
+      "arrivalHeading": "Arrival",
+      "arrivalBody": "Complimentary transfers can be arranged from Colombo International Airport, with private chauffeur service available on request."
     },
     "showcase": {
       "eyebrow": "Featured Stay"

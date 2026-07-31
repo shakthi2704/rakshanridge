@@ -4,54 +4,11 @@ import Reveal from "@/components/ui/Reveal";
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import { buttonVariants } from "@/components/ui/Button";
-
-// const experiences = [
-//     {
-//         title: "Ceylon Tea Trails",
-//         description:
-//             "Wander through mist-covered hillside estates and learn the centuries-old craft behind the world's finest tea.",
-//         image:
-//             "https://images.unsplash.com/photo-1544015759-237f87d55ef3?fm=jpg&q=80&w=1200&auto=format&fit=crop",
-//         featured: true,
-//     },
-//     {
-//         title: "Coastal Excursions",
-//         description:
-//             "Sail the southern coastline at sunrise, from hidden coves to centuries-old fishing villages.",
-//         image:
-//             "https://images.unsplash.com/photo-1646894232861-a0ad84f1ad5d?fm=jpg&q=80&w=800&auto=format&fit=crop",
-//     },
-//     {
-//         title: "Culinary Journeys",
-//         description:
-//             "Sri Lankan cuisine reimagined through private chef tables and spice garden foraging walks.",
-//         image:
-//             "https://images.unsplash.com/photo-1622061662418-fc6887d7915d?fm=jpg&q=80&w=800&auto=format&fit=crop",
-//     },
-// ];
-
-const experiences = [
-    {
-        key: "ceylonTeaTrails",
-        image:
-            "https://images.unsplash.com/photo-1544015759-237f87d55ef3?fm=jpg&q=80&w=1200&auto=format&fit=crop",
-        featured: true,
-    },
-    {
-        key: "coastalExcursions",
-        image:
-            "https://images.unsplash.com/photo-1646894232861-a0ad84f1ad5d?fm=jpg&q=80&w=800&auto=format&fit=crop",
-    },
-    {
-        key: "culinaryJourneys",
-        image:
-            "https://images.unsplash.com/photo-1622061662418-fc6887d7915d?fm=jpg&q=80&w=800&auto=format&fit=crop",
-    },
-];
+import { experiences } from "@/lib/experiences";
 
 export default async function Experiences() {
     const t = await getTranslations("experiences");
-    const [featured, ...rest] = experiences;
+    const [featured, ...rest] = experiences.slice(0, 3);
 
     return (
         <section className="bg-paper py-24 lg:py-32">

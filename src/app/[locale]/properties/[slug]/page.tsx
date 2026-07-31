@@ -86,6 +86,7 @@ export default async function PropertyDetailPage({ params }: Props) {
                 heading={t("detail.roomsHeading")}
                 rooms={rooms}
                 bookLabel={t("detail.bookNow")}
+                propertySlug={property.slug}
             />
             <PropertyFacilities
                 eyebrow={t("detail.facilitiesEyebrow")}
