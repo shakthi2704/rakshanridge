@@ -131,13 +131,6 @@ export default async function RoomDetailPage({ params }: Props) {
                 secondaryImage={roomSecondaryImage}
                 roomName={roomName}
             />
-            <SimilarRooms
-                eyebrow={t("detail.similarRoomsEyebrow")}
-                heading={t("detail.similarRoomsHeading")}
-                exploreLabel={t("detail.exploreRoom")}
-                propertySlug={property.slug}
-                rooms={similarRooms}
-            />
             <RoomExperiences
                 heading={t("detail.curatedHeading")}
                 intro={t("detail.curatedIntro")}
@@ -153,6 +146,14 @@ export default async function RoomDetailPage({ params }: Props) {
                     description: tExperiences("items.coastalExcursions.description"),
                 }}
             />
+            <SimilarRooms
+                eyebrow={t("detail.similarRoomsEyebrow")}
+                heading={t("detail.similarRoomsHeading")}
+                exploreLabel={t("detail.exploreRoom")}
+                propertySlug={property.slug}
+                rooms={similarRooms}
+            />
+
             <MainCta />
         </main>
     );

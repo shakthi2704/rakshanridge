@@ -63,7 +63,32 @@ export default function RoomExperiences({
         <section className="bg-paper py-20 lg:py-28">
             <Container>
                 <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
+
                     {/* Left — heading, intro, amenity list */}
+                    <div className="grid grid-cols-2 gap-6">
+                        {cards.map((card, index) => (
+                            <Reveal key={card.title} delay={100 + index * 80}>
+                                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                                    <Image
+                                        src={card.image}
+                                        alt={card.title}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(min-width: 1024px) 22vw, 45vw"
+                                    />
+                                </div>
+                                <h3 className="mt-4 font-serif text-3xl font-medium text-ink">
+                                    {card.title}
+                                </h3>
+                                <p className="mt-2 font-sans text-sm leading-relaxed text-ink">
+                                    {card.description}
+                                </p>
+                            </Reveal>
+                        ))}
+                    </div>
+
+
+                    {/* Right — two photos, each with its own title + caption */}
                     <div>
                         <Reveal>
                             <h2 className="font-serif text-3xl font-medium text-ink sm:text-4xl">
@@ -99,28 +124,6 @@ export default function RoomExperiences({
                         </div>
                     </div>
 
-                    {/* Right — two photos, each with its own title + caption */}
-                    <div className="grid grid-cols-2 gap-6">
-                        {cards.map((card, index) => (
-                            <Reveal key={card.title} delay={100 + index * 80}>
-                                <div className="relative aspect-[4/5] w-full overflow-hidden">
-                                    <Image
-                                        src={card.image}
-                                        alt={card.title}
-                                        fill
-                                        className="object-cover"
-                                        sizes="(min-width: 1024px) 22vw, 45vw"
-                                    />
-                                </div>
-                                <h3 className="mt-4 font-serif text-3xl font-medium text-ink">
-                                    {card.title}
-                                </h3>
-                                <p className="mt-2 font-sans text-sm leading-relaxed text-ink">
-                                    {card.description}
-                                </p>
-                            </Reveal>
-                        ))}
-                    </div>
                 </div>
             </Container>
         </section>
