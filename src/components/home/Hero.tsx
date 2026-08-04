@@ -2,14 +2,17 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import Container from "@/components/ui/Container";
 import { buttonVariants } from "@/components/ui/Button";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { cn } from "@/lib/utils";
 
 export default async function Hero() {
 
+
     const t = await getTranslations("hero");
+
+    const locale = await getLocale();
     return (
-        <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
+        <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden py-24">
             <Image
                 src="/images/hero.jpg"
                 alt="Infinity pool overlooking the Sri Lankan coastline at sunset"
@@ -25,37 +28,37 @@ export default async function Hero() {
                 className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10"
             />
 
-            <Container className="relative z-10 flex flex-col items-center text-center">
-                {/* <div className="flex items-center gap-4 text-white/80">
-                    <span className="h-px w-10 bg-white/50" />
-                    <span className={cn("font-sans text-xs tracking-[0.35em] uppercase")}>
-                        {t("eyebrow")}
-                    </span>
-                    <span className="h-px w-10 bg-white/50" />
-                </div> */}
+
+            <Container className="relative z-10 flex flex-col items-center text-center pt-24 lg:pt-0">
                 <div className="flex items-center gap-4 text-white/80">
                     <span className="h-px w-10 bg-white/50" />
 
                     <Image
-                        src="/logo/logo-3.png"
+                        src="/logo/logo-1.svg"
                         alt="Logo"
                         width={96}
                         height={96}
                         priority
-                        className="h-auto w-20 sm:w-24 md:w-28"
+                        className="h-auto w-16 sm:w-20 md:w-24"
                     />
 
                     <span className="h-px w-10 bg-white/50" />
                 </div>
                 {/* 
                 <h1 className="mt-6 font-display text-4xl leading-[1.15] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-6xl  xl:text-7xl 2xl:text-8xl"> */}
-                <h1 className="   mt-6 font-display text-[clamp(2.5rem,5vw,5.8rem)] leading-[1.1] tracking-wide text-white">
+                <h1
+                    className={cn(
+                        "mt-6 max-w-5xl font-display text-[clamp(2.5rem,5vw,5.8rem)] leading-[1.1] tracking-wide text-white",
+                        locale === "de" && "text-[clamp(2.3rem,4.5vw,5rem)]",
+                        locale === "ru" && "text-[clamp(2.4rem,4.8vw,5.2rem)]"
+                    )}
+                >
                     {t("headlineLine1")}
                     <br />
                     {t("headlineLine2")}
                 </h1>
 
-                <p className="mt-6 max-w-2xl font-serif text-[clamp(2rem,2.6vw,1.65rem)] font-light italic leading-relaxed text-white/85">
+                <p className="mt-6 max-w-3xl font-serif text-[clamp(1.1rem,1.8vw,1.5rem)] font-light italic leading-relaxed text-white/85">
                     {t("subheadline")}
                 </p>
 
