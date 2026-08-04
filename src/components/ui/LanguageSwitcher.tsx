@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 const LANGUAGES = [
     { code: "en", label: "EN" },
     { code: "ru", label: "RU" },
+    { code: "de", label: "DE" },
 ];
 
 export default function LanguageSwitcher() {

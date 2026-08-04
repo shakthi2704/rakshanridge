@@ -416,10 +416,10 @@
       "Boutiqu": "Boutique"
     },
     "regions": {
-      "central-highlands": "Central Highlands",
-      "southern-coast": "Southern Coast",
+      "central-highlands": "Zentrales Hochland",
+      "southern-coast": "Südküste",
       "colombo": "Colombo",
-      "cultural-triangle": "Cultural Triangle"
+      "cultural-triangle": "Kulturdreieck"
     },
     "items": {
       "kandyRetreat": {

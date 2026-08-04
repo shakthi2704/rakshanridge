@@ -1,0 +1,755 @@
+{
+    "navigation": {
+        "properties": "Immobilien",
+        "experiences": "Erlebnisse",
+        "offers": "Angebote",
+        "about": "Über uns",
+        "consulting": "Beratung",
+        "contact": "Kontakt",
+        "bookNow": "Jetzt buchen",
+        "openMenu": "Menü öffnen",
+        "closeMenu": "Menü schließen",
+        "logoTitle": "Raksha und Ridge"
+    },
+    "footer": {
+        "brandBlurb": "Außergewöhnliche Hotel-, Resort- und Villa-Erlebnisse, geprägt von echter sri-lankischer Gastfreundschaft.",
+        "exploreHeading": "Entdecken",
+        "propertiesHeading": "Unsere Immobilien",
+        "contactHeading": "Kontakt",
+        "whatsappUs": "Kontakt über WhatsApp",
+        "addressCity": "Nr. 318/1 Dutugamunu Mw, Enderamulla, Wattala",
+        "copyright": "© {year} Raksha und Ridge (Pvt) Ltd. Alle Rechte vorbehalten.",
+        "privacyPolicy": "Datenschutzerklärung",
+        "termsOfService": "Nutzungsbedingungen",
+        "offers": "Angebote"
+    },
+    "hero": {
+        "eyebrow": "Sri Lanka",
+        "headlineLine1": "Erleben Sie authentische",
+        "headlineLine2": "sri-lankische Gastfreundschaft",
+        "subheadline": "Wir schaffen unvergessliche Aufenthalte durch echte Gastfreundschaft, persönlichen Service und sorgfältig ausgewählte Erlebnisse.",
+        "exploreProperties": "Immobilien entdecken",
+        "bookYourStay": "Ihren Aufenthalt buchen"
+    },
+    "marquee": {
+        "items": [
+            "Authentische Gastfreundschaft",
+            "Sorgfältig kuratierte Aufenthalte",
+            "Luxusvillen",
+            "Boutique-Hotels",
+            "Natur & Kultur",
+            "Personalisierte Erlebnisse",
+            "Außergewöhnlicher Service",
+            "Unvergessliche Reisen",
+            "Sri Lanka entdecken",
+            "Übernachten • Entdecken • Erleben"
+        ]
+    },
+    "brandStory": {
+        "eyebrow": "Unsere Geschichte",
+        "heading": "Es ging nie nur um das Zimmer",
+        "quote": "Es ist das Geräusch des Regens auf einem Lehmdach, die Herzlichkeit eines Fremden, der zum Freund wird, die Stille eines Hügels im Morgengrauen.",
+        "body": "Wir gestalten Aufenthalte nicht rund um Annehmlichkeiten – wir gestalten sie rund um besondere Momente. Eine Tasse Tee, die Ihnen genau im richtigen Augenblick gereicht wird. Ein stiller Pfad, den nur das Personal kennt. Eine Gastfreundschaft, die nicht inszeniert, sondern aufrichtig erlebt wird.",
+        "cta": "Unsere Geschichte entdecken"
+    },
+    "featuredProperties": {
+        "eyebrow": "Unsere Kollektion",
+        "heading": "Eine kuratierte Auswahl, kein Katalog",
+        "subheading": "Jede Unterkunft der Raksha und Ridge Kollektion wurde aufgrund ihres einzigartigen Charakters ausgewählt. Hier sind zwei unserer aktuellen Favoriten.",
+        "viewProperty": "Unterkunft ansehen",
+        "viewAllCard": "Die gesamte Raksha und Ridge Kollektion entdecken",
+        "viewAllProperties": "Alle Unterkünfte ansehen",
+        "items": {
+            "kandyRetreat": {
+                "name": "Kandy Retreat",
+                "location": "Kandy, Zentrales Hochland",
+                "tagline": "Ein Rückzugsort am Hang über der heiligen Stadt",
+                "body": "..."
+            },
+            "galleEscape": {
+                "name": "Galle Escape",
+                "location": "Galle, Südküste",
+                "tagline": "Koloniale Eleganz an der Küste",
+                "body": "..."
+            },
+            "fortHaven": {
+                "name": "Fort Haven",
+                "location": "Galle, Südküste",
+                "tagline": "Zeitloses Leben an der Küste",
+                "body": "..."
+            }
+        }
+    },
+    "meaningfulEncounters": {
+        "eyebrow": "Erlebnisse",
+        "heading": "Bedeutungsvolle Begegnungen",
+        "subheading": "Sorgfältig kuratierte Erlebnisse, die noch lange nach dem Ende der Reise in Erinnerung bleiben.",
+        "items": {
+            "wellness": {
+                "title": "Traditionelles Wohlbefinden",
+                "description": "Personalisierte Ayurveda- und Meditationsangebote, begleitet von erfahrenen Meistern ihres Fachs."
+            },
+            "spicePath": {
+                "title": "Der Gewürzpfad",
+                "description": "Private kulinarische Entdeckungsreisen durch verborgene Märkte und familiengeführte Gärten."
+            },
+            "conservation": {
+                "title": "Naturschutz in der Wildnis",
+                "description": "Ökologisch geführte Safaris mit Schwerpunkt auf ethischer Tierbeobachtung und dem Schutz natürlicher Lebensräume."
+            }
+        }
+    },
+    "experiences": {
+        "eyebrow": "Erlebnisse",
+        "heading": "Momente über den Aufenthalt hinaus",
+        "subheading": "Sorgfältig ausgewählte Möglichkeiten, die Insel zu erleben – eingebettet in jeden Aufenthalt der Raksha und Ridge Kollektion.",
+        "viewDetails": "Details ansehen",
+        "loadMore": "Mehr laden",
+        "viewAll": "Alle ansehen",
+        "durationLabel": "Dauer",
+        "locationLabel": "Ort",
+        "highlightsHeading": "Was enthalten ist",
+        "similarHeading": "Weitere Erlebnisse",
+        "items": {
+            "ceylonTeaTrails": {
+                "title": "Ceylon Teewege",
+                "description": "Wandern Sie durch nebelverhangene Teeplantagen in den Hügeln und entdecken Sie die jahrhundertealte Handwerkskunst hinter dem feinsten Tee der Welt.",
+                "duration": "Halber Tag",
+                "location": "Hochland",
+                "highlights": [
+                    "Geführter Spaziergang durch aktive Teeplantagen",
+                    "Traditionelle Demonstration der Teepflückung",
+                    "Verkostung mit einem ansässigen Teemeister",
+                    "Privater Transport von Ihrer Unterkunft"
+                ],
+                "storyOpening": "Die Hügel rund um Nuwara Eliya erwachen im Nebel. Lange bevor die Plantagen ihre Tore für Besucher öffnen, bewegen sich die Arbeiter in ruhigem Rhythmus durch die Reihen, während ihre Hände über Blätter gleiten, die seit Generationen auf dieselbe Weise gepflückt werden. Dies ist keine Besichtigung einer Fabrikhalle – es ist ein Spaziergang durch eine lebendige Tradition, die die Wirtschaft und Identität des Hochlands geprägt hat, lange bevor sie die Tasse Tee geprägt hat.",
+                "storyQuote": "Jedes Blatt trägt die Erinnerung an den Hügel, auf dem es gewachsen ist.",
+                "storyClosing": "Wenn die Verkostung beginnt, hat die Plantage ihre eigene Geschichte bereits erzählt – in den Terrassen, dem Licht und dem langsamen, unaufgeregten Rhythmus der Arbeit. Es ist ein Morgen, der von Ihnen nur eines verlangt: aufmerksam zu sein."
+            },
+            "coastalExcursions": {
+                "title": "Küstenausflüge",
+                "description": "Segeln Sie bei Sonnenaufgang entlang der Südküste – von verborgenen Buchten bis hin zu jahrhundertealten Fischerdörfern.",
+                "duration": "Ganzer Tag",
+                "location": "Südküste",
+                "highlights": [
+                    "Abfahrt bei Sonnenaufgang mit einem privaten Boot",
+                    "Stopps an abgelegenen Buchten und Fischerdörfern",
+                    "Leichtes Mittagessen an Bord",
+                    "Rücktransfer inklusive"
+                ],
+                "storyOpening": "Die südliche Küste enthüllt sich langsam beim Sonnenaufgang, wenn das Wasser noch ruhig ist und die Fischereiboote noch nicht ausgefahren sind. Jenseits der bekannten Strände liegen verborgene Buchten und ruhige Dörfer, die weitgehend unberührt von der Geschwindigkeit des modernen Reisens bleiben — Orte, wo der Rhythmus des Gezeiten immer noch den Rhythmus des Tages prägt.",
+                "storyQuote": "Die Küste hat ihre eigene Uhr, und sie eilt für niemanden.",
+                "storyClosing": "Dies ist die Küste von Sri Lanka jenseits der Menge — ein langsamer, intimer Kontakt mit dem Meer, der Küstenlinie und den Gemeinschaften, die es seit Jahrhunderten als ihr Zuhause betrachten."
+            },
+            "culinaryJourneys": {
+                "title": "Kulinarische Reisen",
+                "description": "Neu interpretierte sri-lankische Küche durch private Chefkoch-Erlebnisse und geführte Spaziergänge durch Gewürzgärten.",
+                "duration": "Halber Tag",
+                "location": "In der gesamten Kollektion",
+                "highlights": [
+                    "Geführter Spaziergang zur Erkundung von Gewürzgärten",
+                    "Praktische Kochsession mit einem privaten Chefkoch",
+                    "Mehrgängiges Degustationsmenü",
+                    "Informationen zur Kombination regionaler Zutaten"
+                ],
+                "storyOpening": "In den Gewürzgärten erzählt bereits die Luft selbst eine Geschichte – Zimtrinde, die in der Sonne trocknet, geöffnete Kardamomkapseln und Curryblätter, die unter den Füßen zerdrückt werden. Die sri-lankische Küche wurde schon immer von dem geprägt, was in der Umgebung wächst, und ein Spaziergang durch diese Gärten ist der beste Weg, eine Küche zu verstehen, die auf Generationen lokalen Wissens beruht.",
+                "storyQuote": "Um das Essen zu verstehen, muss man zuerst das Land verstehen, aus dem es entsteht.",
+                "storyClosing": "Was am Tisch des Chefkochs folgt, ist keine Inszenierung, sondern ein Gespräch – Zutaten werden erklärt, Techniken geteilt und eine Mahlzeit entsteht, die den Charakter der Insel in jedem Gang widerspiegelt."
+            },
+            "ayurvedicRituals": {
+                "title": "Ayurvedische Rituale",
+                "description": "Alte Heiltraditionen, neu interpretiert für das moderne Leben, begleitet von ansässigen Therapeuten in offenen Pavillons.",
+                "duration": "2–3 Stunden",
+                "location": "Spa-Pavillons des Resorts",
+                "highlights": [
+                    "Beratung mit einem ansässigen Therapeuten",
+                    "Personalisierte Ritual- und Ölauswahl",
+                    "Atmosphäre in einem offenen Pavillon",
+                    "Kräutertee nach der Behandlung"
+                ],
+                "storyOpening": "In einem offenen Pavillon, fernab vom Lärm des Alltags, beginnt die ayurvedische Praxis nicht mit einer Behandlung, sondern mit einem Gespräch. Die ansässigen Therapeuten greifen auf Wissen zurück, das über Jahrhunderte weitergegeben wurde, und passen alte Techniken an die Bedürfnisse jedes Gastes an, anstatt ein einheitliches Ritual anzubieten.",
+                "storyQuote": "Heilung bewegt sich, wie die Insel selbst, in ihrem eigenen ruhigen Tempo.",
+                "storyClosing": "Das Ergebnis ist weniger ein Spa-Besuch als vielmehr eine stille Neuausrichtung – bewusst eingeplante Zeit, um langsamer zu werden und darauf zu hören, was der Körper wirklich braucht."
+            },
+            "templePilgrimage": {
+                "title": "Pilgerreise zu heiligen Tempeln",
+                "description": "Eine geführte, entschleunigte Reise durch jahrhundertealte Tempel, eingebettet in die Hügel und Wälder.",
+                "duration": "Ganzer Tag",
+                "location": "Zentrales Hochland",
+                "highlights": [
+                    "Besuche heiliger Orte abseits der üblichen Touristenpfade",
+                    "Privater Guide mit umfassendem Wissen über die lokale Geschichte",
+                    "Ruhiges und besinnliches Tempo",
+                    "Angemessene Kleidung wird bei Bedarf bereitgestellt"
+                ],
+                "storyOpening": "Verstreut über die Hügel und Wälder bewahren jahrhundertealte Tempel eine Stille, die leicht übersehen wird, wenn man sich zu schnell bewegt. Eine geführte Pilgerreise durch diese Orte geht weniger darum, Strecke zurückzulegen, sondern vielmehr darum, das richtige Tempo zu finden – an jeder Schwelle innezuhalten, die in Stein gemeißelte Geschichte zu verstehen und dem Ort selbst zu erlauben, den Rhythmus des Besuchs zu bestimmen.",
+                "storyQuote": "Manche Orte verlangen danach, langsam betreten zu werden – und diese gehören dazu.",
+                "storyClosing": "Es ist eine Reise, die ebenso sehr von Stille wie von Eindrücken geprägt ist – ein entschleunigter Weg durch einige der beständigsten heiligen Orte der Insel."
+            },
+            "wildlifeEncounters": {
+                "title": "Begegnungen mit der Tierwelt",
+                "description": "Safaris bei Sonnenaufgang durch unberührte Nationalparks, auf den Spuren von Leoparden, Elefanten und heimischen Vogelarten.",
+                "duration": "Halber Tag",
+                "location": "Nationalparks",
+                "highlights": [
+                    "Abfahrt bei Sonnenaufgang zur besten Zeit für Tierbeobachtungen",
+                    "Privates Safari-Fahrzeug mit offenem Jeep",
+                    "Guide mit Spezialisierung auf heimische Tierarten",
+                    "Leichtes Frühstück unterwegs serviert"
+                ],
+                "storyOpening": "Bevor die Hitze des Tages einsetzt, gehören die Nationalparks ihren ältesten Bewohnern. Safaris im Morgengrauen bewegen sich leise durch unberührte Landschaften und folgen den Spuren von Leoparden, Elefanten und heimischen Vogelarten in den Stunden, in denen die Wildnis der Insel am lebendigsten ist.",
+                "storyQuote": "Die schönsten Begegnungen erleben diejenigen, die bereit sind, vor der Sonne aufzustehen.",
+                "storyClosing": "Es ist eine Erinnerung daran, dass Sri Lankas Landschaften ebenso wild und facettenreich sind wie seine Küsten und das Hochland – und dass die frühen Stunden oft die wertvollsten Erlebnisse bereithalten."
+            }
+        }
+    },
+    "brandFeatures": {
+        "items": {
+            "hospitality": {
+                "title": "Authentische Gastfreundschaft",
+                "description": "Verwurzelt in den echten sri-lankischen Werten von Herzlichkeit und Großzügigkeit."
+            },
+            "stays": {
+                "title": "Kuratierte Luxusaufenthalte",
+                "description": "Individuell gestaltete Unterkünfte, die ihre einzigartige Umgebung widerspiegeln."
+            },
+            "experiences": {
+                "title": "Personalisierte Gästeerlebnisse",
+                "description": "Hochgradig individueller Service, der Ihre Bedürfnisse vorausschauend erfüllt."
+            },
+            "management": {
+                "title": "Vertrauensvolle Verwaltung",
+                "description": "Exzellente Betriebsführung für Hotel- und Villeneigentümer auf der gesamten Insel."
+            }
+        }
+    },
+    "whyChooseUs": {
+        "eyebrow": "Warum Raksha und Ridge",
+        "heading": "Gastfreundschaft, bis ins Detail durchdacht",
+        "reasons": {
+            "personalizedService": {
+                "title": "Personalisierter Service",
+                "description": "Jeder Aufenthalt wird auf Sie zugeschnitten – von Ihren Ankunftswünschen bis hin zu den kleinen Details, die nur ein aufmerksamer Gastgeber bemerken würde."
+            },
+            "authenticExperiences": {
+                "title": "Authentische Erlebnisse",
+                "description": "Keine vorgefertigten Reisepläne. Jede Ausflugserfahrung ist tief in der echten sri-lankischen Kultur, Handwerkskunst und den besonderen Orten der Insel verwurzelt."
+            },
+            "bestRateDirect": {
+                "title": "Bester Preis bei Direktbuchung",
+                "description": "Bei einer direkten Buchung bei uns erhalten Sie garantiert unseren besten verfügbaren Preis – ohne Aufschläge durch Drittanbieter."
+            },
+            "consideredCollection": {
+                "title": "Eine sorgfältig ausgewählte Kollektion",
+                "description": "Jede Unterkunft wird wegen ihres Charakters ausgewählt, nicht wegen ihrer Größe – jede einzigartig, jede unverkennbar unsere."
+            }
+        }
+    },
+    "testimonials": {
+        "eyebrow": "Gästeerlebnisse",
+        "heading": "Geschichten von unseren Gästen",
+        "subheading": "Jeder Aufenthalt wird durch aufmerksame Gastfreundschaft, echte Fürsorge und unvergessliche Momente geprägt. Entdecken Sie, was unsere Gäste über ihre Erfahrung mit Raksha und Ridge berichten.",
+        "items": {
+            "lindqvist": {
+                "quote": "Vom Moment unserer Ankunft an fühlte es sich weniger wie ein Hotelaufenthalt an und mehr wie eine herzliche Aufnahme in ein Zuhause – jedes Detail durchdacht, nichts übertrieben.",
+                "name": "Amara und Josef Lindqvist",
+                "origin": "Stockholm, Schweden"
+            },
+            "nair": {
+                "quote": "Wir haben Unterkünfte in ganz Südostasien besucht, aber die Herzlichkeit hier war anders. Aufrichtig persönlich, niemals aufgesetzt.",
+                "name": "Priya Nair",
+                "origin": "Singapur"
+            },
+            "reid": {
+                "quote": "Das Personal erinnerte sich an Dinge, die wir nicht einmal zweimal erwähnt hatten. Diese Art von Aufmerksamkeit ist selten und ließ die gesamte Reise mühelos erscheinen.",
+                "name": "Thomas Reid",
+                "origin": "London, Vereinigtes Königreich"
+            }
+        }
+    },
+    "specialOffers": {
+        "eyebrow": "Sonderangebote",
+        "heading": "Sorgfältig kuratierte Erlebnisse",
+        "quote": "Ein seltener Fund. Raksha und Ridge bietet nicht einfach nur Zimmer – sie schenken einen tiefgreifenden Perspektivwechsel. Die erholsamste Woche meines Lebens.",
+        "author": "Elena V. — Zürich",
+        "offer": {
+            "eyebrow": "Saisonales Angebot",
+            "title": "Die Ridge-Auszeit",
+            "description": "Genießen Sie eine kostenfreie private Wellnessberatung und ein Vier-Gänge-Menü unter dem Sternenhimmel bei Aufenthalten von mehr als fünf Nächten während dieser Monsunsaison.",
+            "cta": "Saisonale Vorteile entdecken"
+        }
+    },
+    "consulting": {
+        "eyebrow": "Raksha und Ridge Beratung",
+        "heading": "Beratungsdienstleistungen für unabhängige Gastgeber und Eigentümer im Gastgewerbe",
+        "body": "Wir arbeiten mit Eigentümern von Unterkünften in ganz Sri Lanka zusammen, um denselben hohen Standard an Gastfreundschaft in ihre eigenen Betriebe zu integrieren – von der Markenpositionierung bis zur Gestaltung des Gästeerlebnisses.",
+        "cta": "Mehr erfahren"
+    },
+    "mainCta": {
+        "eyebrow": "Ihre Reise erwartet Sie",
+        "heading": "Beginnen Sie Ihre sri-lankische Geschichte",
+        "body": "Reservieren Sie direkt bei uns zum besten verfügbaren Preis und lassen Sie jedes Detail Ihres Aufenthalts ganz nach Ihren Wünschen gestalten.",
+        "cta": "Ihren Aufenthalt buchen"
+    },
+    "about": {
+        "hero": {
+            "eyebrow": "Unsere Geschichte",
+            "heading": "Gastfreundschaft, verwurzelt im Ort",
+            "subheading": "Raksha und Ridge entstand aus einer einfachen Überzeugung – dass wahrer Luxus in einer echten Verbindung zu einem Ort, seinen Menschen und seinen Rhythmen liegt."
+        },
+        "ourStory": {
+            "eyebrow": "Die Geschichte",
+            "heading": "Von bescheidenen Anfängen zu durchdachtem Luxus",
+            "paragraphs": [
+                "Raksha und Ridge entstand nicht aus einem Geschäftsplan, sondern aus einem Versprechen – Sri Lanka nicht wie eine Postkarte zu zeigen, sondern so, wie es wirklich ist: vielschichtig, großzügig und voller Geschichten, für die es sich lohnt, innezuhalten.",
+                "Was mit einem einzigen restaurierten Plantagen-Bungalow im Hochland begann, entwickelte sich Schritt für Schritt, mit jeder sorgfältig ausgewählten Unterkunft, zu einer Kollektion, die weniger durch ihre Größe als durch ihren Charakter geprägt ist. Jede neue Adresse folgt derselben Absicht: ein Gefühl für den Ort, das Sie spüren können, sobald Sie ankommen.",
+                "Wir sind Hoteliers, ja – aber vor allem sind wir Gastgeber. Jedes Detail, vom Tee bei der Ankunft bis zur Route eines Spaziergangs bei Sonnenaufgang, wird von Menschen gestaltet, die diese Insel ihr Zuhause nennen."
+            ],
+            "quote": "Luxus bedeutete für uns nie Überfluss. Es geht um Aufmerksamkeit.",
+            "stat": {
+                "number": "10+",
+                "label": "Jahre durchdachter Gastfreundschaft"
+            }
+        },
+        "philosophy": {
+            "eyebrow": "Das Außergewöhnliche gestalten",
+            "heading": "Die Raksha und Ridge Philosophie",
+            "cards": {
+                "precision": {
+                    "title": "Maßgeschneiderte Präzision",
+                    "description": "Keine zwei Reisenden sind gleich, und keine zwei Reisen sollten es sein. Wir gestalten jedes Detail so, dass es Ihrer persönlichen Vorstellung von Entdeckung entspricht."
+                },
+                "sustainability": {
+                    "title": "Tief verwurzelte Nachhaltigkeit",
+                    "description": "Unser Vermächtnis ist mit dem Land verbunden. Wir arbeiten ausschließlich mit umweltbewussten Unterkünften und lokalen Kunsthandwerkern zusammen, um die wilde Schönheit Sri Lankas für kommende Generationen zu bewahren."
+                },
+                "immersive": {
+                    "title": "Wirklich immersiv",
+                    "description": "Jenseits der üblichen Touristenpfade liegt die Seele der Insel. Wir ermöglichen Zugang zu privaten Anwesen, von lokalen Legenden geprägten Touren und verborgenen Rückzugsorten, die der Welt weitgehend unbekannt sind.",
+                    "cta": "Erlebnisse entdecken"
+                }
+            }
+        },
+        "team": {
+            "eyebrow": "Die Menschen dahinter",
+            "heading": "Lernen Sie das Team kennen",
+            "subheading": "Eine kleine Gruppe von Hoteliers, Gastgebern und Einheimischen, die jeden Aufenthalt im Hintergrund gestalten.",
+            "members": {
+                "founder": {
+                    "name": "Ayesha Ranatunga",
+                    "role": "Gründerin und Kreativdirektorin",
+                    "bio": "Prägt den Charakter jeder Unterkunft der Kollektion – von der Architektur bis zum Ankunftserlebnis."
+                },
+                "operations": {
+                    "name": "Dinesh Fernando",
+                    "role": "Leiter des Betriebs",
+                    "bio": "Sorgt dafür, dass jede Unterkunft mit ruhiger Präzision geführt wird, ohne dass Gäste sich darüber Gedanken machen müssen."
+                },
+                "guestExperience": {
+                    "name": "Nadia Perera",
+                    "role": "Leitung Gästeerlebnis",
+                    "bio": "Gestaltet die kleinen persönlichen Details, die einen Aufenthalt in eine bleibende Erinnerung verwandeln."
+                }
+            }
+        },
+        "milestones": {
+            "eyebrow": "Unsere Reise",
+            "heading": "Meilensteine",
+            "subheading": "Eine stetig wachsende Kollektion, aufgebaut mit jeder Unterkunft und jeder Beziehung Schritt für Schritt.",
+            "items": {
+                "founding": {
+                    "year": "2016",
+                    "title": "Der erste Bungalow",
+                    "description": "Ein einzelner restaurierter Plantagen-Bungalow im Hochland öffnet seine Türen – getragen von einem Versprechen echter Gastfreundschaft."
+                },
+                "expansion": {
+                    "year": "2019",
+                    "title": "Die Kollektion wächst",
+                    "description": "Drei weitere Unterkünfte kommen hinzu, jede wegen ihres Charakters und nicht ihrer Größe ausgewählt – Küstenvillen und ein Rückzugsort im Hochland."
+                },
+                "consulting": {
+                    "year": "2022",
+                    "title": "Start der Hospitality-Beratung",
+                    "description": "Wir beginnen, unabhängige Eigentümer von Unterkünften in ganz Sri Lanka dabei zu beraten, einzigartige und gästeorientierte Erlebnisse zu schaffen."
+                },
+                "today": {
+                    "year": "2026",
+                    "title": "Ein sorgfältig ausgewähltes Portfolio",
+                    "description": "Heute ist Raksha und Ridge eine wachsende Kollektion aus Hotels, Resorts und Villen, vereint durch eine Philosophie: Aufmerksamkeit statt Überfluss."
+                }
+            }
+        },
+        "visionMission": {
+            "eyebrow": "Vision und Mission",
+            "nameNote": "Raksha und Ridge – Sanskrit für Schutz und Erhebung. Diese gleiche Dualität prägt alles, was folgt.",
+            "vision": {
+                "heading": "Unsere Vision",
+                "body": "Unser Ziel ist es, der wegweisende Name für sri-lankische Boutique-Gastfreundschaft zu sein – wo kulturelles Erbe und moderner Komfort ohne Kompromisse miteinander verbunden werden und jeder Aufenthalt weniger wie eine Transaktion, sondern vielmehr wie eine Einladung wirkt."
+            },
+            "mission": {
+                "heading": "Unsere Mission",
+                "pillars": {
+                    "protection": {
+                        "name": "Durchdachter Schutz",
+                        "description": "Jedes Detail, von der Schulung unserer Mitarbeiter bis zur täglichen Pflege, wird nach einem so hohen Anspruch umgesetzt, dass es selbstverständlich und unsichtbar wirkt."
+                    },
+                    "culture": {
+                        "name": "Kulturelle Kuratierung",
+                        "description": "Sri-lankisches Erbe, verwoben mit dem Gästeerlebnis – nicht inszeniert, sondern authentisch präsent: in Handwerk, Ritualen und herzlicher Gastfreundschaft."
+                    },
+                    "service": {
+                        "name": "Vorausschauender Service",
+                        "description": "Eine Gastfreundschaft, die Bedürfnisse erkennt, bevor sie ausgesprochen werden – eine Form der Fürsorge, die nur durch echte Aufmerksamkeit entsteht."
+                    }
+                }
+            }
+        }
+    },
+    "properties": {
+        "eyebrow": "Die vollständige Kollektion",
+        "heading": "Jede Adresse mit Bedacht ausgewählt",
+        "subheading": "Von Hotels in den Hügeln bis hin zu privaten Villen – jede Unterkunft der Raksha und Ridge Kollektion wird aufgrund ihres Charakters und nicht ihrer Größe ausgewählt.",
+        "types": {
+            "hotel": "Hotel",
+            "resort": "Resort",
+            "villa": "Villa",
+            "Boutiqu": "Boutique"
+        },
+        "regions": {
+            "central-highlands": "Zentrales Hochland",
+            "southern-coast": "Südküste",
+            "colombo": "Colombo",
+            "cultural-triangle": "Kulturdreieck"
+        },
+        "items": {
+            "kandyRetreat": {
+                "name": "Kandy Retreat",
+                "location": "Kandy, Zentrales Hochland",
+                "tagline": "Ein Rückzugsort am Hang über der heiligen Stadt",
+                "description": "Auf einem Hügel über der heiligen Stadt gelegen, verbindet Kandy Retreat koloniale Architektur mit ruhigem, durchdachtem Service. Die Morgen beginnen mit Nebel, der über die umliegenden Hügel zieht; die Abende enden auf einer Veranda mit Blick auf die darunterliegenden Tempellichter.",
+                "rooms": {
+                    "gardenSuite": {
+                        "name": "Gartensuite",
+                        "description": "Eine Suite im Erdgeschoss mit direktem Zugang zum terrassierten Garten und einem privaten Sitzbereich.",
+                        "longDescription": "Treten Sie direkt von Ihrem Zimmer in den terrassierten Garten, der dieser Suite ihren Namen gibt – ein privater Sitzbereich im Erdgeschoss, beschattet von Frangipani und Arekapalmen. Im Inneren bewahren hohe Decken und originale Teakholzböden den kolonialen Charakter des Hauses, ergänzt durch ruhige, sorgfältig ausgewählte Einrichtung. Die Morgen beginnen hier mit dem Klang von Vogelgesang und dem Nebel, der sich über die Hügel hinter der Gartenmauer hebt."
+                    },
+                    "hillsideResidence": {
+                        "name": "Hügelresidenz",
+                        "description": "Eine Residenz mit zwei Schlafzimmern, eigenem Tauchbecken und uneingeschränktem Blick über das Tal.",
+                        "longDescription": "Abseits des Haupthauses gelegen, wurde diese Residenz mit zwei Schlafzimmern rund um ein eigenes Tauchbecken und einen uneingeschränkten Blick über das darunterliegende Tal gestaltet. Die Aufteilung bietet jedem Schlafzimmer Privatsphäre, während sich der gemeinsame Wohnbereich vollständig zur Terrasse öffnet – ideal für Familien oder zwei gemeinsam reisende Paare, die dennoch ausreichend Raum genießen möchten. Die Abende auf der Terrasse fangen das letzte Licht über den Hügeln ein."
+                    }
+                }
+            },
+            "galleEscape": {
+                "name": "Galle Escape",
+                "location": "Galle, Südküste",
+                "tagline": "Koloniale Eleganz, wo die Küste auf das Fort trifft",
+                "description": "Hinter den Festungsmauern des Galle Fort öffnet sich dieses restaurierte koloniale Stadthaus zu einem Innenhof mit Pool und dahinter zum Indischen Ozean. Jedes Zimmer bewahrt seinen ursprünglichen Teak- und Steincharakter und wurde nur dort angepasst, wo moderner Komfort es erforderte.",
+                "rooms": {
+                    "courtyardRoom": {
+                        "name": "Innenhofzimmer",
+                        "description": "Ein Zimmer im Erdgeschoss mit Blick auf den privaten Innenhofpool, umrahmt von originalem Steinmauerwerk aus der Fortzeit.",
+                        "longDescription": "Dieses Zimmer im Erdgeschoss mit Blick auf den privaten Innenhofpool bewahrt an einer Wand das freigelegte originale Steinmauerwerk aus der Fortzeit – eine stille Erinnerung an die jahrhundertelange Geschichte des Gebäudes. Teakholzläden öffnen sich zum Innenhof und lassen das Geräusch des Wassers sowie gelegentliche Rufe der im Fort lebenden Vögel herein. Ein kühler, ruhiger Rückzugsort fernab der Hitze und des lebhaften Treibens außerhalb der Festungsmauern."
+                    },
+                    "oceanSuite": {
+                        "name": "Ozeansuite",
+                        "description": "Eine Suite im obersten Stockwerk mit privatem Balkon und direktem Blick über die Festungsmauer auf das offene Meer.",
+                        "longDescription": "Im obersten Stockwerk gelegen, öffnet sich diese Suite zu einem privaten Balkon mit direktem Blick über die Festungsmauer auf das offene Meer – keine Dächer, keine anderen Gebäude, nur die historische Mauer und der Indische Ozean dahinter. Originale Teakholzmöbel und hohe Decken bewahren den kolonialen Charakter des Gebäudes, während der Balkon den besten Platz im Haus für den Sonnenuntergang bietet."
+                    }
+                }
+            },
+            "colomboResidence": {
+                "name": "Colombo Residence",
+                "location": "Colombo",
+                "tagline": "Eine ruhige Adresse im Herzen der Hauptstadt",
+                "description": "Eine diskrete Adresse im Diplomatenviertel der Stadt, geschaffen für Reisende, die die Hauptstadt erleben möchten, ohne ihrem Lärm ausgesetzt zu sein – mit durchdachtem Interieur, einem Dachpool und einer nur fünfminütigen Entfernung zu Colombos besten Restaurants.",
+                "rooms": {
+                    "executiveRoom": {
+                        "name": "Executive-Zimmer",
+                        "description": "Ein ruhiges, zur Stadt ausgerichtetes Zimmer für längere Aufenthalte, mit einem voll ausgestatteten Schreibtisch und einer Leseecke.",
+                        "longDescription": "Dieses ruhige, zur Stadt ausgerichtete Zimmer wurde für längere Aufenthalte gestaltet und verfügt über einen richtigen Schreibtisch sowie eine gemütliche Leseecke am Fenster – eine Seltenheit in einem Hotelzimmer einer Hauptstadt. Das Interieur ist bewusst zurückhaltend gestaltet: ausgewählte Materialien, geringe Geräuschkulisse und nichts, was von Arbeit oder Erholung ablenkt."
+                    },
+                    "cityViewSuite": {
+                        "name": "Suite mit Stadtblick",
+                        "description": "Eine Eck-Suite mit umlaufenden Fenstern über der Skyline von Colombo und einem separaten Wohnbereich.",
+                        "longDescription": "Diese Eck-Suite erstreckt sich über zwei Seiten des Gebäudes und bietet aus dem separaten Wohnbereich sowie dem Schlafzimmer weite, ununterbrochene Ausblicke über die Skyline von Colombo. Sie wurde für Reisende geschaffen, die die Energie der Hauptstadt direkt vor dem Fenster spüren möchten, ohne jemals ihrem Lärm ausgesetzt zu sein."
+                    }
+                }
+            },
+            "teaCountryResort": {
+                "name": "Tea Country Resort",
+                "location": "Nuwara Eliya, Zentrales Hochland",
+                "tagline": "Nebelverhangene Hügel und der Duft frisch gepflückter Teeblätter",
+                "description": "Umgeben von bewirtschafteten Teeplantagen oberhalb von Nuwara Eliya wurde dieses Resort in den Hang hinein und nicht einfach darauf gebaut. Jeden Abend werden Kamine entzündet; die Luft trägt das ganze Jahr über den Duft frisch gepflückter Teeblätter.",
+                "rooms": {
+                    "plantersCottage": {
+                        "name": "Plantagen-Cottage",
+                        "description": "Ein eigenständiges Cottage im Stil der Plantagenhäuser, mit holzbefeuertem Kamin und privater Veranda.",
+                        "longDescription": "Ein eigenständiges Cottage, erbaut im Stil der ursprünglichen Plantagen-Bungalows des Anwesens, mit einem holzbefeuerten Kamin, der jeden Abend frisch entzündet wird. Die private Veranda blickt direkt über die Reihen der Teepflanzen, während der Duft frisch gepflückter Blätter morgens von der darunterliegenden Plantage heraufzieht."
+                    },
+                    "hillsideVilla": {
+                        "name": "Hügelvilla",
+                        "description": "Eine Villa mit mehreren Schlafzimmern, abseits der Hauptlodge gelegen, mit eigener Küche, Wohnbereich und terrassiertem Garten.",
+                        "longDescription": "Abseits der Hauptlodge gelegen, bietet diese Villa mit mehreren Schlafzimmern eine eigene Küche, einen Wohnbereich und einen terrassierten Garten, der sich den Hang hinunter erstreckt. Sie wurde für Familien oder Gruppen geschaffen, die die Umgebung des Resorts mit der Unabhängigkeit eines privaten Zuhauses genießen möchten – ein persönlicher Koch und eine Haushaltskraft können auf Anfrage organisiert werden."
+                    }
+                }
+            },
+            "mirissaBayResort": {
+                "name": "Mirissa Bay Resort",
+                "location": "Mirissa, Südküste",
+                "tagline": "Suiten mit Meerblick über einer Bucht zur Walbeobachtung",
+                "description": "Hoch über Mirissas Bucht zur Walbeobachtung gelegen, bietet jede Suite hier einen Blick auf das Wasser. Die Tage verbringt man zwischen dem Infinity-Pool und dem Strandweg darunter; die Abende gehören dem Anblick der zurückkehrenden Fischerboote.",
+                "rooms": {
+                    "bayViewRoom": {
+                        "name": "Zimmer mit Buchtblick",
+                        "description": "Ein Zimmer mit direktem Blick über die Bucht und einem privaten Balkon, ideal für den Morgenkaffee.",
+                        "longDescription": "Mit direktem Blick über Mirissas Bucht zur Walbeobachtung ist der private Balkon dieses Zimmers der perfekte Ort für den ersten Kaffee des Tages – Fischerboote, die bei Sonnenaufgang hinausfahren, und an klaren Morgen sichtbare Wale in der Ferne. Das schlichte, aufgeräumte Interieur lenkt den Fokus ganz auf die Aussicht."
+                    },
+                    "beachfrontSuite": {
+                        "name": "Strandsuite",
+                        "description": "Eine Suite auf Erdgeschossebene mit direktem Zugang zum Strand und einer Außendusche mit Regeneffekt.",
+                        "longDescription": "Diese Suite im Erdgeschoss öffnet sich direkt zum Strandweg und verfügt über eine Außendusche mit Regeneffekt, eingebettet in eine private Gartenecke. Mit dem Klang der Brandung einzuschlafen und jeden Morgen direkt den Sand zu betreten, ist der eigentliche Zweck dieses Zimmers – alles andere bleibt bewusst schlicht gehalten."
+                    }
+                }
+            },
+            "sigiriyaWildernessResort": {
+                "name": "Sigiriya Wilderness Resort",
+                "location": "Sigiriya, Kulturdreieck",
+                "tagline": "Blick auf die antike Felsenfestung von einer privaten Terrasse",
+                "description": "Am Waldrand mit Blick auf den Sigiriya-Felsen gelegen, hält dieses Resort seinen Eingriff in die Natur bewusst gering – mit erhöhten Holzstegen, offenen Pavillons und Ausblicken auf die antike Festung von nahezu jedem Zimmer.",
+                "rooms": {
+                    "jungleChalet": {
+                        "name": "Dschungel-Chalet",
+                        "description": "Ein erhöht gelegenes Holzchalet, umgeben von der Waldkrone, mit privater Terrasse und Blick auf den Felsen.",
+                        "longDescription": "Auf Holzpfählen inmitten der Baumkronen errichtet, fügt sich dieses Chalet bewusst leicht in die umgebende Natur ein. Eine private Terrasse bietet direkten Blick auf den Sigiriya-Felsen – besonders eindrucksvoll im ersten Licht des Tages, wenn der Nebel noch am Fuß der antiken Festung liegt."
+                    },
+                    "wildernessSuite": {
+                        "name": "Wildnis-Suite",
+                        "description": "Eine größere Suite im Pavillonstil mit Außenbad und uneingeschränktem Blick auf Sigiriya.",
+                        "longDescription": "Eine großzügige Suite im Pavillonstil mit einem Außenbad, das so ausgerichtet ist, dass Sie während des Badens einen ungestörten Blick auf den Sigiriya-Felsen genießen können. Nach dem Prinzip eines offenen Designs gestaltet, mit Sichtschutz statt geschlossener Wände, wurde sie für Gäste geschaffen, die wegen der natürlichen Umgebung kommen und ihr auch im Innenbereich nah bleiben möchten."
+                    }
+                }
+            },
+            "ellaHillsideVilla": {
+                "name": "Ella Hillside Villa",
+                "location": "Ella, Zentrales Hochland",
+                "tagline": "Eine private Villa über dem Tal schwebend",
+                "description": "Auf einem Bergrücken über Ellas Tal gelegen, wird diese private Villa jeweils nur an eine Gruppe zur exklusiven Nutzung vergeben. Eine persönliche Haushälterin und ein Koch können auf Anfrage organisiert werden; ansonsten gehören die Villa und ihre Ausblicke ganz Ihnen.",
+                "rooms": {
+                    "wholeVilla": {
+                        "name": "Die gesamte Villa",
+                        "description": "Drei Schlafzimmer, ein privater Infinity-Pool und eine umlaufende Terrasse mit Blick über das Tal – exklusiv für eine Gruppe zur gleichen Zeit buchbar.",
+                        "longDescription": "Diese Villa mit drei Schlafzimmern wird jeweils nur an eine Gruppe vergeben und liegt auf einem Bergrücken über Ellas Tal. Sie verfügt über einen privaten Infinity-Pool und eine umlaufende Terrasse, die aus nahezu jedem Winkel beeindruckende Ausblicke bietet. Eine persönliche Haushälterin und ein Koch können auf Anfrage organisiert werden; ansonsten gehören die Villa, der Garten und die Blicke über das Tal für die gesamte Dauer Ihres Aufenthalts ganz Ihnen."
+                    }
+                }
+            },
+            "tangallePrivateVilla": {
+                "name": "Tangalle Private Villa",
+                "location": "Tangalle, Südküste",
+                "tagline": "Abgeschiedener Strand, ganz allein für Ihren Aufenthalt",
+                "description": "Eine von Mauern umgebene Strandvilla an einem ruhigen Abschnitt der Tangalle-Küste mit direktem, privatem Zugang zum Sand. Keine gemeinsamen Wände, keine anderen Gäste – nur die Villa, der Garten und das Meer.",
+                "rooms": {
+                    "wholeVilla": {
+                        "name": "Die gesamte Villa",
+                        "description": "Vier Schlafzimmer, ein Strandgarten und ein privater Pool nur wenige Schritte vom Sand entfernt – exklusiv für eine Gruppe zur gleichen Zeit buchbar.",
+                        "longDescription": "Diese Strandvilla mit vier Schlafzimmern wird vollständig und jeweils nur an eine Gruppe vergeben – ohne gemeinsame Wände und ohne andere Gäste. Ein ummauerter Garten führt direkt zu einem ruhigen Abschnitt des Tangalle-Strandes, mit einem privaten Pool nur wenige Schritte vom Meer entfernt. Geschaffen für Familien oder Gruppen, die die Küste ganz für sich genießen möchten."
+                    }
+                }
+            }
+        },
+        "filters": {
+            "typeLabel": "Art",
+            "regionLabel": "Region",
+            "priceLabel": "Preis",
+            "allTypes": "Alle Arten",
+            "allRegions": "Alle Regionen",
+            "anyPrice": "Beliebiger Preis",
+            "priceUnder300": "Unter 300 $",
+            "price300to450": "300 $ – 450 $",
+            "price450plus": "450 $+",
+            "clearFilters": "Filter löschen",
+            "resultsCount": "{count} Unterkünfte",
+            "currencyLabel": "Währung"
+        },
+        "groups": {
+            "hotel": "Hotels",
+            "resort": "Resorts",
+            "villa": "Villa",
+            "Boutique": "Boutique"
+        },
+        "noResults": "Keine Unterkünfte entsprechen diesen Filtern. Versuchen Sie, die Filter anzupassen oder zu löschen.",
+        "amenities": {
+            "pool": {
+                "name": "Privater Pool",
+                "description": "Entspannen Sie in einem privaten Pool, der für ruhige Momente und vollkommene Privatsphäre gestaltet wurde."
+            },
+            "wifi": {
+                "name": "Highspeed-WLAN",
+                "description": "Schneller und zuverlässiger Internetzugang während Ihres gesamten Aufenthalts."
+            },
+            "breakfast": {
+                "name": "Tägliches Frühstück",
+                "description": "Beginnen Sie jeden Morgen mit einem frisch zubereiteten Frühstück, das lokale und internationale Aromen vereint."
+            },
+            "spa": {
+                "name": "Spa & Wellness",
+                "description": "Erleben Sie Erholung mit exklusiven Spa-Behandlungen, inspiriert von sri-lankischen Wellness-Traditionen."
+            },
+            "airportTransfer": {
+                "name": "Flughafentransfer",
+                "description": "Genießen Sie eine reibungslose Abholung und Rückfahrt zum Flughafen, organisiert von unserem Gastfreundschaftsteam."
+            },
+            "mountainView": {
+                "name": "Bergblick",
+                "description": "Erwachen Sie mit atemberaubenden Ausblicken auf das üppige Hochland Sri Lankas."
+            },
+            "oceanView": {
+                "name": "Meerblick",
+                "description": "Genießen Sie uneingeschränkte Ausblicke auf den Indischen Ozean von Ihrem Zimmer oder Ihrer Suite aus."
+            },
+            "privateButler": {
+                "name": "Privater Butler",
+                "description": "Erleben Sie persönlichen Service mit einem engagierten Butler, der sich um jedes Detail kümmert."
+            },
+            "ecoCertified": {
+                "name": "Öko-zertifiziert",
+                "description": "Übernachten Sie mit Vertrauen in Unterkünften, die sich für nachhaltige und umweltbewusste Praktiken einsetzen."
+            }
+        },
+        "detail": {
+            "amenitiesHeading": "Ausstattung",
+            "roomsHeading": "Zimmer & Suiten",
+            "locationHeading": "Lage",
+            "fromPerNight": "Ab {price} / Nacht",
+            "bookThisProperty": "Buchungsanfrage senden",
+            "backToProperties": "Zurück zu den Unterkünften",
+            "occupancy": "Für {count} Personen",
+            "galleryImageAlt": "{name} — Bild {index}",
+            "bookNow": "Jetzt buchen",
+            "overviewEyebrow": "Die Unterkunft",
+            "beds": "{count} Betten",
+            "bathrooms": "{count} Badezimmer",
+            "similarRoomsEyebrow": "Mehr in dieser Unterkunft",
+            "similarRoomsHeading": "Ähnliche Zimmer",
+            "roomSize": "{size} m²",
+            "roomOverviewEyebrow": "Das Zimmer",
+            "facilitiesEyebrow": "Die Einrichtungen",
+            "facilitiesHeading": "Alles, was diese Unterkunft bietet",
+            "overviewHeading": "Die Geschichte dieses Ortes",
+            "addressLabel": "Adresse",
+            "phoneLabel": "Telefon",
+            "emailLabel": "E-Mail",
+            "roomsEyebrow": "Unterkünfte",
+            "locationEyebrow": "Unsere Lage",
+            "locationBody": "Ganz gleich, wie Sie anreisen – die Reise hierher ist Teil des Erlebnisses: nebelverhangene Hügel, ruhige Straßen und ein herzlicher Empfang, der am Ende auf Sie wartet.",
+            "getDirections": "Route anzeigen",
+            "reserveYourStay": "Ihren Aufenthalt reservieren",
+            "checkAvailability": "Verfügbarkeit prüfen",
+            "statGuests": "Gäste",
+            "statSize": "Größe",
+            "statBeds": "Betten",
+            "statBaths": "Bäder",
+            "exploreRoom": "Zimmer ansehen",
+            "exploreProperty": "Unterkunft ansehen",
+            "curatedHeading": "Für bewusste Reisende ausgewählt.",
+            "curatedIntro": "Jedes Detail Ihres Aufenthalts ist darauf ausgelegt, Leichtigkeit, Komfort und ein tieferes Gefühl für den Ort zu schaffen.",
+            "arrivalHeading": "Ankunft",
+            "arrivalBody": "Kostenfreie Transfers vom internationalen Flughafen Colombo können arrangiert werden. Ein privater Chauffeurservice ist auf Anfrage verfügbar.",
+            "propertyHighlights": {
+                "heading": "Highlights der Unterkunft",
+                "accommodationLabel": "Unterkunft",
+                "accommodationValue": "12 private Suiten",
+                "locationLabel": "Lage",
+                "locationValue": "Sri-lankisches Hochland",
+                "experienceLabel": "Erlebnis",
+                "experienceValue": "Kulturerbe · Natur · Wellness",
+                "openingLabel": "Verfügbarkeit",
+                "openingValue": "Ganzjährig geöffnet"
+            }
+        },
+        "showcase": {
+            "eyebrow": "Empfohlener Aufenthalt"
+        },
+        "essentials": {
+            "eyebrow": "Das Wesentliche",
+            "heading": "Jeder Aufenthalt beinhaltet das Wesentliche – durchdacht gestaltet.",
+            "subheading": "In jeder Unterkunft der Kollektion erwartet Sie ein gleichbleibender Standard an Komfort und Fürsorge – ganz gleich, für welche Sie sich entscheiden."
+        }
+    },
+    "consultingPage": {
+        "hero": {
+            "eyebrow": "Beratung",
+            "heading": "Beratungsdienstleistungen für unabhängige Eigentümer im Gastgewerbe",
+            "subheading": "Wir bringen denselben Standard an durchdachter Gastfreundschaft, an den wir uns selbst halten, zu Eigentümern, die etwas Einzigartiges aufbauen möchten."
+        },
+        "intro": {
+            "eyebrow": "Wie wir helfen",
+            "heading": "Fünf Wege, wie wir mit Eigentümern zusammenarbeiten",
+            "body": "Jede Zusammenarbeit wird individuell auf die Unterkunft abgestimmt, nicht nach einem festen Paket. Dies sind die Bereiche, in denen Eigentümer uns am häufigsten einbeziehen."
+        },
+        "services": {
+            "brandPositioning": {
+                "title": "Markenpositionierung & Identität",
+                "description": "Wir definieren, was eine Unterkunft einzigartig macht – und stellen sicher, dass diese Geschichte in jedem Detail für Gäste spürbar wird, nicht nur im Marketing."
+            },
+            "guestExperience": {
+                "title": "Gestaltung des Gästeerlebnisses",
+                "description": "Wir analysieren die gesamte Gästereise – von der ersten Anfrage bis zur Abreise – um die Momente zu erkennen, in die es sich zu investieren lohnt, und Hindernisse zu beseitigen."
+            },
+            "operationalStandards": {
+                "title": "Betriebsstandards & Schulungen",
+                "description": "Wir entwickeln die stillen Systeme und Mitarbeiterschulungen, die außergewöhnlichen Service konstant und nicht nur gelegentlich ermöglichen."
+            },
+            "revenueStrategy": {
+                "title": "Umsatz- & Vertriebsstrategie",
+                "description": "Wir beraten zu Direktbuchungsstrategien, Preispositionierung und Vertriebskanälen – abgestimmt auf das tatsächliche Gästeprofil der Unterkunft."
+            },
+            "propertyLaunch": {
+                "title": "Unterstützung bei der Eröffnung",
+                "description": "Wir begleiten eine Unterkunft praxisnah durch ihre erste Saison – von Standards vor der Eröffnung bis hin zu frühem Gästefeedback, das die weitere Entwicklung prägt."
+            }
+        },
+        "cta": "Beratung anfragen"
+    },
+    "contactPage": {
+        "hero": {
+            "eyebrow": "Kontakt aufnehmen",
+            "heading": "Wir freuen uns, von Ihnen zu hören",
+            "subheading": "Für Reservierungen nutzen Sie bitte unsere Buchungsseite. Für alles Weitere – Fragen, Beratungsanfragen, Presseanfragen oder Feedback – erreichen Sie uns hier."
+        },
+        "details": {
+            "heading": "Direkt mit uns in Kontakt treten",
+            "intro": "Ganz gleich, ob Sie Ihren Aufenthalt planen, eine Partnerschaft erkunden oder einfach eine Frage haben – unser Team steht Ihnen gerne zur Seite.",
+            "locationEyebrow": "Unser Standort",
+            "locationHeading": "Finden Sie Ihren Weg zu einer ruhigeren Seite Sri Lankas",
+            "locationDescription": "Abseits des Trubels gelegen, bietet Raksha & Ridge einen friedvollen Rückzugsort, an dem Natur, Erbe und durchdachte Gastfreundschaft zusammenkommen.",
+            "emailLabel": "E-Mail",
+            "phoneLabel": "Telefon",
+            "whatsappLabel": "WhatsApp",
+            "addressLabel": "Adresse",
+            "hoursLabel": "Öffnungszeiten",
+            "hoursValue": "Montag – Samstag, 9:00 Uhr – 18:00 Uhr (GMT+5:30)"
+        },
+        "bookingRedirect": {
+            "text": "Möchten Sie einen Aufenthalt reservieren?",
+            "cta": "Zur Buchung"
+        },
+        "form": {
+            "heading": "Anfrage senden",
+            "intro": "Erzählen Sie uns von Ihren Plänen, Fragen oder wie wir Sie unterstützen können. Unser Team wird sich mit Sorgfalt und Aufmerksamkeit bei Ihnen melden.",
+            "nameLabel": "Vollständiger Name",
+            "namePlaceholder": "Ihr Name",
+            "emailLabel": "E-Mail-Adresse",
+            "emailPlaceholder": "sie@example.com",
+            "topicLabel": "Thema",
+            "topicGeneral": "Allgemeine Anfrage",
+            "topicConsulting": "Beratung",
+            "topicPress": "Presse",
+            "topicOther": "Sonstiges",
+            "messageLabel": "Nachricht",
+            "messagePlaceholder": "Teilen Sie uns mit, wie wir Ihnen helfen können",
+            "submit": "Nachricht senden",
+            "submitted": "Vielen Dank – wir werden uns in Kürze bei Ihnen melden."
+        }
+    }
+}

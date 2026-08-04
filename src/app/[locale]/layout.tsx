@@ -11,20 +11,20 @@ import Footer from "@/components/layout/Footer";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
-  subsets: ["latin"],
+  subsets: ['latin', 'latin-ext'],
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
 });
 
 const manrope = Manrope({
   variable: "--font-manrope",
-  subsets: ["latin"],
+  subsets: ['latin', 'latin-ext'],
   weight: ["300", "400", "500", "600"],
 });
 
 const playfairSC = Playfair_Display_SC({
   variable: "--font-playfair-sc",
-  subsets: ["latin"],
+  subsets: ['latin', 'latin-ext'],
   weight: ["400", "700"],
 });
 
