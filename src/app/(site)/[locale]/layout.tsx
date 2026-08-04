@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Manrope, Playfair_Display_SC } from "next/font/goog
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
-import "../globals.css";
+import "../../globals.css";
 
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/layout/Navbar";

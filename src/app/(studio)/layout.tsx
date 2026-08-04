@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Raksha & Ridge",
+    title: "Raksha & Ridge — Studio",
 };
 
-export default function RootLayout({
+export default function StudioRootLayout({
     children,
 }: {
     children: React.ReactNode;
