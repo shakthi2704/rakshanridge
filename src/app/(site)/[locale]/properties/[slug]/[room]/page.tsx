@@ -14,6 +14,8 @@ import RoomExperiences from "@/components/properties/room-detail/RoomExperiences
 // import RoomArrival from "@/components/properties/RoomArrival";
 import MainCta from "@/components/ui/MainCta";
 
+import { getCurrencyContext } from "@/lib/currency";
+
 type Props = {
     params: Promise<{ locale: string; slug: string; room: string }>;
 };
@@ -52,7 +54,7 @@ export default async function RoomDetailPage({ params }: Props) {
     const { property, room } = match;
     const t = await getTranslations("properties");
     const tExperiences = await getTranslations("experiences");
-    const currency = "USD" as const;
+    const { currency, rate } = await getCurrencyContext();
 
     const propertyName = t(`items.${property.key}.name`);
     const propertyLocation = t(`items.${property.key}.location`);
@@ -62,9 +64,8 @@ export default async function RoomDetailPage({ params }: Props) {
     );
     const sizeLabel = t("detail.roomSize", { size: room.sizeSqm });
     const priceLabel = t("detail.fromPerNight", {
-        price: formatPrice(room.priceFrom, currency),
+        price: formatPrice(room.priceFrom, currency, rate),
     });
-
     const roomIndex = property.rooms.findIndex((r) => r.key === room.key);
     const roomImage =
         property.gallery[roomIndex % property.gallery.length] ?? property.image;
@@ -97,7 +98,7 @@ export default async function RoomDetailPage({ params }: Props) {
                     property.gallery[rIndex % property.gallery.length] ??
                     property.image,
                 priceLabel: t("detail.fromPerNight", {
-                    price: formatPrice(r.priceFrom, currency),
+                    price: formatPrice(r.priceFrom, currency, rate),
                 }),
             };
         });

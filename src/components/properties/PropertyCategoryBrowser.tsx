@@ -9,15 +9,14 @@ import Reveal from "@/components/ui/Reveal";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
-import { properties, PROPERTY_TYPES, formatPrice, type PropertyType } from "@/lib/properties";
-
+import { properties, PROPERTY_TYPES, formatPrice, type PropertyType, type Currency } from "@/lib/properties";
 
 
 type PropertyCategoryBrowserProps = {
-    lkrRate?: number;
+    currency: Currency;
+    rate?: number;
 };
-
-export default function PropertyCategoryBrowser({ lkrRate }: PropertyCategoryBrowserProps) {
+export default function PropertyCategoryBrowser({ currency, rate }: PropertyCategoryBrowserProps) {
     const t = useTranslations("properties");
     const tTypes = useTranslations("properties.types");
 
@@ -114,7 +113,7 @@ export default function PropertyCategoryBrowser({ lkrRate }: PropertyCategoryBro
                                                 {/* Price - Top */}
                                                 <span className="absolute top-4 right-4 font-sans text-xs tracking-[0.1em] text-white uppercase bg-ink/80 p-1.5">
                                                     {t("detail.fromPerNight", {
-                                                        price: formatPrice(property.priceFrom, "USD"),
+                                                        price: formatPrice(property.priceFrom, currency, rate),
                                                     })}
                                                 </span>
 

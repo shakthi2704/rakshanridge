@@ -7,6 +7,7 @@ import PropertyOverview from "@/components/properties/Property-detail/PropertyOv
 import RoomTypes from "@/components/properties/Property-detail/RoomTypes";
 import PropertyFacilities from "@/components/properties/Property-detail/PropertyFacilities";
 import PropertyLocation from "@/components/properties/Property-detail/PropertyLocation";
+import { getCurrencyContext } from "@/lib/currency";
 
 
 type Props = {
@@ -37,7 +38,7 @@ export default async function PropertyDetailPage({ params }: Props) {
     if (!property) notFound();
 
     const t = await getTranslations("properties");
-    const currency = "USD" as const;
+    const { currency, rate } = await getCurrencyContext();
 
     const name = t(`items.${property.key}.name`);
     const location = t(`items.${property.key}.location`);
@@ -57,9 +58,9 @@ export default async function PropertyDetailPage({ params }: Props) {
         image: property.gallery[property.rooms.indexOf(room) % property.gallery.length] ?? property.image,
         occupancyLabel: t("detail.occupancy", { count: room.occupancy }),
         sizeLabel: t("detail.roomSize", { size: room.sizeSqm }),
-        priceLabel: t("detail.fromPerNight", { price: formatPrice(room.priceFrom, currency) }),
+        priceLabel: t("detail.fromPerNight", { price: formatPrice(room.priceFrom, currency, rate) }),
     }));
-    const priceLabel = t("detail.fromPerNight", { price: formatPrice(property.priceFrom, currency) });
+    const priceLabel = t("detail.fromPerNight", { price: formatPrice(property.priceFrom, currency, rate) });
 
 
     return (

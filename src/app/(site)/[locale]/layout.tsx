@@ -64,7 +64,7 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
-          <Navbar />
+          <Navbar lkrRate={siteSettings?.exchangeRates.find((r) => r.currencyCode === "LKR")?.rate} />
           {children}
           <Footer />
         </NextIntlClientProvider>

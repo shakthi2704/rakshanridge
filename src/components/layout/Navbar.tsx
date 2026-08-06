@@ -11,6 +11,7 @@ import { getTranslations } from "next-intl/server";
 
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
+import CurrencySwitcher from "../ui/CurrencySwitcher";
 const navLinks = [
     { labelKey: "about", href: "/about" },
     { labelKey: "properties", href: "/properties" },
@@ -40,7 +41,11 @@ function Monogram() {
         </div>
     );
 }
-export default function Navbar() {
+
+type NavbarProps = {
+    lkrRate?: number;
+};
+export default function Navbar({ lkrRate }: NavbarProps) {
     const t = useTranslations("navigation");
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -144,6 +149,7 @@ export default function Navbar() {
                             />
                         </button>
                         <LanguageSwitcher />
+                        <CurrencySwitcher lkrRate={lkrRate} />
                     </div>
                 </Container>
             </header>
