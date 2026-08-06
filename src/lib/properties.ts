@@ -161,13 +161,30 @@ export type Region = (typeof REGIONS)[number];
 
 
 // Fixed conversion rate — update manually as needed.
-export const USD_TO_LKR_RATE = 300;
+// export const USD_TO_LKR_RATE = 300;
+
+// export type Currency = "USD" | "LKR";
+
+// export function formatPrice(priceFrom: number, currency: Currency): string {
+//     if (currency === "LKR") {
+//         const converted = Math.round((priceFrom * USD_TO_LKR_RATE) / 100) * 100;
+//         return `LKR ${converted.toLocaleString()}`;
+//     }
+//     return `$${priceFrom.toLocaleString()}`;
+// }
+
 
 export type Currency = "USD" | "LKR";
 
-export function formatPrice(priceFrom: number, currency: Currency): string {
+// `rate` is the conversion rate FROM USD TO the target currency (e.g. 330 for LKR).
+// Sourced from Sanity's siteSettings document — see src/sanity/lib/queries.ts.
+// Only required when currency !== "USD".
+export function formatPrice(priceFrom: number, currency: Currency, rate?: number): string {
     if (currency === "LKR") {
-        const converted = Math.round((priceFrom * USD_TO_LKR_RATE) / 100) * 100;
+        if (!rate) {
+            throw new Error("formatPrice: a conversion rate is required for non-USD currencies.");
+        }
+        const converted = Math.round((priceFrom * rate) / 100) * 100;
         return `LKR ${converted.toLocaleString()}`;
     }
     return `$${priceFrom.toLocaleString()}`;

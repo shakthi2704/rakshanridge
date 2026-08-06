@@ -8,6 +8,8 @@ import "../../globals.css";
 import { routing } from "@/i18n/routing";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { SanityLive } from "@/sanity/lib/live";
+import { getSiteSettings } from "@/sanity/lib/queries";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -52,6 +54,8 @@ export default async function RootLayout({
   }
 
   const messages = await getMessages();
+  const siteSettings = await getSiteSettings();
+  // console.log("SITE SETTINGS:", siteSettings);
 
   return (
     <html
@@ -64,6 +68,7 @@ export default async function RootLayout({
           {children}
           <Footer />
         </NextIntlClientProvider>
+        <SanityLive />
       </body>
     </html>
   );

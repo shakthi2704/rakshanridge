@@ -11,7 +11,13 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { properties, PROPERTY_TYPES, formatPrice, type PropertyType } from "@/lib/properties";
 
-export default function PropertyCategoryBrowser() {
+
+
+type PropertyCategoryBrowserProps = {
+    lkrRate?: number;
+};
+
+export default function PropertyCategoryBrowser({ lkrRate }: PropertyCategoryBrowserProps) {
     const t = useTranslations("properties");
     const tTypes = useTranslations("properties.types");
 
