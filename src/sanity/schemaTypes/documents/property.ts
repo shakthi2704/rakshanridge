@@ -1,0 +1,147 @@
+import { defineType, defineField } from 'sanity'
+
+const AMENITY_OPTIONS = [
+    { title: 'Pool', value: 'pool' },
+    { title: 'Wifi', value: 'wifi' },
+    { title: 'Breakfast', value: 'breakfast' },
+    { title: 'Spa', value: 'spa' },
+    { title: 'Airport transfer', value: 'airportTransfer' },
+    { title: 'Mountain view', value: 'mountainView' },
+    { title: 'Ocean view', value: 'oceanView' },
+    { title: 'Private butler', value: 'privateButler' },
+    { title: 'Eco certified', value: 'ecoCertified' },
+]
+
+export const property = defineType({
+    name: 'property',
+    title: 'Property',
+    type: 'document',
+    groups: [
+        { name: 'content', title: 'Content', default: true },
+        { name: 'media', title: 'Media' },
+        { name: 'rooms', title: 'Rooms' },
+    ],
+    fields: [
+        defineField({
+            name: 'name',
+            title: 'Property name',
+            type: 'localeString',
+            group: 'content',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug',
+            options: { source: 'name.en', maxLength: 96 },
+            group: 'content',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'tagline',
+            title: 'Tagline',
+            type: 'localeString',
+            group: 'content',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'location',
+            title: 'Location label',
+            description: 'e.g. "Kandy, Central Highlands" — shown as a subtitle, not the address.',
+            type: 'localeString',
+            group: 'content',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'description',
+            title: 'Description',
+            type: 'localeText',
+            group: 'content',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'type',
+            title: 'Property type',
+            type: 'string',
+            group: 'content',
+            options: {
+                list: [
+                    { title: 'Hotel', value: 'hotel' },
+                    { title: 'Resort', value: 'resort' },
+                    { title: 'Villa', value: 'villa' },
+                ],
+            },
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'region',
+            title: 'Region',
+            type: 'string',
+            group: 'content',
+            options: {
+                list: [
+                    { title: 'Central Highlands', value: 'central-highlands' },
+                    { title: 'Southern Coast', value: 'southern-coast' },
+                    { title: 'Colombo', value: 'colombo' },
+                    { title: 'Cultural Triangle', value: 'cultural-triangle' },
+                ],
+            },
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'priceFrom',
+            title: 'Price from (USD/night)',
+            type: 'number',
+            group: 'content',
+            validation: (Rule) => Rule.required().positive(),
+        }),
+        defineField({
+            name: 'address',
+            title: 'Address',
+            description: 'Placeholder street address — real data pending.',
+            type: 'string',
+            group: 'content',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'amenityKeys',
+            title: 'Amenities',
+            type: 'array',
+            of: [{ type: 'string' }],
+            options: { list: AMENITY_OPTIONS },
+            group: 'content',
+        }),
+        defineField({
+            name: 'featured',
+            title: 'Featured',
+            type: 'boolean',
+            initialValue: false,
+            group: 'content',
+        }),
+        defineField({
+            name: 'heroImage',
+            title: 'Hero image',
+            type: 'image',
+            options: { hotspot: true },
+            group: 'media',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'gallery',
+            title: 'Gallery',
+            type: 'array',
+            of: [{ type: 'image', options: { hotspot: true } }],
+            group: 'media',
+        }),
+        defineField({
+            name: 'rooms',
+            title: 'Rooms',
+            type: 'array',
+            of: [{ type: 'room' }],
+            group: 'rooms',
+        }),
+    ],
+    preview: {
+        select: { title: 'name.en', subtitle: 'location.en', media: 'heroImage' },
+    },
+})
