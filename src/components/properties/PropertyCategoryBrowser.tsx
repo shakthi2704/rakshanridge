@@ -9,14 +9,17 @@ import Reveal from "@/components/ui/Reveal";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
-import { properties, PROPERTY_TYPES, formatPrice, type PropertyType, type Currency } from "@/lib/properties";
+import { PROPERTY_TYPES, formatPrice, type PropertyType, type Currency } from "@/lib/properties";
+import type { adaptProperty } from "@/sanity/lib/adapters";
 
+type AdaptedProperty = ReturnType<typeof adaptProperty>;
 
 type PropertyCategoryBrowserProps = {
     currency: Currency;
     rate?: number;
+    properties: AdaptedProperty[];
 };
-export default function PropertyCategoryBrowser({ currency, rate }: PropertyCategoryBrowserProps) {
+export default function PropertyCategoryBrowser({ currency, rate, properties }: PropertyCategoryBrowserProps) {
     const t = useTranslations("properties");
     const tTypes = useTranslations("properties.types");
 
@@ -64,7 +67,7 @@ export default function PropertyCategoryBrowser({ currency, rate }: PropertyCate
                             <div className="relative aspect-[4/3] w-full overflow-hidden lg:aspect-auto">
                                 <Image
                                     src={highlight.image}
-                                    alt={t(`items.${highlight.key}.name`)}
+                                    alt={highlight.name}
                                     fill
                                     className="object-cover"
                                 />
@@ -75,13 +78,13 @@ export default function PropertyCategoryBrowser({ currency, rate }: PropertyCate
                                     {t("showcase.eyebrow")}
                                 </span>
                                 <h3 className="mt-4 font-serif text-3xl font-medium text-ink sm:text-4xl">
-                                    {t(`items.${highlight.key}.name`)}
+                                    {highlight.name}
                                 </h3>
                                 <p className="mt-4 max-w-md font-serif text-lg font-light italic leading-relaxed text-charcoal">
-                                    {t(`items.${highlight.key}.tagline`)}
+                                    {highlight.tagline}
                                 </p>
                                 <p className="mt-4 max-w-md font-serif text-lg  leading-relaxed text-ink">
-                                    {t(`items.${highlight.key}.description`)}
+                                    {highlight.description}
                                 </p>
                                 <div className="mt-8">
                                     <Link
@@ -103,7 +106,7 @@ export default function PropertyCategoryBrowser({ currency, rate }: PropertyCate
                                             <div className="relative aspect-[4/3] w-full overflow-hidden shadow-md transition-shadow duration-500 group-hover:shadow-2xl">
                                                 <Image
                                                     src={property.image}
-                                                    alt={t(`items.${property.key}.name`)}
+                                                    alt={property.name}
                                                     fill
                                                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                                 />
@@ -120,11 +123,11 @@ export default function PropertyCategoryBrowser({ currency, rate }: PropertyCate
                                                 {/* Property info - Bottom */}
                                                 <div className="absolute right-5 bottom-5 left-5 text-white">
                                                     <span className="font-sans text-xs tracking-[0.2em] uppercase text-white/80">
-                                                        {t(`items.${property.key}.location`)}
+                                                        {property.location}
                                                     </span>
 
                                                     <h3 className="mt-2 font-serif text-3xl font-medium">
-                                                        {t(`items.${property.key}.name`)}
+                                                        {property.name}
                                                     </h3>
 
                                                     <span

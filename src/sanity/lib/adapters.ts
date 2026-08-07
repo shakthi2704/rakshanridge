@@ -1,14 +1,30 @@
 import { urlFor } from "./image";
 import { pickLocale, type AppLocale } from "./locale";
 import type { SanityProperty, SanityRoom } from "./queries";
-import type { Property, PropertyRoom, PropertyType } from "@/lib/properties";
+import type { Property, PropertyType } from "@/lib/properties";
 
-function adaptRoom(room: SanityRoom, locale: AppLocale): PropertyRoom & {
+export type AdaptedRoom = {
+    key: string;
     slug: string;
     name: string;
     description: string;
     longDescription: string;
-} {
+    occupancy: number;
+    sizeSqm: number;
+    beds: number;
+    bathrooms: number;
+    priceFrom: number;
+};
+
+export type AdaptedProperty = Omit<Property, "rooms"> & {
+    name: string;
+    tagline: string;
+    location: string;
+    description: string;
+    rooms: AdaptedRoom[];
+};
+
+function adaptRoom(room: SanityRoom, locale: AppLocale): AdaptedRoom {
     return {
         key: room.slug.current,
         slug: room.slug.current,
@@ -23,12 +39,7 @@ function adaptRoom(room: SanityRoom, locale: AppLocale): PropertyRoom & {
     };
 }
 
-export function adaptProperty(sanityProperty: SanityProperty, locale: AppLocale): Property & {
-    name: string;
-    tagline: string;
-    location: string;
-    description: string;
-} {
+export function adaptProperty(sanityProperty: SanityProperty, locale: AppLocale): AdaptedProperty {
     return {
         slug: sanityProperty.slug.current,
         key: sanityProperty.slug.current,
