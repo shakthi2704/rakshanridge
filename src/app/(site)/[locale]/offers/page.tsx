@@ -6,6 +6,7 @@ import { adaptOffer } from "@/sanity/lib/adapters";
 import type { AppLocale } from "@/sanity/lib/locale";
 import OffersHero from "@/components/offers/OffersHero";
 import OffersGrid from "@/components/offers/OffersGrid";
+import OffersIntro from "@/components/offers/OffersIntro";
 
 export async function generateMetadata(): Promise<Metadata> {
     const t = await getTranslations("offersPage");
@@ -33,6 +34,7 @@ export default async function OffersPage() {
     return (
         <main className="flex flex-1 flex-col">
             <OffersHero />
+            <OffersIntro />
             <OffersGrid offers={offers} currency={currency} rate={rate} />
         </main>
     );

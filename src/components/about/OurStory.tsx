@@ -15,7 +15,7 @@ export default async function OurStory() {
                 aria-hidden="true"
                 width={500}
                 height={650}
-                className="pointer-events-none absolute top-0 left-0 z-0 w-64 -scale-x-100 opacity-30 sm:w-80 lg:w-[28rem]"
+                className="pointer-events-none absolute top-0 left-0 z-0 w-64 -scale-x-100 opacity-20 sm:w-80 lg:w-[28rem]"
             />
 
             <Container>

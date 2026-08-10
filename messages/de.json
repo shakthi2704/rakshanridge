@@ -336,18 +336,18 @@
             "subheading": "Eine kleine Gruppe von Hoteliers, Gastgebern und Einheimischen, die jeden Aufenthalt im Hintergrund gestalten.",
             "members": {
                 "founder": {
-                    "name": "Ayesha Ranatunga",
-                    "role": "Gründerin und Kreativdirektorin",
+                    "name": "Halud Ranasinghe",
+                    "role": "Gründer & Direktor",
                     "bio": "Prägt den Charakter jeder Unterkunft der Kollektion – von der Architektur bis zum Ankunftserlebnis."
                 },
                 "operations": {
-                    "name": "Dinesh Fernando",
-                    "role": "Leiter des Betriebs",
+                    "name": "Nipun Thilakarathne",
+                    "role": "Gründer & Direktor",
                     "bio": "Sorgt dafür, dass jede Unterkunft mit ruhiger Präzision geführt wird, ohne dass Gäste sich darüber Gedanken machen müssen."
                 },
                 "guestExperience": {
-                    "name": "Nadia Perera",
-                    "role": "Leitung Gästeerlebnis",
+                    "name": "Subash Maduranga Wimalaweera",
+                    "role": "Gründer & Direktor",
                     "bio": "Gestaltet die kleinen persönlichen Details, die einen Aufenthalt in eine bleibende Erinnerung verwandeln."
                 }
             }
@@ -758,6 +758,7 @@
         "subheading": "Saisonale Preise und exklusive Vorteile in unseren Häusern.",
         "noResults": "Derzeit keine Angebote – schauen Sie bald wieder vorbei.",
         "discountBadge": "{percent}% Rabatt",
-        "viewOffer": "Angebot ansehen"
+        "viewOffer": "Angebot ansehen",
+        "introText": "Jeder Aufenthalt ist von einem besonderen Moment geprägt, zu dem man gerne zurückkehrt – wir schaffen Möglichkeiten, die es noch leichter machen, Ja zu sagen."
     }
 }

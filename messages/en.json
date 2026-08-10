@@ -336,18 +336,18 @@
       "subheading": "A small group of hoteliers, hosts, and locals who shape every stay behind the scenes.",
       "members": {
         "founder": {
-          "name": "Ayesha Ranatunga",
-          "role": "Founder & Creative Director",
+          "name": "Halud Ranasinghe",
+          "role": "Founder & Director",
           "bio": "Sets the tone for every property in the collection, from architecture to arrival experience."
         },
         "operations": {
-          "name": "Dinesh Fernando",
-          "role": "Head of Operations",
+          "name": " Nipun Thilakarathne",
+          "role": "Founder & Director",
           "bio": "Keeps every property running with the quiet precision guests never have to think about."
         },
         "guestExperience": {
-          "name": "Nadia Perera",
-          "role": "Guest Experience Lead",
+          "name": " Subash maduranga wimalaweera ",
+          "role": "Founder & Director",
           "bio": "Designs the small, personal touches that turn a stay into a memory."
         }
       }
@@ -758,6 +758,7 @@
     "subheading": "Seasonal rates and exclusive privileges across our properties.",
     "noResults": "No current offers — check back soon.",
     "discountBadge": "{percent}% Off",
-    "viewOffer": "View Offer"
+    "viewOffer": "View Offer",
+    "introText": "Every stay is shaped around a moment worth returning for — these are the ways we make it easier to say yes."
   }
 }
