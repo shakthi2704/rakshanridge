@@ -4,7 +4,8 @@ import { localeString } from './objects/localeString'
 import { localeText } from './objects/localeText'
 import { room } from './objects/room'
 import { property } from './documents/property'
+import { offer } from './documents/offer'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [siteSettings, localeString, localeText, room, property],
+  types: [siteSettings, localeString, localeText, room, property, offer],
 }

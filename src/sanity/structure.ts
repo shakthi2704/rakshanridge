@@ -17,12 +17,15 @@ export const structure: StructureResolver = (S) =>
       S.divider(),
 
       S.documentTypeListItem('property').title('Properties'),
+      S.documentTypeListItem('offer').title('Offers'),
 
       S.divider(),
 
       // Everything else (future document types) still shows as a normal list.
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          listItem.getId() !== 'siteSettings' && listItem.getId() !== 'property'
+          listItem.getId() !== 'siteSettings' &&
+          listItem.getId() !== 'property' &&
+          listItem.getId() !== 'offer'
       ),
     ])

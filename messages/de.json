@@ -751,5 +751,13 @@
             "submit": "Nachricht senden",
             "submitted": "Vielen Dank – wir werden uns in Kürze bei Ihnen melden."
         }
+    },
+    "offersPage": {
+        "eyebrow": "Sonderangebote",
+        "heading": "Ausgewählte Angebote",
+        "subheading": "Saisonale Preise und exklusive Vorteile in unseren Häusern.",
+        "noResults": "Derzeit keine Angebote – schauen Sie bald wieder vorbei.",
+        "discountBadge": "{percent}% Rabatt",
+        "viewOffer": "Angebot ansehen"
     }
 }

@@ -1,72 +1,67 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import {
-    properties,
-    getPropertyAndRoom,
-    slugifyRoomKey,
-    formatPrice,
-} from "@/lib/properties";
+import { formatPrice } from "@/lib/properties";
 import RoomDetailHero from "@/components/properties/room-detail/RoomDetailHero";
 import RoomOverview from "@/components/properties/room-detail/RoomOverview";
 import SimilarRooms from "@/components/properties/room-detail/SimilarRooms";
 import RoomExperiences from "@/components/properties/room-detail/RoomExperiences";
-// import RoomArrival from "@/components/properties/RoomArrival";
 import MainCta from "@/components/ui/MainCta";
-
 import { getCurrencyContext } from "@/lib/currency";
+import { getProperties, getSanityPropertyBySlug } from "@/sanity/lib/queries";
+import { adaptProperty } from "@/sanity/lib/adapters";
+import type { AppLocale } from "@/sanity/lib/locale";
 
 type Props = {
     params: Promise<{ locale: string; slug: string; room: string }>;
 };
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+    const properties = await getProperties();
     return properties.flatMap((property) =>
         property.rooms.map((room) => ({
-            slug: property.slug,
-            room: slugifyRoomKey(room.key),
+            slug: property.slug.current,
+            room: room.slug.current,
         }))
     );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const { slug, room: roomSlug } = await params;
-    const match = getPropertyAndRoom(slug, roomSlug);
-    if (!match) return {};
+    const { slug, room: roomSlug, locale } = await params;
+    const raw = await getSanityPropertyBySlug(slug);
+    if (!raw) return {};
 
-    const { property, room } = match;
-    const t = await getTranslations("properties");
+    const property = adaptProperty(raw, locale as AppLocale);
+    const room = property.rooms.find((r) => r.slug === roomSlug);
+    if (!room) return {};
 
     return {
-        title: `${t(`items.${property.key}.rooms.${room.key}.name`)} — ${t(
-            `items.${property.key}.name`
-        )} | Raksha & Ridge`,
-        description: t(`items.${property.key}.rooms.${room.key}.description`),
+        title: `${room.name} — ${property.name} | Raksha & Ridge`,
+        description: room.description,
     };
 }
 
 export default async function RoomDetailPage({ params }: Props) {
-    const { slug, room: roomSlug } = await params;
-    const match = getPropertyAndRoom(slug, roomSlug);
+    const { slug, room: roomSlug, locale } = await params;
+    const raw = await getSanityPropertyBySlug(slug);
 
-    if (!match) notFound();
+    if (!raw) notFound();
 
-    const { property, room } = match;
+    const property = adaptProperty(raw, locale as AppLocale);
+    const room = property.rooms.find((r) => r.slug === roomSlug);
+
+    if (!room) notFound();
+
     const t = await getTranslations("properties");
     const tExperiences = await getTranslations("experiences");
     const { currency, rate } = await getCurrencyContext();
 
-    const propertyName = t(`items.${property.key}.name`);
-    const propertyLocation = t(`items.${property.key}.location`);
-    const roomName = t(`items.${property.key}.rooms.${room.key}.name`);
-    const longDescription = t(
-        `items.${property.key}.rooms.${room.key}.longDescription`
-    );
     const sizeLabel = t("detail.roomSize", { size: room.sizeSqm });
     const priceLabel = t("detail.fromPerNight", {
         price: formatPrice(room.priceFrom, currency, rate),
     });
-    const roomIndex = property.rooms.findIndex((r) => r.key === room.key);
+
+    const roomIndex = property.rooms.findIndex((r) => r.slug === room.slug);
     const roomImage =
         property.gallery[roomIndex % property.gallery.length] ?? property.image;
     const roomSecondaryImage =
@@ -87,13 +82,13 @@ export default async function RoomDetailPage({ params }: Props) {
         property.image;
 
     const similarRooms = property.rooms
-        .filter((r) => r.key !== room.key)
+        .filter((r) => r.slug !== room.slug)
         .map((r) => {
-            const rIndex = property.rooms.findIndex((x) => x.key === r.key);
+            const rIndex = property.rooms.findIndex((x) => x.slug === r.slug);
             return {
-                key: r.key,
-                slug: slugifyRoomKey(r.key),
-                name: t(`items.${property.key}.rooms.${r.key}.name`),
+                key: r.slug,
+                slug: r.slug,
+                name: r.name,
                 image:
                     property.gallery[rIndex % property.gallery.length] ??
                     property.image,
@@ -106,16 +101,16 @@ export default async function RoomDetailPage({ params }: Props) {
     return (
         <main className="flex flex-1 flex-col">
             <RoomDetailHero
-                roomName={roomName}
-                propertyName={propertyName}
-                propertyLocation={propertyLocation}
+                roomName={room.name}
+                propertyName={property.name}
+                propertyLocation={property.location}
                 propertySlug={property.slug}
                 image={roomImage}
             />
             <RoomOverview
                 eyebrow={t("detail.roomOverviewEyebrow")}
-                heading={roomName}
-                description={longDescription}
+                heading={room.name}
+                description={room.longDescription}
                 occupancy={room.occupancy}
                 sizeLabel={sizeLabel}
                 beds={room.beds}
@@ -127,10 +122,10 @@ export default async function RoomDetailPage({ params }: Props) {
                 priceLabel={priceLabel}
                 bookLabel={t("detail.bookNow")}
                 checkAvailabilityLabel={t("detail.checkAvailability")}
-                roomKey={room.key}
+                roomKey={room.slug}
                 image={roomImage}
                 secondaryImage={roomSecondaryImage}
-                roomName={roomName}
+                roomName={room.name}
             />
             <RoomExperiences
                 heading={t("detail.curatedHeading")}

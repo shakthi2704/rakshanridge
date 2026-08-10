@@ -751,5 +751,13 @@
       "submit": "Send Message",
       "submitted": "Thank you — we'll be in touch shortly."
     }
+  },
+  "offersPage": {
+    "eyebrow": "Special Offers",
+    "heading": "Curated Offers",
+    "subheading": "Seasonal rates and exclusive privileges across our properties.",
+    "noResults": "No current offers — check back soon.",
+    "discountBadge": "{percent}% Off",
+    "viewOffer": "View Offer"
   }
 }

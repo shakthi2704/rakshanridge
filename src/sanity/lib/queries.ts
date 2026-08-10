@@ -109,3 +109,66 @@ export async function getSanityPropertyBySlug(slug: string): Promise<SanityPrope
     const { data } = await sanityFetch({ query: PROPERTY_BY_SLUG_QUERY, params: { slug } });
     return (data as SanityProperty) ?? null;
 }
+
+export type SanityOffer = {
+    _id: string;
+    title: LocaleString;
+    slug: { current: string };
+    description: LocaleString;
+    property: {
+        name: LocaleString;
+        slug: { current: string };
+        priceFrom: number;
+        heroImage: SanityImageSource;
+        rooms: { slug: { current: string }; priceFrom: number }[];
+    };
+    roomSlug: string | null;
+    discountType: "percentage" | "fixed";
+    discountValue: number;
+    validFrom: string | null;
+    validUntil: string | null;
+    featured: boolean;
+    image: SanityImageSource | null;
+};
+const OFFER_FIELDS = `
+    _id,
+    title,
+    slug,
+    description,
+    property->{
+        name,
+        slug,
+        priceFrom,
+        rooms[]{ slug, priceFrom },
+        heroImage
+    },
+    roomSlug,
+    discountType,
+    discountValue,
+    validFrom,
+    validUntil,
+    featured,
+    image
+`;
+
+const OFFERS_QUERY = defineQuery(`
+    *[_type == "offer"] | order(featured desc, validFrom desc){
+        ${OFFER_FIELDS}
+    }
+`);
+
+const OFFER_BY_SLUG_QUERY = defineQuery(`
+    *[_type == "offer" && slug.current == $slug][0]{
+        ${OFFER_FIELDS}
+    }
+`);
+
+export async function getOffers(): Promise<SanityOffer[]> {
+    const { data } = await sanityFetch({ query: OFFERS_QUERY });
+    return (data as SanityOffer[]) ?? [];
+}
+
+export async function getSanityOfferBySlug(slug: string): Promise<SanityOffer | null> {
+    const { data } = await sanityFetch({ query: OFFER_BY_SLUG_QUERY, params: { slug } });
+    return (data as SanityOffer) ?? null;
+}
