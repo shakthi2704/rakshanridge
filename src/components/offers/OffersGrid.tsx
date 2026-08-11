@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
@@ -16,11 +15,7 @@ type OffersGridProps = {
     rate?: number;
 };
 
-export default async function OffersGrid({
-    offers,
-    currency,
-    rate,
-}: OffersGridProps) {
+export default async function OffersGrid({ offers, currency, rate }: OffersGridProps) {
     const t = await getTranslations("offersPage");
 
     if (offers.length === 0) {
@@ -41,18 +36,13 @@ export default async function OffersGrid({
                 <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
                     {offers.map((offer, i) => {
                         const href = offer.roomSlug
-                            ? `/ properties / ${offer.propertySlug}/${offer.roomSlug}`
+                            ? `/properties/${offer.propertySlug}/${offer.roomSlug}`
                             : `/properties/${offer.propertySlug}`;
 
                         return (
-
                             <Reveal key={offer.slug} delay={i * 100}>
-                                <Link
-                                    href={href}
-                                    className="group block border border-charcoal/15 bg-white transition-all duration-500 hover:border-charcoal/30 hover:shadow-xl"
-                                >
-                                    {/* Image */}
-                                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                                <Link href={href} className="group block">
+                                    <div className="relative aspect-[4/5] w-full overflow-hidden shadow-md transition-shadow duration-500 group-hover:shadow-2xl">
                                         <Image
                                             src={offer.image}
                                             alt={offer.title}
@@ -60,58 +50,52 @@ export default async function OffersGrid({
                                             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                         />
 
-                                        {/* Discount badge */}
+                                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10" />
+
+                                        {/* Discount badge - Top */}
                                         <span className="absolute top-4 right-4 bg-ink/80 p-1.5 font-sans text-xs tracking-[0.1em] text-white uppercase">
-                                            {t("discountBadge", {
-                                                percent: offer.discountPercentage,
-                                            })}
-                                        </span>
-                                    </div>
-
-                                    {/* Details */}
-                                    <div className="p-6 lg:p-7">
-                                        <span className="font-sans text-xs tracking-[0.2em] text-charcoal/60 uppercase">
-                                            {offer.propertyName}
+                                            {t("discountBadge", { percent: offer.discountPercentage })}
                                         </span>
 
-                                        <h3 className="mt-2 font-serif text-3xl font-medium text-ink">
-                                            {offer.title}
-                                        </h3>
-
-                                        <div className="mt-3 flex items-baseline gap-3">
-                                            <span className="font-sans text-sm text-charcoal/40 line-through">
-                                                {formatPrice(
-                                                    offer.basePrice,
-                                                    currency,
-                                                    rate
-                                                )}
+                                        {/* Offer info - Bottom */}
+                                        <div className="absolute right-5 bottom-5 left-5 text-white">
+                                            <span className="font-sans text-xs tracking-[0.2em] text-white/80 uppercase">
+                                                {offer.propertyName}
                                             </span>
 
-                                            <span className="font-sans text-sm text-ink">
-                                                {formatPrice(
-                                                    offer.offerPrice,
-                                                    currency,
-                                                    rate
-                                                )}
+                                            <h3 className="mt-2 font-serif text-3xl font-medium">
+                                                {offer.title}
+                                            </h3>
+
+                                            <p className="mt-2 line-clamp-2 font-sans text-sm leading-relaxed text-white/70">
+                                                {offer.description}
+                                            </p>
+
+                                            <div className="mt-4 flex items-baseline gap-3">
+                                                <span className="font-sans text-sm text-white/50 line-through">
+                                                    {formatPrice(offer.basePrice, currency, rate)}
+                                                </span>
+                                                <span className="font-sans text-base font-medium text-white">
+                                                    {formatPrice(offer.offerPrice, currency, rate)}
+                                                </span>
+                                            </div>
+
+                                            <span className="mt-6 inline-flex items-center gap-3 border-b border-white/40 pb-1 font-sans text-xs tracking-[0.2em] uppercase transition-colors group-hover:border-white">
+                                                {t("viewOffer")}
+                                                <ArrowRight
+                                                    size={15}
+                                                    strokeWidth={1.5}
+                                                    className="transition-transform duration-300 group-hover:translate-x-1"
+                                                />
                                             </span>
                                         </div>
-
-                                        <span className="mt-6 inline-flex items-center gap-3 border-b border-charcoal/40 pb-1 font-sans text-xs tracking-[0.2em] text-ink uppercase transition-colors group-hover:border-ink">
-                                            {t("viewOffer")}
-                                            <ArrowRight
-                                                size={15}
-                                                strokeWidth={1.5}
-                                                className="transition-transform duration-300 group-hover:translate-x-1"
-                                            />
-                                        </span>
                                     </div>
                                 </Link>
                             </Reveal>
-
                         );
                     })}
-                </div >
-            </Container >
-        </section >
+                </div>
+            </Container>
+        </section>
     );
 }

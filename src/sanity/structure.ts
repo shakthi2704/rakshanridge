@@ -18,6 +18,7 @@ export const structure: StructureResolver = (S) =>
 
       S.documentTypeListItem('property').title('Properties'),
       S.documentTypeListItem('offer').title('Offers'),
+      S.documentTypeListItem('bookingInquiry').title('Booking Inquiries'),
 
       S.divider(),
 
@@ -26,6 +27,7 @@ export const structure: StructureResolver = (S) =>
         (listItem) =>
           listItem.getId() !== 'siteSettings' &&
           listItem.getId() !== 'property' &&
-          listItem.getId() !== 'offer'
+          listItem.getId() !== 'offer' &&
+          listItem.getId() !== 'bookingInquiry'
       ),
     ])
