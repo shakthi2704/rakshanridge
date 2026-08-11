@@ -760,5 +760,31 @@
     "discountBadge": "{percent}% Off",
     "viewOffer": "View Offer",
     "introText": "Every stay is shaped around a moment worth returning for — these are the ways we make it easier to say yes."
+  },
+  "bookPage": {
+    "eyebrow": "Reserve Your Stay",
+    "heading": "Begin Your Inquiry",
+    "subheading": "Share a few details and our concierge team will be in touch within 24 hours to arrange your stay.",
+    "inquiringAbout": "Inquiring About",
+    "form": {
+      "nameLabel": "Full Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "phoneLabel": "Phone (optional)",
+      "phonePlaceholder": "+94 ...",
+      "checkInLabel": "Check-in",
+      "checkInPlaceholder": "e.g. 12 Dec 2026",
+      "checkOutLabel": "Check-out",
+      "checkOutPlaceholder": "e.g. 18 Dec 2026",
+      "guestsLabel": "Guests (optional)",
+      "guestsPlaceholder": "2",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us about your stay — occasions, preferences, anything we should know.",
+      "submit": "Send Inquiry",
+      "submitting": "Sending...",
+      "error": "Something went wrong — please try again or contact us directly.",
+      "submitted": "Thank you. Our concierge team will be in touch shortly."
+    }
   }
 }

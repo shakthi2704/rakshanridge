@@ -1,0 +1,208 @@
+"use client";
+
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+import { buttonVariants } from "@/components/ui/Button";
+
+const fieldClass =
+    "w-full border-0 border-b border-white/20 bg-transparent px-0 py-4 font-sans text-sm text-white placeholder:text-white/40 transition-colors focus:border-white focus:outline-none focus:ring-0";
+
+type BookingFormProps = {
+    propertySlug?: string;
+    roomSlug?: string;
+};
+
+type Status = "idle" | "submitting" | "success" | "error";
+
+export default function BookingForm({ propertySlug, roomSlug }: BookingFormProps) {
+    const t = useTranslations("bookPage.form");
+
+    const [status, setStatus] = useState<Status>("idle");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [checkIn, setCheckIn] = useState("");
+    const [checkOut, setCheckOut] = useState("");
+    const [guests, setGuests] = useState("");
+    const [message, setMessage] = useState("");
+
+    async function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        setStatus("submitting");
+
+        try {
+            const res = await fetch("/api/book", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    phone,
+                    propertySlug,
+                    roomSlug,
+                    checkIn,
+                    checkOut,
+                    guests,
+                    message,
+                }),
+            });
+
+            if (!res.ok) throw new Error("Request failed");
+
+            setStatus("success");
+        } catch {
+            setStatus("error");
+        }
+    }
+
+    if (status === "success") {
+        return (
+            <div className="border border-white/10 bg-ink px-8 py-14 text-center">
+                <p className="font-serif text-2xl text-white">{t("submitted")}</p>
+            </div>
+        );
+    }
+
+    return (
+        <div className="bg-ink px-8 py-10 lg:px-10 lg:py-12">
+            <form onSubmit={handleSubmit} className="space-y-8">
+                <div>
+                    <label
+                        htmlFor="name"
+                        className="font-sans text-[0.75rem] tracking-[0.15em] text-white/60 uppercase"
+                    >
+                        {t("nameLabel")}
+                    </label>
+                    <input
+                        id="name"
+                        type="text"
+                        required
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder={t("namePlaceholder")}
+                        className={fieldClass}
+                    />
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="email"
+                        className="font-sans text-[0.75rem] tracking-[0.15em] text-white/60 uppercase"
+                    >
+                        {t("emailLabel")}
+                    </label>
+                    <input
+                        id="email"
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder={t("emailPlaceholder")}
+                        className={fieldClass}
+                    />
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="phone"
+                        className="font-sans text-[0.75rem] tracking-[0.15em] text-white/60 uppercase"
+                    >
+                        {t("phoneLabel")}
+                    </label>
+                    <input
+                        id="phone"
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder={t("phonePlaceholder")}
+                        className={fieldClass}
+                    />
+                </div>
+
+                <div className="grid grid-cols-2 gap-6">
+                    <div>
+                        <label
+                            htmlFor="checkIn"
+                            className="font-sans text-[0.75rem] tracking-[0.15em] text-white/60 uppercase"
+                        >
+                            {t("checkInLabel")}
+                        </label>
+                        <input
+                            id="checkIn"
+                            type="text"
+                            value={checkIn}
+                            onChange={(e) => setCheckIn(e.target.value)}
+                            placeholder={t("checkInPlaceholder")}
+                            className={fieldClass}
+                        />
+                    </div>
+
+                    <div>
+                        <label
+                            htmlFor="checkOut"
+                            className="font-sans text-[0.75rem] tracking-[0.15em] text-white/60 uppercase"
+                        >
+                            {t("checkOutLabel")}
+                        </label>
+                        <input
+                            id="checkOut"
+                            type="text"
+                            value={checkOut}
+                            onChange={(e) => setCheckOut(e.target.value)}
+                            placeholder={t("checkOutPlaceholder")}
+                            className={fieldClass}
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="guests"
+                        className="font-sans text-[0.75rem] tracking-[0.15em] text-white/60 uppercase"
+                    >
+                        {t("guestsLabel")}
+                    </label>
+                    <input
+                        id="guests"
+                        type="number"
+                        min={1}
+                        value={guests}
+                        onChange={(e) => setGuests(e.target.value)}
+                        placeholder={t("guestsPlaceholder")}
+                        className={fieldClass}
+                    />
+                </div>
+
+                <div>
+                    <label
+                        htmlFor="message"
+                        className="font-sans text-[0.75rem] tracking-[0.15em] text-white/60 uppercase"
+                    >
+                        {t("messageLabel")}
+                    </label>
+                    <textarea
+                        id="message"
+                        required
+                        rows={4}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder={t("messagePlaceholder")}
+                        className={`${fieldClass} resize-none`}
+                    />
+                </div>
+
+                {status === "error" && (
+                    <p className="font-sans text-sm text-red-400">{t("error")}</p>
+                )}
+
+                <button
+                    type="submit"
+                    disabled={status === "submitting"}
+                    className={buttonVariants({ variant: "white", size: "md" })}
+                >
+                    {status === "submitting" ? t("submitting") : t("submit")}
+                </button>
+            </form>
+        </div>
+    );
+}

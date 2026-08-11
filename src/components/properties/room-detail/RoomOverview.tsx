@@ -20,6 +20,7 @@ export default function RoomOverview({
     bookLabel,
     checkAvailabilityLabel,
     roomKey,
+    propertySlug,
     image,
     secondaryImage,
     roomName,
@@ -39,6 +40,7 @@ export default function RoomOverview({
     bookLabel: string;
     checkAvailabilityLabel: string;
     roomKey: string;
+    propertySlug: string;
     image: string;
     secondaryImage: string;
     roomName: string;
@@ -95,13 +97,13 @@ export default function RoomOverview({
                                     {priceLabel}
                                 </span> */}
                                 <Link
-                                    href={`/book?room=${roomKey}`}
+                                    href={`/book?property=${propertySlug}&room=${roomKey}`}
                                     className={buttonVariants({ variant: "ink", size: "sm" })}
                                 >
                                     {bookLabel}
                                 </Link>
                                 <Link
-                                    href={`/book?room=${roomKey}`}
+                                    href={`/book?property=${propertySlug}&room=${roomKey}`}
                                     className={buttonVariants({ variant: "outline-ink", size: "sm" })}
                                 >
                                     {checkAvailabilityLabel}

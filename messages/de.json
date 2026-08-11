@@ -760,5 +760,31 @@
         "discountBadge": "{percent}% Rabatt",
         "viewOffer": "Angebot ansehen",
         "introText": "Jeder Aufenthalt ist von einem besonderen Moment geprägt, zu dem man gerne zurückkehrt – wir schaffen Möglichkeiten, die es noch leichter machen, Ja zu sagen."
+    },
+    "bookPage": {
+        "eyebrow": "Ihren Aufenthalt reservieren",
+        "heading": "Ihre Anfrage beginnen",
+        "subheading": "Teilen Sie uns einige Details mit. Unser Concierge-Team wird sich innerhalb von 24 Stunden bei Ihnen melden, um Ihren Aufenthalt zu arrangieren.",
+        "inquiringAbout": "Anfrage zu",
+        "form": {
+            "nameLabel": "Vollständiger Name",
+            "namePlaceholder": "Ihr Name",
+            "emailLabel": "E-Mail",
+            "emailPlaceholder": "sie@beispiel.com",
+            "phoneLabel": "Telefon (optional)",
+            "phonePlaceholder": "+49 ...",
+            "checkInLabel": "Anreise",
+            "checkInPlaceholder": "z. B. 12. Dez. 2026",
+            "checkOutLabel": "Abreise",
+            "checkOutPlaceholder": "z. B. 18. Dez. 2026",
+            "guestsLabel": "Gäste (optional)",
+            "guestsPlaceholder": "2",
+            "messageLabel": "Nachricht",
+            "messagePlaceholder": "Erzählen Sie uns von Ihrem Aufenthalt – Anlässe, Vorlieben oder alles, was wir wissen sollten.",
+            "submit": "Anfrage senden",
+            "submitting": "Wird gesendet...",
+            "error": "Etwas ist schiefgelaufen – bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.",
+            "submitted": "Vielen Dank. Unser Concierge-Team wird sich in Kürze bei Ihnen melden."
+        }
     }
 }
