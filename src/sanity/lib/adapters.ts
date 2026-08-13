@@ -1,6 +1,6 @@
 import { urlFor } from "./image";
 import { pickLocale, type AppLocale } from "./locale";
-import type { SanityProperty, SanityRoom, SanityOffer } from "./queries";
+import type { SanityProperty, SanityRoom, SanityOffer, SanityTestimonial, SanityExperience } from "./queries";
 import type { Property, PropertyType } from "@/lib/properties";
 
 export type AdaptedRoom = {
@@ -14,6 +14,7 @@ export type AdaptedRoom = {
     beds: number;
     bathrooms: number;
     priceFrom: number;
+    gallery: string[];
 };
 
 export type AdaptedProperty = Omit<Property, "rooms"> & {
@@ -22,6 +23,25 @@ export type AdaptedProperty = Omit<Property, "rooms"> & {
     location: string;
     description: string;
     rooms: AdaptedRoom[];
+    experiences: AdaptedExperienceCard[];
+};
+export type AdaptedExperienceCard = {
+    key: string;
+    slug: string;
+    title: string;
+    description: string;
+    image: string;
+};
+
+export type AdaptedExperience = AdaptedExperienceCard & {
+    duration: string;
+    location: string;
+    highlights: string[];
+    featured: boolean;
+    storyOpening: string;
+    storyQuote: string;
+    storyClosing: string;
+    detailImage: string;
 };
 export type AdaptedOffer = {
     slug: string;
@@ -41,6 +61,12 @@ export type AdaptedOffer = {
     featured: boolean;
 };
 
+export type AdaptedTestimonial = {
+    id: string;
+    quote: string;
+    name: string;
+    origin: string;
+};
 
 function adaptRoom(room: SanityRoom, locale: AppLocale): AdaptedRoom {
     return {
@@ -54,6 +80,8 @@ function adaptRoom(room: SanityRoom, locale: AppLocale): AdaptedRoom {
         beds: room.beds,
         bathrooms: room.bathrooms,
         priceFrom: room.priceFrom,
+        gallery: (room.gallery ?? []).map((img) => urlFor(img).width(1600).url()),
+
     };
 }
 
@@ -74,6 +102,7 @@ export function adaptProperty(sanityProperty: SanityProperty, locale: AppLocale)
         location: pickLocale(sanityProperty.location, locale),
         description: pickLocale(sanityProperty.description, locale),
         rooms: (sanityProperty.rooms ?? []).map((room) => adaptRoom(room, locale)),
+        experiences: (sanityProperty.experiences ?? []).map((exp) => adaptExperienceCard(exp, locale)),
     };
 }
 
@@ -116,5 +145,38 @@ export function adaptOffer(offer: SanityOffer, locale: AppLocale): AdaptedOffer 
         validFrom: offer.validFrom,
         validUntil: offer.validUntil,
         featured: offer.featured,
+    };
+}
+
+export function adaptTestimonial(testimonial: SanityTestimonial, locale: AppLocale): AdaptedTestimonial {
+    return {
+        id: testimonial._id,
+        quote: pickLocale(testimonial.quote, locale),
+        name: testimonial.name,
+        origin: pickLocale(testimonial.origin, locale),
+    };
+}
+
+function adaptExperienceCard(exp: SanityExperience, locale: AppLocale): AdaptedExperienceCard {
+    return {
+        key: exp.slug.current,
+        slug: exp.slug.current,
+        title: pickLocale(exp.title, locale),
+        description: pickLocale(exp.description, locale),
+        image: urlFor(exp.image).width(1200).url(),
+    };
+}
+
+export function adaptExperience(exp: SanityExperience, locale: AppLocale): AdaptedExperience {
+    return {
+        ...adaptExperienceCard(exp, locale),
+        duration: pickLocale(exp.duration, locale),
+        location: pickLocale(exp.location, locale),
+        highlights: (exp.highlights ?? []).map((h) => pickLocale(h, locale)),
+        featured: exp.featured,
+        storyOpening: pickLocale(exp.storyOpening, locale),
+        storyQuote: pickLocale(exp.storyQuote, locale),
+        storyClosing: pickLocale(exp.storyClosing, locale),
+        detailImage: urlFor(exp.detailImage).width(1600).url(),
     };
 }

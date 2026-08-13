@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { buttonVariants } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 
 const fieldClass =
     "w-full border-0 border-b border-white/20 bg-transparent px-0 py-4 font-sans text-sm text-white placeholder:text-white/40 transition-colors focus:border-white focus:outline-none focus:ring-0";
@@ -13,9 +14,11 @@ type BookingFormProps = {
 };
 
 type Status = "idle" | "submitting" | "success" | "error";
+type PaymentMethod = "pay_at_property" | "bank_deposit" | "";
 
 export default function BookingForm({ propertySlug, roomSlug }: BookingFormProps) {
     const t = useTranslations("bookPage.form");
+    const locale = useLocale();
 
     const [status, setStatus] = useState<Status>("idle");
     const [name, setName] = useState("");
@@ -24,6 +27,7 @@ export default function BookingForm({ propertySlug, roomSlug }: BookingFormProps
     const [checkIn, setCheckIn] = useState("");
     const [checkOut, setCheckOut] = useState("");
     const [guests, setGuests] = useState("");
+    const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("");
     const [message, setMessage] = useState("");
 
     async function handleSubmit(e: React.FormEvent) {
@@ -43,7 +47,9 @@ export default function BookingForm({ propertySlug, roomSlug }: BookingFormProps
                     checkIn,
                     checkOut,
                     guests,
+                    paymentMethod,
                     message,
+                    locale,
                 }),
             });
 
@@ -171,6 +177,35 @@ export default function BookingForm({ propertySlug, roomSlug }: BookingFormProps
                         placeholder={t("guestsPlaceholder")}
                         className={fieldClass}
                     />
+                </div>
+
+                <div>
+                    <span className="font-sans text-[0.75rem] tracking-[0.15em] text-white/60 uppercase">
+                        {t("paymentMethodLabel")}
+                    </span>
+
+                    <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:gap-4">
+                        {(
+                            [
+                                { value: "pay_at_property", label: t("paymentPayAtProperty") },
+                                { value: "bank_deposit", label: t("paymentBankDeposit") },
+                            ] as const
+                        ).map((option) => (
+                            <button
+                                key={option.value}
+                                type="button"
+                                onClick={() => setPaymentMethod(option.value)}
+                                className={cn(
+                                    "flex-1 border px-4 py-3 text-left font-sans text-sm transition-colors",
+                                    paymentMethod === option.value
+                                        ? "border-white bg-white/10 text-white"
+                                        : "border-white/20 text-white/70 hover:border-white/40"
+                                )}
+                            >
+                                {option.label}
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 <div>

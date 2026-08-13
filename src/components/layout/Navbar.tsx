@@ -7,11 +7,10 @@ import Container from "@/components/ui/Container";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
 
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import CurrencySwitcher from "@/components/ui/CurrencySwitcher";
 
-import CurrencySwitcher from "../ui/CurrencySwitcher";
 const navLinks = [
     { labelKey: "about", href: "/about" },
     { labelKey: "properties", href: "/properties" },
@@ -45,6 +44,7 @@ function Monogram() {
 type NavbarProps = {
     lkrRate?: number;
 };
+
 export default function Navbar({ lkrRate }: NavbarProps) {
     const t = useTranslations("navigation");
     const [scrolled, setScrolled] = useState(false);
@@ -72,37 +72,22 @@ export default function Navbar({ lkrRate }: NavbarProps) {
                     scrolled ? "bg-black/80 shadow-lg backdrop-blur-sm" : "bg-black/60 backdrop-blur-sm"
                 )}
             >
-                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/10 z-20" />
-                <Container className="relative flex h-24 items-center justify-between">
-                    {/* <div className="flex-shrink-0">
-                        <Link href="/" onClick={() => setMenuOpen(false)}>
-                            <Image
-                                src="/logo/logo-8.png" // or "/logo.svg"
-                                alt="Raksha & Ridge"
-                                width={180}
-                                height={60}
-                                priority
-                                className="h-28 w-auto"
-                            />
-                        </Link>
-                    </div> */}
-                    {/* <div className="flex-shrink-0">
-                        <Link href="/" onClick={() => setMenuOpen(false)}>
-                            <Image
-                                src="/logo/logo-3.png"
-                                alt="Raksha & Ridge"
-                                width={180}
-                                height={60}
-                                priority
-                                className="h-20 w-auto"
-                            />
-                        </Link>
-                    </div> */}
+                {/* Utility row — language / currency only */}
+                <div className="border-b border-white/10">
+                    <Container className="flex h-9 items-center justify-end gap-6">
+                        <LanguageSwitcher />
+                        <CurrencySwitcher lkrRate={lkrRate} />
+                    </Container>
+                </div>
+
+                {/* Main nav row */}
+                <Container className="relative flex h-20 items-center justify-between">
                     <div className="flex-shrink-0">
                         <Link href="/" onClick={() => setMenuOpen(false)}>
                             <Monogram />
                         </Link>
                     </div>
+
                     <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
                         {navLinks.map((link) => (
                             <Link
@@ -121,7 +106,6 @@ export default function Navbar({ lkrRate }: NavbarProps) {
                     </nav>
 
                     <div className="flex items-center justify-end gap-4">
-
                         <Link
                             href="/book"
                             className={cn(buttonVariants({ variant: "outline-white", size: "sm" }), "hidden lg:inline-flex")}
@@ -148,8 +132,6 @@ export default function Navbar({ lkrRate }: NavbarProps) {
                                 )}
                             />
                         </button>
-                        <LanguageSwitcher />
-                        <CurrencySwitcher lkrRate={lkrRate} />
                     </div>
                 </Container>
             </header>

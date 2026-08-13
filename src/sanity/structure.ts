@@ -4,7 +4,6 @@ export const structure: StructureResolver = (S) =>
   S.list()
     .title('Content')
     .items([
-      // Singleton — Site Settings. No "create new", no list, just the one document.
       S.listItem()
         .title('Site Settings')
         .id('siteSettings')
@@ -18,16 +17,19 @@ export const structure: StructureResolver = (S) =>
 
       S.documentTypeListItem('property').title('Properties'),
       S.documentTypeListItem('offer').title('Offers'),
+      S.documentTypeListItem('experience').title('Experiences'),
+      S.documentTypeListItem('testimonial').title('Testimonials'),
       S.documentTypeListItem('bookingInquiry').title('Booking Inquiries'),
 
       S.divider(),
 
-      // Everything else (future document types) still shows as a normal list.
       ...S.documentTypeListItems().filter(
         (listItem) =>
           listItem.getId() !== 'siteSettings' &&
           listItem.getId() !== 'property' &&
           listItem.getId() !== 'offer' &&
+          listItem.getId() !== 'experience' &&
+          listItem.getId() !== 'testimonial' &&
           listItem.getId() !== 'bookingInquiry'
       ),
     ])

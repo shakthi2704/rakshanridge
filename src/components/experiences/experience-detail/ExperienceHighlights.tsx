@@ -44,7 +44,7 @@ export default function ExperienceHighlights({
                                 <Reveal key={item} delay={index * 80}>
                                     <div className="flex items-start gap-4 py-5">
                                         <Image
-                                            src="/logo/1.svg"
+                                            src="/logo/logo-1.svg"
                                             alt=""
                                             width={16}
                                             height={16}

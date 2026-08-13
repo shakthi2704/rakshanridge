@@ -4,6 +4,10 @@ export const siteSettings = defineType({
     name: 'siteSettings',
     title: 'Site Settings',
     type: 'document',
+    groups: [
+        { name: 'currency', title: 'Currency', default: true },
+        { name: 'payment', title: 'Payment' },
+    ],
     fields: [
         defineField({
             name: 'baseCurrency',
@@ -12,12 +16,14 @@ export const siteSettings = defineType({
             description: 'The currency all prices are entered in across the site (properties, rooms, offers). This should not change casually — it defines what "priceFrom" and offer prices mean everywhere.',
             initialValue: 'USD',
             readOnly: true,
+            group: 'currency',
         }),
         defineField({
             name: 'exchangeRates',
             title: 'Exchange Rates',
             type: 'array',
             description: 'Conversion rates from the base currency. Add a new entry here to support a new currency — no code changes needed.',
+            group: 'currency',
             of: [
                 defineField({
                     name: 'exchangeRate',
@@ -53,6 +59,20 @@ export const siteSettings = defineType({
                         },
                     },
                 }),
+            ],
+        }),
+        defineField({
+            name: 'bankDetails',
+            title: 'Bank Deposit Details',
+            type: 'object',
+            description: 'Shown to guests via the automatic confirmation email when they choose "Bank Deposit" as their payment method on the booking form.',
+            group: 'payment',
+            fields: [
+                defineField({ name: 'bankName', title: 'Bank Name', type: 'string' }),
+                defineField({ name: 'accountName', title: 'Account Name', type: 'string' }),
+                defineField({ name: 'accountNumber', title: 'Account Number', type: 'string' }),
+                defineField({ name: 'branch', title: 'Branch', type: 'string' }),
+                defineField({ name: 'swiftCode', title: 'SWIFT / BIC Code', type: 'string' }),
             ],
         }),
     ],

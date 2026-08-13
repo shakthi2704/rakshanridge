@@ -766,6 +766,10 @@
     "heading": "Begin Your Inquiry",
     "subheading": "Share a few details and our concierge team will be in touch within 24 hours to arrange your stay.",
     "inquiringAbout": "Inquiring About",
+    "selectPropertyLabel": "Property",
+    "selectPropertyPlaceholder": "Choose a property",
+    "selectRoomLabel": "Room",
+    "selectRoomPlaceholder": "Choose a room",
     "form": {
       "nameLabel": "Full Name",
       "namePlaceholder": "Your name",
@@ -784,7 +788,10 @@
       "submit": "Send Inquiry",
       "submitting": "Sending...",
       "error": "Something went wrong — please try again or contact us directly.",
-      "submitted": "Thank you. Our concierge team will be in touch shortly."
+      "submitted": "Thank you. Our concierge team will be in touch shortly.",
+      "paymentMethodLabel": "Preferred Payment Method",
+      "paymentPayAtProperty": "Pay at Property",
+      "paymentBankDeposit": "Bank Deposit"
     }
   }
 }

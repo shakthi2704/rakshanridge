@@ -1,12 +1,17 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Container from "@/components/ui/Container";
-import { experiences } from "@/lib/experiences";
+import { getExperiences } from "@/sanity/lib/queries";
+import { adaptExperience } from "@/sanity/lib/adapters";
+import type { AppLocale } from "@/sanity/lib/locale";
 
 export default async function ExperiencesHero() {
     const t = await getTranslations("experiences");
-    const heroImage =
-        experiences.find((exp) => exp.featured)?.image ?? experiences[0].image;
+    const locale = await getLocale();
+
+    const sanityExperiences = await getExperiences();
+    const adapted = sanityExperiences.map((exp) => adaptExperience(exp, locale as AppLocale));
+    const heroImage = adapted.find((exp) => exp.featured)?.image ?? adapted[0]?.image;
 
     return (
         <section className="relative flex h-[70vh] min-h-[480px] items-center justify-center overflow-hidden bg-ink">

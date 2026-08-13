@@ -140,6 +140,15 @@ export const property = defineType({
             of: [{ type: 'room' }],
             group: 'rooms',
         }),
+        defineField({
+            name: 'experiences',
+            title: 'Curated Experiences',
+            description: 'Experiences featured for this property — shown in the room detail page "Curated" section. Add at least 2.',
+            type: 'array',
+            of: [{ type: 'reference', to: [{ type: 'experience' }] }],
+            group: 'content',
+            validation: (Rule) => Rule.min(2),
+        }),
     ],
     preview: {
         select: { title: 'name.en', subtitle: 'location.en', media: 'heroImage' },

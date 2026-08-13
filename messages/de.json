@@ -762,17 +762,21 @@
         "introText": "Jeder Aufenthalt ist von einem besonderen Moment geprägt, zu dem man gerne zurückkehrt – wir schaffen Möglichkeiten, die es noch leichter machen, Ja zu sagen."
     },
     "bookPage": {
-        "eyebrow": "Ihren Aufenthalt reservieren",
-        "heading": "Ihre Anfrage beginnen",
+        "eyebrow": "Reservieren Sie Ihren Aufenthalt",
+        "heading": "Beginnen Sie Ihre Anfrage",
         "subheading": "Teilen Sie uns einige Details mit. Unser Concierge-Team wird sich innerhalb von 24 Stunden bei Ihnen melden, um Ihren Aufenthalt zu arrangieren.",
         "inquiringAbout": "Anfrage zu",
+        "selectPropertyLabel": "Unterkunft",
+        "selectPropertyPlaceholder": "Unterkunft auswählen",
+        "selectRoomLabel": "Zimmer",
+        "selectRoomPlaceholder": "Zimmer auswählen",
         "form": {
             "nameLabel": "Vollständiger Name",
             "namePlaceholder": "Ihr Name",
             "emailLabel": "E-Mail",
-            "emailPlaceholder": "sie@beispiel.com",
+            "emailPlaceholder": "[you@example.com](mailto:you@example.com)",
             "phoneLabel": "Telefon (optional)",
-            "phonePlaceholder": "+49 ...",
+            "phonePlaceholder": "+94 ...",
             "checkInLabel": "Anreise",
             "checkInPlaceholder": "z. B. 12. Dez. 2026",
             "checkOutLabel": "Abreise",
@@ -784,7 +788,10 @@
             "submit": "Anfrage senden",
             "submitting": "Wird gesendet...",
             "error": "Etwas ist schiefgelaufen – bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.",
-            "submitted": "Vielen Dank. Unser Concierge-Team wird sich in Kürze bei Ihnen melden."
+            "submitted": "Vielen Dank. Unser Concierge-Team wird sich in Kürze bei Ihnen melden.",
+            "paymentMethodLabel": "Bevorzugte Zahlungsmethode",
+            "paymentPayAtProperty": "Zahlung vor Ort",
+            "paymentBankDeposit": "Banküberweisung"
         }
     }
 }

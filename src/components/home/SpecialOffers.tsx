@@ -1,12 +1,24 @@
 import { ArrowRight, Quote } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+import { getOffers } from "@/sanity/lib/queries";
+import { adaptOffer } from "@/sanity/lib/adapters";
+import type { AppLocale } from "@/sanity/lib/locale";
 
 export default async function SpecialOffers() {
     const t = await getTranslations("specialOffers");
+    const locale = await getLocale();
 
+    const sanityOffers = await getOffers();
+    const adaptedOffers = sanityOffers.map((o) => adaptOffer(o, locale as AppLocale));
+
+    if (adaptedOffers.length === 0) return null;
+
+    const offer = adaptedOffers.find((o) => o.featured) ?? adaptedOffers[0];
+    const offerHref = "/offers";
     return (
         <section className="bg-paper overflow-hidden py-24 lg:py-32">
             <Container>
@@ -72,14 +84,15 @@ export default async function SpecialOffers() {
                                 </p>
 
                                 <h3 className="mt-4 font-serif text-4xl text-white">
-                                    {t("offer.title")}
+                                    {offer.title}
                                 </h3>
 
                                 <p className="mt-6 max-w-sm font-sans text-sm leading-relaxed text-white/70">
-                                    {t("offer.description")}
+                                    {offer.description}
                                 </p>
 
-                                <button
+                                <Link
+                                    href={offerHref}
                                     className="
                                         mt-8 inline-flex items-center gap-3
                                         border-b border-white/40 pb-1
@@ -95,7 +108,7 @@ export default async function SpecialOffers() {
                                         size={15}
                                         strokeWidth={1.5}
                                     />
-                                </button>
+                                </Link>
 
                             </div>
                         </div>

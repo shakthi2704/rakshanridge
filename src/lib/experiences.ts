@@ -49,7 +49,7 @@ export const experiences: Experience[] = [
         image:
             "https://images.unsplash.com/photo-1546708973-b339540b5162?fm=jpg&q=80&w=800&auto=format&fit=crop",
         detailImage:
-            "https://images.unsplash.com/photo-1580889240911-e9756a63e1f0?fm=jpg&q=80&w=1200&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?fm=jpg&q=80&w=1200&auto=format&fit=crop",
     },
     {
         key: "wildlifeEncounters",

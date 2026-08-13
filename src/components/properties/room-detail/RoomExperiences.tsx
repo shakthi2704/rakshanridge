@@ -67,7 +67,7 @@ export default function RoomExperiences({
                     {/* Left — heading, intro, amenity list */}
                     <div className="grid grid-cols-2 gap-6">
                         {cards.map((card, index) => (
-                            <Reveal key={card.title} delay={100 + index * 80}>
+                            <Reveal key={index} delay={100 + index * 80}>
                                 <div className="relative aspect-[4/5] w-full overflow-hidden">
                                     <Image
                                         src={card.image}

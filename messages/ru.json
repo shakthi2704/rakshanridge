@@ -760,21 +760,25 @@
     "introText": "Каждое пребывание наполнено моментами, к которым хочется возвращаться — мы создаём возможности, благодаря которым сказать «да» становится ещё проще."
   },
   "bookPage": {
-    "eyebrow": "Забронируйте ваше пребывание",
-    "heading": "Начните оформление запроса",
+    "eyebrow": "Забронируйте проживание",
+    "heading": "Оставьте заявку",
     "subheading": "Поделитесь с нами несколькими деталями, и наша команда консьержей свяжется с вами в течение 24 часов, чтобы организовать ваше пребывание.",
     "inquiringAbout": "Запрос по поводу",
+    "selectPropertyLabel": "Объект",
+    "selectPropertyPlaceholder": "Выберите объект",
+    "selectRoomLabel": "Номер",
+    "selectRoomPlaceholder": "Выберите номер",
     "form": {
       "nameLabel": "Полное имя",
       "namePlaceholder": "Ваше имя",
       "emailLabel": "Электронная почта",
-      "emailPlaceholder": "you@example.com",
+      "emailPlaceholder": "[you@example.com](mailto:you@example.com)",
       "phoneLabel": "Телефон (необязательно)",
-      "phonePlaceholder": "+7 ...",
-      "checkInLabel": "Заезд",
-      "checkInPlaceholder": "например, 12 дек. 2026",
-      "checkOutLabel": "Выезд",
-      "checkOutPlaceholder": "например, 18 дек. 2026",
+      "phonePlaceholder": "+94 ...",
+      "checkInLabel": "Дата заезда",
+      "checkInPlaceholder": "например, 12 дек. 2026 г.",
+      "checkOutLabel": "Дата выезда",
+      "checkOutPlaceholder": "например, 18 дек. 2026 г.",
       "guestsLabel": "Гости (необязательно)",
       "guestsPlaceholder": "2",
       "messageLabel": "Сообщение",
@@ -782,7 +786,10 @@
       "submit": "Отправить запрос",
       "submitting": "Отправка...",
       "error": "Что-то пошло не так — попробуйте ещё раз или свяжитесь с нами напрямую.",
-      "submitted": "Спасибо. Наша команда консьержей свяжется с вами в ближайшее время."
+      "submitted": "Спасибо. Наша команда консьержей свяжется с вами в ближайшее время.",
+      "paymentMethodLabel": "Предпочтительный способ оплаты",
+      "paymentPayAtProperty": "Оплата на месте",
+      "paymentBankDeposit": "Банковский перевод"
     }
   }
 }

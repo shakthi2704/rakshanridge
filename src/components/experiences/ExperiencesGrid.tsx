@@ -1,18 +1,26 @@
+import { getLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { experiences } from "@/lib/experiences";
+import { getExperiences } from "@/sanity/lib/queries";
+import { adaptExperience } from "@/sanity/lib/adapters";
+import type { AppLocale } from "@/sanity/lib/locale";
 import ExperiencesGridClient from "./ExperiencesGridClient";
 
 export default async function ExperiencesGrid() {
     const t = await getTranslations("experiences");
+    const locale = await getLocale();
 
-    const items = experiences.map((exp) => ({
-        key: exp.key,
-        slug: exp.slug,
-        image: exp.image,
-        featured: exp.featured ?? false,
-        title: t(`items.${exp.key}.title`),
-        description: t(`items.${exp.key}.description`),
-    }));
+    const sanityExperiences = await getExperiences();
+    const items = sanityExperiences.map((exp) => {
+        const adapted = adaptExperience(exp, locale as AppLocale);
+        return {
+            key: adapted.key,
+            slug: adapted.slug,
+            image: adapted.image,
+            featured: adapted.featured,
+            title: adapted.title,
+            description: adapted.description,
+        };
+    });
 
     return (
         <ExperiencesGridClient

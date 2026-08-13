@@ -2,39 +2,22 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-
-
-// `featured: true` controls homepage visibility — this list will grow to
-// ~50 properties over time, but only ones flagged featured ever show here.
-// The homepage always shows the two most current featured picks, full stop.
-const properties = [
-    {
-        slug: "kandy-retreat",
-        key: "kandyRetreat",
-        image: "/images/property2.webp",
-        featured: true,
-    },
-    {
-        slug: "galle-escape",
-        key: "galleEscape",
-        image: "/images/property1.webp",
-        featured: true,
-    },
-    {
-        slug: "fort-haven",
-        key: "fortHaven",
-        image: "/images/property1.webp",
-        featured: true,
-    },
-];
+import { getProperties } from "@/sanity/lib/queries";
+import { adaptProperty } from "@/sanity/lib/adapters";
+import type { AppLocale } from "@/sanity/lib/locale";
 
 export default async function FeaturedProperties() {
     const t = await getTranslations("featuredProperties");
+    const locale = (await getLocale()) as AppLocale;
 
-    const featured = properties.filter((p) => p.featured).slice(0, 2);
+    const sanityProperties = await getProperties();
+    const featured = sanityProperties
+        .filter((p) => p.featured)
+        .slice(0, 2)
+        .map((p) => adaptProperty(p, locale));
 
     return (
         <section className="bg-mist py-24 lg:py-32">
@@ -58,67 +41,26 @@ export default async function FeaturedProperties() {
                 </Reveal>
 
                 <div className="mt-16 grid gap-8 lg:grid-cols-3">
-                    {/* {featured.map((property, index) => (
-                        <Reveal key={property.slug} delay={index * 150}>
-                            <Link href={`/properties/${property.slug}`} className="group block">
-                                <div className="relative aspect-[4/3] w-full overflow-hidden shadow-md transition-shadow duration-500 group-hover:shadow-2xl">
-                                    <Image
-                                        src={property.image}
-                                        alt={t(`items.${property.key}.name`)}
-                                        fill
-                                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                                    />
-                                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                                </div>
-
-                                <div className="mt-6">
-                                    <span className="font-sans text-xs tracking-[0.2em] text-slate uppercase">
-                                        {t(`items.${property.key}.location`)}
-                                    </span>
-                                    <h3 className="mt-2 font-display text-xl font-medium text-ink " >
-                                        {t(`items.${property.key}.name`)}
-                                    </h3>
-                                    <p className="mt-2 font-sans text-sm leading-relaxed text-charcoal">
-                                        {t(`items.${property.key}.tagline`)}
-                                    </p>
-
-                                    <span className="mt-4 inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] text-ink uppercase transition-colors group-hover:text-ink/70">
-                                        {t("viewProperty")}
-                                        <span className="transition-transform duration-300 group-hover:translate-x-1">
-                                            →
-                                        </span>
-                                    </span>
-                                </div>
-                            </Link>
-                        </Reveal>
-                    ))} */}
-
                     {featured.map((property, index) => (
                         <Reveal key={property.slug} delay={index * 150}>
                             <Link href={`/properties/${property.slug}`} className="group block">
                                 <div className="relative aspect-[4/3] w-full overflow-hidden shadow-md transition-all duration-500 group-hover:shadow-2xl">
                                     <Image
                                         src={property.image}
-                                        alt={t(`items.${property.key}.name`)}
+                                        alt={property.name}
                                         fill
                                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                     />
 
-                                    {/* Dark gradient */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 via-50% to-transparent" />
 
-                                    {/* Content */}
                                     <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                                        {/* <span className="text-xs uppercase tracking-[0.2em] text-white/75">
-                                            {t(`items.${property.key}.location`)}
-                                        </span> */}
-
                                         <h3 className="mt font-display text-3xl font-medium">
-                                            {t(`items.${property.key}.name`)}
+                                            {property.name}
                                         </h3>
 
                                         <p className="mt-2 line-clamp-2 font-serif text-xl italic leading-relaxed text-white/85">
-                                            {t(`items.${property.key}.tagline`)}
+                                            {property.tagline}
                                         </p>
 
                                         <Button

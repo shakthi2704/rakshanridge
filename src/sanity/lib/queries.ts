@@ -12,6 +12,15 @@ export type ExchangeRate = {
 export type SiteSettings = {
     baseCurrency: string;
     exchangeRates: ExchangeRate[];
+    bankDetails?: BankDetails;
+}
+
+export type SanityTestimonial = {
+    _id: string;
+    quote: LocaleString;
+    name: string;
+    origin: LocaleString;
+    order: number;
 };
 
 const SITE_SETTINGS_QUERY = defineQuery(`
@@ -21,10 +30,10 @@ const SITE_SETTINGS_QUERY = defineQuery(`
             currencyCode,
             currencyLabel,
             rate
-        }
+        },
+        bankDetails
     }
 `);
-
 export async function getSiteSettings(): Promise<SiteSettings | null> {
     const { data } = await sanityFetch({ query: SITE_SETTINGS_QUERY });
     return (data as SiteSettings) ?? null;
@@ -40,6 +49,7 @@ export type SanityRoom = {
     beds: number;
     bathrooms: number;
     priceFrom: number;
+    gallery?: SanityImageSource[];
 };
 
 export type SanityProperty = {
@@ -58,6 +68,31 @@ export type SanityProperty = {
     heroImage: SanityImageSource;
     gallery: SanityImageSource[];
     rooms: SanityRoom[];
+    experiences: SanityExperience[];
+};
+export type SanityExperience = {
+    _id: string;
+    title: LocaleString;
+    slug: { current: string };
+    description: LocaleString;
+    duration: LocaleString;
+    location: LocaleString;
+    highlights: LocaleString[];
+    featured: boolean;
+    storyOpening: LocaleString;
+    storyQuote: LocaleString;
+    storyClosing: LocaleString;
+    image: SanityImageSource;
+    detailImage: SanityImageSource;
+};
+
+
+export type BankDetails = {
+    bankName?: string;
+    accountName?: string;
+    accountNumber?: string;
+    branch?: string;
+    swiftCode?: string;
 };
 
 const PROPERTY_FIELDS = `
@@ -76,7 +111,7 @@ const PROPERTY_FIELDS = `
     heroImage,
     gallery,
     rooms[]{
-        name,
+       name,
         slug,
         description,
         longDescription,
@@ -84,7 +119,14 @@ const PROPERTY_FIELDS = `
         sizeSqm,
         beds,
         bathrooms,
-        priceFrom
+        priceFrom,
+        gallery
+    },
+      experiences[]->{
+        title,
+        slug,
+        description,
+        image
     }
 `;
 
@@ -163,6 +205,17 @@ const OFFER_BY_SLUG_QUERY = defineQuery(`
     }
 `);
 
+const TESTIMONIALS_QUERY = defineQuery(`
+    *[_type == "testimonial" && featured == true] | order(order asc){
+        _id,
+        quote,
+        name,
+        origin,
+        order
+    }
+`);
+
+
 export async function getOffers(): Promise<SanityOffer[]> {
     const { data } = await sanityFetch({ query: OFFERS_QUERY });
     return (data as SanityOffer[]) ?? [];
@@ -171,4 +224,47 @@ export async function getOffers(): Promise<SanityOffer[]> {
 export async function getSanityOfferBySlug(slug: string): Promise<SanityOffer | null> {
     const { data } = await sanityFetch({ query: OFFER_BY_SLUG_QUERY, params: { slug } });
     return (data as SanityOffer) ?? null;
+}
+export async function getTestimonials(): Promise<SanityTestimonial[]> {
+    const { data } = await sanityFetch({ query: TESTIMONIALS_QUERY });
+    return (data as SanityTestimonial[]) ?? [];
+}
+
+
+const EXPERIENCE_FIELDS = `
+    _id,
+    title,
+    slug,
+    description,
+    duration,
+    location,
+    highlights,
+    featured,
+    storyOpening,
+    storyQuote,
+    storyClosing,
+    image,
+    detailImage
+`;
+
+const EXPERIENCES_QUERY = defineQuery(`
+    *[_type == "experience"] | order(featured desc, title.en asc){
+        ${EXPERIENCE_FIELDS}
+    }
+`);
+
+const EXPERIENCE_BY_SLUG_QUERY = defineQuery(`
+    *[_type == "experience" && slug.current == $slug][0]{
+        ${EXPERIENCE_FIELDS}
+    }
+`);
+
+export async function getExperiences(): Promise<SanityExperience[]> {
+    const { data } = await sanityFetch({ query: EXPERIENCES_QUERY });
+    return (data as SanityExperience[]) ?? [];
+}
+
+export async function getSanityExperienceBySlug(slug: string): Promise<SanityExperience | null> {
+    const { data } = await sanityFetch({ query: EXPERIENCE_BY_SLUG_QUERY, params: { slug } });
+    return (data as SanityExperience) ?? null;
 }

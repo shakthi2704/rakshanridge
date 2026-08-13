@@ -2,56 +2,24 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { buttonVariants } from "@/components/ui/Button";
-
-// const experiences = [
-//     {
-//         title: "Ceylon Tea Trails",
-//         description:
-//             "Wander through mist-covered hillside estates and learn the centuries-old craft behind the world's finest tea.",
-//         image:
-//             "https://images.unsplash.com/photo-1544015759-237f87d55ef3?fm=jpg&q=80&w=1200&auto=format&fit=crop",
-//         featured: true,
-//     },
-//     {
-//         title: "Coastal Excursions",
-//         description:
-//             "Sail the southern coastline at sunrise, from hidden coves to centuries-old fishing villages.",
-//         image:
-//             "https://images.unsplash.com/photo-1646894232861-a0ad84f1ad5d?fm=jpg&q=80&w=800&auto=format&fit=crop",
-//     },
-//     {
-//         title: "Culinary Journeys",
-//         description:
-//             "Sri Lankan cuisine reimagined through private chef tables and spice garden foraging walks.",
-//         image:
-//             "https://images.unsplash.com/photo-1622061662418-fc6887d7915d?fm=jpg&q=80&w=800&auto=format&fit=crop",
-//     },
-// ];
-
-const experiences = [
-    {
-        key: "ceylonTeaTrails",
-        image:
-            "https://images.unsplash.com/photo-1544015759-237f87d55ef3?fm=jpg&q=80&w=1200&auto=format&fit=crop",
-        featured: true,
-    },
-    {
-        key: "coastalExcursions",
-        image:
-            "https://images.unsplash.com/photo-1646894232861-a0ad84f1ad5d?fm=jpg&q=80&w=800&auto=format&fit=crop",
-    },
-    {
-        key: "culinaryJourneys",
-        image:
-            "https://images.unsplash.com/photo-1622061662418-fc6887d7915d?fm=jpg&q=80&w=800&auto=format&fit=crop",
-    },
-];
+import { getExperiences } from "@/sanity/lib/queries";
+import { adaptExperience } from "@/sanity/lib/adapters";
+import type { AppLocale } from "@/sanity/lib/locale";
 
 export default async function Experiences() {
     const t = await getTranslations("experiences");
-    const [featured, ...rest] = experiences;
+    const locale = await getLocale();
+
+    const sanityExperiences = await getExperiences();
+    const adapted = sanityExperiences.map((exp) => adaptExperience(exp, locale as AppLocale));
+
+    if (adapted.length === 0) return null;
+
+    const featuredIndex = adapted.findIndex((exp) => exp.featured);
+    const featured = featuredIndex >= 0 ? adapted[featuredIndex] : adapted[0];
+    const rest = adapted.filter((exp) => exp.key !== featured.key).slice(0, 2);
 
     return (
         <section className="bg-paper py-24 lg:py-32">
@@ -80,17 +48,17 @@ export default async function Experiences() {
                         <div className="group relative aspect-[4/5] w-full overflow-hidden shadow-md transition-shadow duration-500 hover:shadow-2xl lg:aspect-auto lg:h-full lg:min-h-[32rem]">
                             <Image
                                 src={featured.image}
-                                alt={t(`items.${featured.key}.title`)}
+                                alt={featured.title}
                                 fill
                                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                             />
                             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                             <div className="absolute inset-x-0 bottom-0 p-8 sm:p-10">
                                 <h3 className="font-serif text-2xl font-light text-white sm:text-3xl">
-                                    {t(`items.${featured.key}.title`)}
+                                    {featured.title}
                                 </h3>
                                 <p className="mt-3 max-w-sm font-sans text-sm leading-relaxed text-white/85">
-                                    {t(`items.${featured.key}.description`)}
+                                    {featured.description}
                                 </p>
                             </div>
                         </div>
@@ -103,17 +71,17 @@ export default async function Experiences() {
                                 <div className="group relative  rounded-sm flex h-full min-h-[15rem] w-full overflow-hidden shadow-md transition-shadow duration-500 hover:shadow-2xl">
                                     <Image
                                         src={exp.image}
-                                        alt={t(`items.${exp.key}.title`)}
+                                        alt={exp.title}
                                         fill
                                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                     />
                                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent" />
                                     <div className="relative mt-auto p-6 sm:p-7">
                                         <h3 className="font-serif text-xl font-light text-white">
-                                            {t(`items.${exp.key}.title`)}
+                                            {exp.title}
                                         </h3>
                                         <p className="mt-2 max-w-xs font-sans text-sm leading-relaxed text-white/85">
-                                            {t(`items.${exp.key}.description`)}
+                                            {exp.description}
                                         </p>
                                     </div>
                                 </div>

@@ -53,7 +53,7 @@ export default async function RoomDetailPage({ params }: Props) {
     if (!room) notFound();
 
     const t = await getTranslations("properties");
-    const tExperiences = await getTranslations("experiences");
+
     const { currency, rate } = await getCurrencyContext();
 
     const sizeLabel = t("detail.roomSize", { size: room.sizeSqm });
@@ -62,11 +62,12 @@ export default async function RoomDetailPage({ params }: Props) {
     });
 
     const roomIndex = property.rooms.findIndex((r) => r.slug === room.slug);
-    const roomImage =
-        property.gallery[roomIndex % property.gallery.length] ?? property.image;
-    const roomSecondaryImage =
-        property.gallery[(roomIndex + 1) % property.gallery.length] ??
+    const fallbackRoomImage = (offset: number) =>
+        property.gallery[(roomIndex + offset) % property.gallery.length] ??
         property.image;
+
+    const roomImage = room.gallery[0] ?? fallbackRoomImage(0);
+    const roomSecondaryImage = room.gallery[1] ?? fallbackRoomImage(1);
 
     const amenities = property.amenityKeys.map((key) => ({
         key,
@@ -74,11 +75,16 @@ export default async function RoomDetailPage({ params }: Props) {
         description: t(`amenities.${key}.description`),
     }));
 
-    const experienceImageOne =
-        property.gallery[(roomIndex + 2) % property.gallery.length] ??
-        property.image;
-    const experienceImageTwo =
-        property.gallery[(roomIndex + 3) % property.gallery.length] ??
+    // const experienceImageOne =
+    //     property.gallery[(roomIndex + 2) % property.gallery.length] ??
+    //     property.image;
+    // const experienceImageTwo =
+    //     property.gallery[(roomIndex + 3) % property.gallery.length] ??
+    //     property.image;
+
+    const [experienceOne, experienceTwo] = property.experiences;
+    const fallbackExperienceImage = (offset: number) =>
+        property.gallery[(roomIndex + offset) % property.gallery.length] ??
         property.image;
 
     const similarRooms = property.rooms
@@ -90,6 +96,7 @@ export default async function RoomDetailPage({ params }: Props) {
                 slug: r.slug,
                 name: r.name,
                 image:
+                    r.gallery[0] ??
                     property.gallery[rIndex % property.gallery.length] ??
                     property.image,
                 priceLabel: t("detail.fromPerNight", {
@@ -123,6 +130,7 @@ export default async function RoomDetailPage({ params }: Props) {
                 bookLabel={t("detail.bookNow")}
                 checkAvailabilityLabel={t("detail.checkAvailability")}
                 roomKey={room.slug}
+                propertySlug={property.slug}
                 image={roomImage}
                 secondaryImage={roomSecondaryImage}
                 roomName={room.name}
@@ -131,15 +139,15 @@ export default async function RoomDetailPage({ params }: Props) {
                 heading={t("detail.curatedHeading")}
                 intro={t("detail.curatedIntro")}
                 amenities={amenities}
-                imageOne={experienceImageOne}
-                imageTwo={experienceImageTwo}
+                imageOne={experienceOne?.image ?? fallbackExperienceImage(2)}
+                imageTwo={experienceTwo?.image ?? fallbackExperienceImage(3)}
                 captionOne={{
-                    title: tExperiences("items.ceylonTeaTrails.title"),
-                    description: tExperiences("items.ceylonTeaTrails.description"),
+                    title: experienceOne?.title ?? "",
+                    description: experienceOne?.description ?? "",
                 }}
                 captionTwo={{
-                    title: tExperiences("items.coastalExcursions.title"),
-                    description: tExperiences("items.coastalExcursions.description"),
+                    title: experienceTwo?.title ?? "",
+                    description: experienceTwo?.description ?? "",
                 }}
             />
             <SimilarRooms

@@ -15,7 +15,10 @@ export const room = defineType({
             name: 'slug',
             title: 'Room slug',
             type: 'slug',
-            options: { source: 'name.en', maxLength: 96 },
+            options: {
+                source: (_doc, options) => (options.parent as any)?.name?.en ?? '',
+                maxLength: 96,
+            },
             validation: (Rule) => Rule.required(),
         }),
         defineField({
@@ -61,6 +64,14 @@ export const room = defineType({
             title: 'Price from (USD/night)',
             type: 'number',
             validation: (Rule) => Rule.required().positive(),
+        }),
+        defineField({
+            name: 'gallery',
+            title: 'Room gallery',
+            description:
+                'Photos for this specific room. First image is used as the room hero; second as the secondary image. If left empty, the property gallery is used as a fallback.',
+            type: 'array',
+            of: [{ type: 'image', options: { hotspot: true } }],
         }),
     ],
     preview: {

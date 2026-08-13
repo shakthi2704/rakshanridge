@@ -51,6 +51,18 @@ export const bookingInquiry = defineType({
             type: 'number',
         }),
         defineField({
+            name: 'paymentMethod',
+            title: 'Payment Method',
+            type: 'string',
+            options: {
+                list: [
+                    { title: 'Pay at Property', value: 'pay_at_property' },
+                    { title: 'Bank Deposit', value: 'bank_deposit' },
+                ],
+                layout: 'radio',
+            },
+        }),
+        defineField({
             name: 'message',
             title: 'Message',
             type: 'text',
@@ -73,11 +85,23 @@ export const bookingInquiry = defineType({
         }),
     ],
     preview: {
-        select: { title: 'name', subtitle: 'email', property: 'property.name.en' },
-        prepare({ title, subtitle, property }) {
+        select: {
+            title: 'name',
+            subtitle: 'email',
+            property: 'property.name.en',
+            payment: 'paymentMethod',
+        },
+        prepare({ title, subtitle, property, payment }) {
+            const paymentLabel =
+                payment === 'bank_deposit'
+                    ? 'Bank Deposit'
+                    : payment === 'pay_at_property'
+                        ? 'Pay at Property'
+                        : null;
+            const parts = [subtitle, property, paymentLabel].filter(Boolean);
             return {
                 title,
-                subtitle: property ? `${subtitle} — ${property}` : subtitle,
+                subtitle: parts.join(' — '),
             };
         },
     },
