@@ -75,12 +75,7 @@ export default async function RoomDetailPage({ params }: Props) {
         description: t(`amenities.${key}.description`),
     }));
 
-    // const experienceImageOne =
-    //     property.gallery[(roomIndex + 2) % property.gallery.length] ??
-    //     property.image;
-    // const experienceImageTwo =
-    //     property.gallery[(roomIndex + 3) % property.gallery.length] ??
-    //     property.image;
+
 
     const [experienceOne, experienceTwo] = property.experiences;
     const fallbackExperienceImage = (offset: number) =>
