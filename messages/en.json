@@ -15,6 +15,7 @@
     "brandBlurb": "Exceptional hotel, resort, and villa experiences rooted in genuine Sri Lankan hospitality.",
     "exploreHeading": "Explore",
     "propertiesHeading": "Our Properties",
+    "experiencesHeading": "Experiences",
     "contactHeading": "Contact",
     "whatsappUs": "WhatsApp Us",
     "addressCity": "No 318/1 Dutugamunu Mw, Enderamulla Wattala",
@@ -416,10 +417,10 @@
       "Boutiqu": "Boutique"
     },
     "regions": {
-      "central-highlands": "Zentrales Hochland",
-      "southern-coast": "Südküste",
+      "central-highlands": "Central Highlands",
+      "southern-coast": "Southern Coast",
       "colombo": "Colombo",
-      "cultural-triangle": "Kulturdreieck"
+      "cultural-triangle": "Cultural Triangle"
     },
     "items": {
       "kandyRetreat": {
@@ -578,6 +579,7 @@
       "Boutique": "Boutique"
     },
     "noResults": "No properties match these filters. Try adjusting or clearing them.",
+    "viewAll": "View All",
     "amenities": {
       "pool": {
         "name": "Private Pool",
@@ -749,7 +751,9 @@
       "messageLabel": "Message",
       "messagePlaceholder": "Tell us how we can help",
       "submit": "Send Message",
-      "submitted": "Thank you — we'll be in touch shortly."
+      "submitted": "Thank you — we'll be in touch shortly.",
+      "submitting": "Sending...",
+      "error": "Something went wrong. Please try again, or email us directly."
     }
   },
   "offersPage": {
@@ -770,6 +774,7 @@
     "selectPropertyPlaceholder": "Choose a property",
     "selectRoomLabel": "Room",
     "selectRoomPlaceholder": "Choose a room",
+    "summaryEyebrow": "Your Selection",
     "form": {
       "nameLabel": "Full Name",
       "namePlaceholder": "Your name",
@@ -778,9 +783,9 @@
       "phoneLabel": "Phone (optional)",
       "phonePlaceholder": "+94 ...",
       "checkInLabel": "Check-in",
-      "checkInPlaceholder": "e.g. 12 Dec 2026",
+      "checkInPlaceholder": "DD/MM/YYYY",
       "checkOutLabel": "Check-out",
-      "checkOutPlaceholder": "e.g. 18 Dec 2026",
+      "checkOutPlaceholder": "DD/MM/YYYY",
       "guestsLabel": "Guests (optional)",
       "guestsPlaceholder": "2",
       "messageLabel": "Message",

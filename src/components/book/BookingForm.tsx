@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import DateMaskInput from "@/components/book/DateMaskInput";
 
 const fieldClass =
     "w-full border-0 border-b border-white/20 bg-transparent px-0 py-4 font-sans text-sm text-white placeholder:text-white/40 transition-colors focus:border-white focus:outline-none focus:ring-0";
@@ -133,11 +134,10 @@ export default function BookingForm({ propertySlug, roomSlug }: BookingFormProps
                         >
                             {t("checkInLabel")}
                         </label>
-                        <input
+                        <DateMaskInput
                             id="checkIn"
-                            type="text"
                             value={checkIn}
-                            onChange={(e) => setCheckIn(e.target.value)}
+                            onChange={setCheckIn}
                             placeholder={t("checkInPlaceholder")}
                             className={fieldClass}
                         />
@@ -150,11 +150,10 @@ export default function BookingForm({ propertySlug, roomSlug }: BookingFormProps
                         >
                             {t("checkOutLabel")}
                         </label>
-                        <input
+                        <DateMaskInput
                             id="checkOut"
-                            type="text"
                             value={checkOut}
-                            onChange={(e) => setCheckOut(e.target.value)}
+                            onChange={setCheckOut}
                             placeholder={t("checkOutPlaceholder")}
                             className={fieldClass}
                         />

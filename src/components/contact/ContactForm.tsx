@@ -2,34 +2,44 @@
 
 import { useState } from "react";
 import { buttonVariants } from "@/components/ui/Button";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 const fieldClass =
     "w-full border-0 border-b border-white/20 bg-transparent px-0 py-4 font-sans text-sm text-white placeholder:text-white/40 transition-colors focus:border-white focus:outline-none focus:ring-0";
 
+type Status = "idle" | "submitting" | "success" | "error";
+type Topic = "general" | "consulting" | "press" | "other";
+
 export default function ContactForm() {
     const t = useTranslations("contactPage.form");
+    const locale = useLocale();
 
-    const [submitted, setSubmitted] = useState(false);
+    const [status, setStatus] = useState<Status>("idle");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [topic, setTopic] = useState("general");
+    const [topic, setTopic] = useState<Topic>("general");
     const [message, setMessage] = useState("");
 
-    function handleSubmit(e: React.FormEvent) {
+    async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
+        setStatus("submitting");
 
-        console.log({
-            name,
-            email,
-            topic,
-            message,
-        });
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, topic, message, locale }),
+            });
 
-        setSubmitted(true);
+            if (!res.ok) throw new Error("Request failed");
+
+            setStatus("success");
+        } catch {
+            setStatus("error");
+        }
     }
 
-    if (submitted) {
+    if (status === "success") {
         return (
             <div className="border border-white/10 bg-ink px-8 py-14 text-center">
                 <p className="font-serif text-2xl text-white">
@@ -38,6 +48,7 @@ export default function ContactForm() {
             </div>
         );
     }
+
     return (
         <div className="bg-ink px-8 py-10 lg:px-10 lg:py-12">
             <div className="mb-10">
@@ -101,7 +112,7 @@ export default function ContactForm() {
                     <select
                         id="topic"
                         value={topic}
-                        onChange={(e) => setTopic(e.target.value)}
+                        onChange={(e) => setTopic(e.target.value as Topic)}
                         className={`${fieldClass} cursor-pointer`}
                     >
                         <option value="general">
@@ -141,14 +152,19 @@ export default function ContactForm() {
                     />
                 </div>
 
+                {status === "error" && (
+                    <p className="font-sans text-sm text-red-400">{t("error")}</p>
+                )}
+
                 <button
                     type="submit"
+                    disabled={status === "submitting"}
                     className={buttonVariants({
                         variant: "white",
                         size: "md",
                     })}
                 >
-                    {t("submit")}
+                    {status === "submitting" ? t("submitting") : t("submit")}
                 </button>
             </form>
         </div>

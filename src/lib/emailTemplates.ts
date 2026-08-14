@@ -82,3 +82,46 @@ export function getBookingConfirmationEmail(
             return bookingConfirmationEn(data);
     }
 }
+
+type ContactConfirmationData = {
+    name: string;
+    topic?: "general" | "consulting" | "press" | "other" | "";
+};
+
+function contactConfirmationEn(data: ContactConfirmationData): EmailContent {
+    return {
+        subject: "We've received your message — Raksha & Ridge",
+        text: [
+            `Dear ${data.name},`,
+            "",
+            "Thank you for reaching out to Raksha & Ridge. Your message has been received, and our team will respond within 24 hours.",
+            "",
+            "Warm regards,",
+            "The Raksha & Ridge Team",
+        ].join("\n"),
+    };
+}
+
+// TODO: translate — mirrors contactConfirmationEn exactly, Russian copy.
+function contactConfirmationRu(data: ContactConfirmationData): EmailContent {
+    return contactConfirmationEn(data);
+}
+
+// TODO: translate — mirrors contactConfirmationEn exactly, German copy.
+function contactConfirmationDe(data: ContactConfirmationData): EmailContent {
+    return contactConfirmationEn(data);
+}
+
+export function getContactConfirmationEmail(
+    locale: string,
+    data: ContactConfirmationData
+): EmailContent {
+    switch (locale) {
+        case "ru":
+            return contactConfirmationRu(data);
+        case "de":
+            return contactConfirmationDe(data);
+        default:
+            return contactConfirmationEn(data);
+    }
+}

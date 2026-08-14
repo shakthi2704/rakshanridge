@@ -6,8 +6,10 @@ import { room } from './objects/room'
 import { property } from './documents/property'
 import { offer } from './documents/offer'
 import { bookingInquiry } from './documents/bookingInquiry'
+import { contactInquiry } from './documents/contactInquiry'
 import { testimonial } from './documents/testimonial'
 import { experience } from './documents/experience'
+
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -18,6 +20,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     property,
     offer,
     bookingInquiry,
+    contactInquiry,
     testimonial,
     experience,
   ],

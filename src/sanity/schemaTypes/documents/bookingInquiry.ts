@@ -37,13 +37,15 @@ export const bookingInquiry = defineType({
         }),
         defineField({
             name: 'checkIn',
-            title: 'Check-in date',
-            type: 'date',
+            title: 'Check-in',
+            type: 'string',
+            description: 'Free text as entered by the guest (e.g. "12 Dec 2026") — not a strict date, by design.',
         }),
         defineField({
             name: 'checkOut',
-            title: 'Check-out date',
-            type: 'date',
+            title: 'Check-out',
+            type: 'string',
+            description: 'Free text as entered by the guest (e.g. "20 Dec 2026") — not a strict date, by design.',
         }),
         defineField({
             name: 'guests',

@@ -14,7 +14,8 @@
     "footer": {
         "brandBlurb": "Außergewöhnliche Hotel-, Resort- und Villa-Erlebnisse, geprägt von echter sri-lankischer Gastfreundschaft.",
         "exploreHeading": "Entdecken",
-        "propertiesHeading": "Unsere Immobilien",
+        "propertiesHeading": "Unsere Unterkünfte",
+        "experiencesHeading": "Erlebnisse",
         "contactHeading": "Kontakt",
         "whatsappUs": "Kontakt über WhatsApp",
         "addressCity": "Nr. 318/1 Dutugamunu Mw, Enderamulla, Wattala",
@@ -578,6 +579,7 @@
             "Boutique": "Boutique"
         },
         "noResults": "Keine Unterkünfte entsprechen diesen Filtern. Versuchen Sie, die Filter anzupassen oder zu löschen.",
+        "viewAll": "Alle anzeigen",
         "amenities": {
             "pool": {
                 "name": "Privater Pool",
@@ -749,7 +751,9 @@
             "messageLabel": "Nachricht",
             "messagePlaceholder": "Teilen Sie uns mit, wie wir Ihnen helfen können",
             "submit": "Nachricht senden",
-            "submitted": "Vielen Dank – wir werden uns in Kürze bei Ihnen melden."
+            "submitted": "Vielen Dank – wir werden uns in Kürze bei Ihnen melden.",
+            "submitting": "Sending...",
+            "error": "Something went wrong. Please try again, or email us directly."
         }
     },
     "offersPage": {
@@ -770,6 +774,7 @@
         "selectPropertyPlaceholder": "Unterkunft auswählen",
         "selectRoomLabel": "Zimmer",
         "selectRoomPlaceholder": "Zimmer auswählen",
+        "summaryEyebrow": "Ihre Auswahl",
         "form": {
             "nameLabel": "Vollständiger Name",
             "namePlaceholder": "Ihr Name",
@@ -778,9 +783,9 @@
             "phoneLabel": "Telefon (optional)",
             "phonePlaceholder": "+94 ...",
             "checkInLabel": "Anreise",
-            "checkInPlaceholder": "z. B. 12. Dez. 2026",
+            "checkInPlaceholder": "DD/MM/YYYY",
             "checkOutLabel": "Abreise",
-            "checkOutPlaceholder": "z. B. 18. Dez. 2026",
+            "checkOutPlaceholder": "DD/MM/YYYY",
             "guestsLabel": "Gäste (optional)",
             "guestsPlaceholder": "2",
             "messageLabel": "Nachricht",

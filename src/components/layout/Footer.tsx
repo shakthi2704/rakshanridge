@@ -1,22 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Link as LocaleLink } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Mail, Phone, MessageCircle, MapPin } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { InstagramIcon, FacebookIcon } from '@/components/ui/SocialIcons';
 import { SOCIAL_LINKS } from '@/lib/constants';
+import { getProperties, getExperiences } from "@/sanity/lib/queries";
+import { pickLocale, type AppLocale } from "@/sanity/lib/locale";
+
 const exploreLinks = [
     { labelKey: "properties", href: "/properties" },
     { labelKey: "experiences", href: "/experiences" },
     { labelKey: "offers", href: "/offers" },
     { labelKey: "about", href: "/about" },
     { labelKey: "consulting", href: "/consulting" },
-];
-
-const propertyLinks = [
-    { key: "kandyRetreat", href: "/properties/kandy-retreat" },
-    { key: "galleEscape", href: "/properties/galle-escape" },
 ];
 
 const legalLinks = [
@@ -29,15 +27,28 @@ const SOCIAL = [
     { Icon: FacebookIcon, href: SOCIAL_LINKS.facebook, label: 'Facebook' },
 ];
 
-const experienceLinks = [
-    { labelKey: "wildlife", href: "/experiences/wildlife" },
-    { labelKey: "culture", href: "/experiences/culture" },
-    { labelKey: "wellness", href: "/experiences/wellness" },
-];
+const FOOTER_PROPERTY_LIMIT = 5;
+const FOOTER_EXPERIENCE_LIMIT = 4;
+
 export default async function Footer() {
     const t = await getTranslations("footer");
     const tNav = await getTranslations("navigation");
-    const tProperties = await getTranslations("featuredProperties");
+    const locale = (await getLocale()) as AppLocale;
+
+    const [sanityProperties, sanityExperiences] = await Promise.all([
+        getProperties(),
+        getExperiences(),
+    ]);
+
+    const propertyLinks = sanityProperties.slice(0, FOOTER_PROPERTY_LIMIT).map((p) => ({
+        slug: p.slug.current,
+        name: pickLocale(p.name, locale),
+    }));
+
+    const experienceLinks = sanityExperiences.slice(0, FOOTER_EXPERIENCE_LIMIT).map((exp) => ({
+        slug: exp.slug.current,
+        title: pickLocale(exp.title, locale),
+    }));
     return (
         // <footer className="relative overflow-hidden bg-black pt-30">
         <footer className="peer relative overflow-hidden bg-black pt-30">
@@ -142,9 +153,9 @@ export default async function Footer() {
                             <div className="mt-3 h-px w-12 bg-white/50" />
                             <ul className="mt-5 flex flex-col gap-3">
                                 {propertyLinks.map((link) => (
-                                    <li key={link.href}>
+                                    <li key={link.slug}>
                                         <LocaleLink
-                                            href={link.href}
+                                            href={`/properties/${link.slug}`}
                                             className="group inline-flex items-center gap-0 font-sans text-sm text-white/80 transition-all duration-300"
                                         >
                                             <span className="w-0 overflow-hidden  transition-all duration-300 group-hover:w-3">
@@ -152,7 +163,7 @@ export default async function Footer() {
                                             </span>
 
                                             <span className="transition-transform duration-300 group-hover:translate-x-1">
-                                                {tProperties(`items.${link.key}.name`)}
+                                                {link.name}
                                             </span>
                                         </LocaleLink>
                                     </li>
@@ -162,20 +173,20 @@ export default async function Footer() {
                         {/* Experiences */}
                         <div>
                             <h3 className="font-sans text-xs tracking-[0.2em] text-white/50 uppercase">
-                                Other Services
+                                {t("experiencesHeading")}
                             </h3>
                             <div className="mt-3 h-px w-12 bg-white/50" />
                             <ul className="mt-5 flex flex-col gap-3">
                                 {experienceLinks.map((link) => (
-                                    <li key={link.href}>
+                                    <li key={link.slug}>
                                         <LocaleLink
-                                            href={link.href}
+                                            href={`/experiences/${link.slug}`}
                                             className="group inline-flex items-center gap-0 font-sans text-sm text-white/80 transition-all duration-300"
                                         >
                                             <span className="w-0 overflow-hidden  transition-all duration-300 group-hover:w-3">
                                                 —
                                             </span>
-                                            {link.labelKey}
+                                            {link.title}
                                         </LocaleLink>
                                     </li>
                                 ))}

@@ -15,6 +15,7 @@
     "brandBlurb": "Исключительный отдых в отелях, резортах и виллах, основанный на подлинном шри-ланкийском гостеприимстве.",
     "exploreHeading": "Навигация",
     "propertiesHeading": "Наши объекты",
+    "experiencesHeading": "Впечатления",
     "contactHeading": "Контакты",
     "whatsappUs": "Написать в WhatsApp",
     "addressCity": "№ 318/1, улица Дутугамуну, Эндерамулла, Ваттала",
@@ -576,6 +577,7 @@
       "villa": "Виллы"
     },
     "noResults": "Нет объектов, соответствующих выбранным фильтрам. Попробуйте изменить или сбросить фильтры.",
+    "viewAll": "Показать все",
     "amenities": {
       "pool": {
         "name": "Приватный бассейн",
@@ -747,7 +749,9 @@
       "messageLabel": "Сообщение",
       "messagePlaceholder": "Расскажите, чем мы можем вам помочь",
       "submit": "Отправить сообщение",
-      "submitted": "Спасибо — мы свяжемся с вами в ближайшее время."
+      "submitted": "Спасибо — мы свяжемся с вами в ближайшее время.",
+      "submitting": "Sending...",
+      "error": "Something went wrong. Please try again, or email us directly."
     }
   },
   "offersPage": {
@@ -768,6 +772,7 @@
     "selectPropertyPlaceholder": "Выберите объект",
     "selectRoomLabel": "Номер",
     "selectRoomPlaceholder": "Выберите номер",
+    "summaryEyebrow": "Ваш выбор",
     "form": {
       "nameLabel": "Полное имя",
       "namePlaceholder": "Ваше имя",
@@ -776,9 +781,9 @@
       "phoneLabel": "Телефон (необязательно)",
       "phonePlaceholder": "+94 ...",
       "checkInLabel": "Дата заезда",
-      "checkInPlaceholder": "например, 12 дек. 2026 г.",
+      "checkInPlaceholder": "DD/MM/YYYY",
       "checkOutLabel": "Дата выезда",
-      "checkOutPlaceholder": "например, 18 дек. 2026 г.",
+      "checkOutPlaceholder": "DD/MM/YYYY",
       "guestsLabel": "Гости (необязательно)",
       "guestsPlaceholder": "2",
       "messageLabel": "Сообщение",

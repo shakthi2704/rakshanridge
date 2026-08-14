@@ -68,7 +68,7 @@ export default async function RootLayout({
           {children}
           <Footer />
         </NextIntlClientProvider>
-        <SanityLive />
+        <SanityLive onWelcome={false} />
       </body>
     </html>
   );

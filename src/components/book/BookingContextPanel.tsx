@@ -1,10 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import BookingForm from "@/components/book/BookingForm";
+import RoomSummaryCard from "@/components/book/RoomSummaryCard";
+import type { Currency } from "@/lib/properties";
 import type { adaptProperty } from "@/sanity/lib/adapters";
 
 type AdaptedProperty = ReturnType<typeof adaptProperty>;
@@ -19,12 +20,16 @@ type BookingExperienceProps = {
     properties: AdaptedProperty[];
     initialPropertySlug?: string;
     initialRoomSlug?: string;
+    currency: Currency;
+    rate?: number;
 };
 
 export default function BookingExperience({
     properties,
     initialPropertySlug,
     initialRoomSlug,
+    currency,
+    rate,
 }: BookingExperienceProps) {
     const t = useTranslations("bookPage");
 
@@ -46,10 +51,28 @@ export default function BookingExperience({
         setRoomSlug(""); // rooms belong to a property — reset when it changes
     }
 
-    const previewImage = selectedProperty?.image ?? undefined;
+    // Same room-image fallback convention as the room detail page: prefer the
+    // room's own gallery, then cycle the property gallery, then the property
+    // hero image. Keeps this consistent even for the ~most rooms that don't
+    // have real photography uploaded yet.
+    const roomImage = useMemo(() => {
+        if (!selectedProperty || !selectedRoom) return undefined;
+
+        if (selectedRoom.gallery[0]) return selectedRoom.gallery[0];
+
+        const roomIndex = selectedProperty.rooms.findIndex(
+            (r) => r.slug === selectedRoom.slug
+        );
+        return (
+            selectedProperty.gallery[roomIndex % (selectedProperty.gallery.length || 1)] ??
+            selectedProperty.image
+        );
+    }, [selectedProperty, selectedRoom]);
+
+    const showSummary = Boolean(selectedProperty && selectedRoom && roomImage);
 
     return (
-        <div className="grid gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
             <div>
                 <div className="flex items-center gap-4 text-charcoal">
                     <span className="h-px w-10 bg-ink/30" />
@@ -65,17 +88,6 @@ export default function BookingExperience({
                 <p className="mt-6 max-w-md font-sans text-base leading-relaxed text-charcoal">
                     {t("subheading")}
                 </p>
-
-                {previewImage && (
-                    <div className="relative mt-10 aspect-[4/3] w-full max-w-md overflow-hidden">
-                        <Image
-                            src={previewImage}
-                            alt={selectedRoom?.name ?? selectedProperty?.name ?? ""}
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-                )}
 
                 <div className="mt-10 space-y-6">
                     <div>
@@ -135,6 +147,18 @@ export default function BookingExperience({
                         </div>
                     </div>
                 </div>
+
+                {showSummary && selectedProperty && selectedRoom && roomImage && (
+                    <div className="mt-10">
+                        <RoomSummaryCard
+                            property={selectedProperty}
+                            room={selectedRoom}
+                            image={roomImage}
+                            currency={currency}
+                            rate={rate}
+                        />
+                    </div>
+                )}
             </div>
 
             <BookingForm propertySlug={selectedProperty?.slug} roomSlug={selectedRoom?.slug} />

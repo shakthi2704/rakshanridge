@@ -32,25 +32,34 @@ export default function PropertyCategoryBrowser({ currency, rate, properties }: 
         <section className="bg-paper py-20 lg:py-28">
             <Container>
                 {/* Category tabs */}
-                <div className="flex items-center justify-center gap-8 border-b border-ink/10 sm:gap-14">
-                    {PROPERTY_TYPES.map((type) => (
-                        <button
-                            key={type}
-                            type="button"
-                            onClick={() => setActiveType(type)}
-                            className={cn(
-                                "relative pb-4 font-sans text-xs tracking-[0.2em] uppercase transition-colors",
-                                activeType === type ? "text-ink" : "text-slate hover:text-charcoal"
-                            )}
-                        >
-                            {tTypes(type)}
-                            {activeType === type && (
-                                <span className="absolute inset-x-0 -bottom-px h-px bg-ink" />
-                            )}
-                        </button>
-                    ))}
-                </div>
+                {/* Category tabs */}
+                <div className="flex items-center justify-between gap-6 border-b border-ink/10">
+                    <div className="flex items-center gap-8 sm:gap-14">
+                        {PROPERTY_TYPES.map((type) => (
+                            <button
+                                key={type}
+                                type="button"
+                                onClick={() => setActiveType(type)}
+                                className={cn(
+                                    "relative pb-4 font-sans text-xs tracking-[0.2em] uppercase transition-colors",
+                                    activeType === type ? "text-ink" : "text-slate hover:text-charcoal"
+                                )}
+                            >
+                                {tTypes(type)}
+                                {activeType === type && (
+                                    <span className="absolute inset-x-0 -bottom-px h-px bg-ink" />
+                                )}
+                            </button>
+                        ))}
+                    </div>
 
+                    <Link
+                        href="/properties/all"
+                        className="mb-4 shrink-0 font-sans text-xs tracking-[0.2em] text-ink uppercase underline underline-offset-4 transition-colors hover:text-charcoal"
+                    >
+                        {t("viewAll")}
+                    </Link>
+                </div>
                 {!highlight && (
                     <p className="mt-16 text-center font-sans text-base text-charcoal">
                         {t("noResults")}

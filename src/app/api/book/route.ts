@@ -101,7 +101,7 @@ export async function POST(request: Request) {
     // Internal notification email — never fails the whole request.
     try {
         await resend.emails.send({
-            from: process.env.RESEND_FROM_EMAIL!,
+            from: process.env.BOOKING_FROM_EMAIL!,
             to: process.env.BOOKING_NOTIFICATION_EMAIL!,
             subject: `New booking inquiry — ${name}`,
             text: [
@@ -141,7 +141,7 @@ export async function POST(request: Request) {
         });
 
         await resend.emails.send({
-            from: process.env.RESEND_FROM_EMAIL!,
+            from: process.env.BOOKING_FROM_EMAIL!,
             to: email,
             subject,
             text,
