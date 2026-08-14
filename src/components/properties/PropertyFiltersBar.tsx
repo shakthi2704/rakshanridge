@@ -48,38 +48,50 @@ export default function PropertyFiltersBar({ resultsCount }: PropertyFiltersBarP
         }
 
         const query = params.toString();
-        router.push(query ? `${pathname}?${query}` : pathname);
+        router.replace(query ? `${pathname}?${query}` : pathname, {
+            scroll: false,
+        })
     }
 
     function handleClear() {
-        router.push(pathname);
+        router.replace(pathname, {
+            scroll: false,
+        });
     }
-
     return (
-        <div className="border-b border-ink/10 bg-paper py-8">
+        <div className="border-b border-white/10 bg-ink py-8">
             <Container>
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:flex lg:items-center lg:gap-4">
                         {/* Type */}
                         <label className="flex flex-col gap-2">
-                            <span className="font-sans text-xs tracking-[0.2em] text-slate uppercase">
+                            <span className="font-sans text-xs tracking-[0.2em] text-stone uppercase">
                                 {t("typeLabel")}
                             </span>
+
                             <span className={selectWrapperClass}>
                                 <select
-                                    className={selectClass}
+                                    className={`${selectClass} !appearance-none !bg-ink !text-paper border-white/20`}
                                     value={type}
                                     onChange={(e) => updateParam("type", e.target.value)}
                                 >
-                                    <option value="all">{t("allTypes")}</option>
+                                    <option className="bg-ink text-paper" value="all">
+                                        {t("allTypes")}
+                                    </option>
+
                                     {PROPERTY_TYPES.map((option: PropertyType) => (
-                                        <option key={option} value={option}>
+                                        <option
+                                            className="bg-ink text-paper"
+                                            key={option}
+                                            value={option}
+                                        >
                                             {tTypes(option)}
                                         </option>
                                     ))}
                                 </select>
+
                                 <ChevronDown
-                                    className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-slate"
+                                    className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-stone"
                                     strokeWidth={1.5}
                                 />
                             </span>
@@ -87,12 +99,13 @@ export default function PropertyFiltersBar({ resultsCount }: PropertyFiltersBarP
 
                         {/* Region */}
                         <label className="flex flex-col gap-2">
-                            <span className="font-sans text-xs tracking-[0.2em] text-slate uppercase">
+                            <span className="font-sans text-xs tracking-[0.2em] text-stone uppercase">
                                 {t("regionLabel")}
                             </span>
+
                             <span className={selectWrapperClass}>
                                 <select
-                                    className={selectClass}
+                                    className={`${selectClass} !appearance-none !bg-ink !text-paper border-white/20`}
                                     value={region}
                                     onChange={(e) => updateParam("region", e.target.value)}
                                 >
@@ -103,8 +116,9 @@ export default function PropertyFiltersBar({ resultsCount }: PropertyFiltersBarP
                                         </option>
                                     ))}
                                 </select>
+
                                 <ChevronDown
-                                    className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-slate"
+                                    className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-stone"
                                     strokeWidth={1.5}
                                 />
                             </span>
@@ -112,24 +126,37 @@ export default function PropertyFiltersBar({ resultsCount }: PropertyFiltersBarP
 
                         {/* Price */}
                         <label className="flex flex-col gap-2">
-                            <span className="font-sans text-xs tracking-[0.2em] text-slate uppercase">
+                            <span className="font-sans text-xs tracking-[0.2em] text-stone uppercase">
                                 {t("priceLabel")}
                             </span>
+
                             <span className={selectWrapperClass}>
                                 <select
-                                    className={selectClass}
+                                    className={`${selectClass} !appearance-none !bg-ink !text-paper border-white/20`}
                                     value={price}
                                     onChange={(e) => updateParam("price", e.target.value)}
                                 >
                                     <option value="all">{t("anyPrice")}</option>
-                                    {PRICE_BRACKETS.map((bracket: { id: PriceBracketId; labelKey: string }) => (
-                                        <option key={bracket.id} value={bracket.id}>
-                                            {t(bracket.labelKey as "priceUnder300" | "price300to450" | "price450plus")}
-                                        </option>
-                                    ))}
+
+                                    {PRICE_BRACKETS.map(
+                                        (bracket: {
+                                            id: PriceBracketId;
+                                            labelKey: string;
+                                        }) => (
+                                            <option key={bracket.id} value={bracket.id}>
+                                                {t(
+                                                    bracket.labelKey as
+                                                    | "priceUnder300"
+                                                    | "price300to450"
+                                                    | "price450plus"
+                                                )}
+                                            </option>
+                                        )
+                                    )}
                                 </select>
+
                                 <ChevronDown
-                                    className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-slate"
+                                    className="pointer-events-none absolute top-1/2 right-3 size-4 -translate-y-1/2 text-stone"
                                     strokeWidth={1.5}
                                 />
                             </span>
@@ -137,7 +164,7 @@ export default function PropertyFiltersBar({ resultsCount }: PropertyFiltersBarP
                     </div>
 
                     <div className="flex items-center justify-between gap-6 lg:justify-end">
-                        <span className="font-sans text-xs tracking-[0.2em] text-charcoal uppercase">
+                        <span className="font-sans text-xs tracking-[0.2em] text-white uppercase">
                             {t("resultsCount", { count: resultsCount })}
                         </span>
 
@@ -145,7 +172,7 @@ export default function PropertyFiltersBar({ resultsCount }: PropertyFiltersBarP
                             <button
                                 type="button"
                                 onClick={handleClear}
-                                className="font-sans text-xs tracking-[0.2em] text-ink uppercase underline underline-offset-4 transition-colors hover:text-charcoal"
+                                className="font-sans text-xs tracking-[0.2em] text-white uppercase underline underline-offset-4 transition-colors hover:text-stone"
                             >
                                 {t("clearFilters")}
                             </button>

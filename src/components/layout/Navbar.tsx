@@ -22,18 +22,19 @@ const navLinks = [
 function Monogram() {
     const t = useTranslations("navigation");
     return (
-        <div className="flex items-center gap-1">
+
+        <div className="flex items-center gap-0.5 sm:gap-1">
             <Image
                 src="/logo/logo-3.png"
                 alt="Raksha & Ridge"
                 width={80}
                 height={80}
                 priority
-                className="h-20 w-20 object-contain"
+                className="h-16 w-16 object-contain sm:h-18 sm:w-18 lg:h-20 lg:w-20"
             />
 
             <span className="leading-tight">
-                <span className="block font-display text-[20px] text-white">
+                <span className="block font-display text-[20px] text-white sm:text-[px] lg:text-[20px]">
                     {t("logoTitle")}
                 </span>
             </span>
@@ -69,17 +70,21 @@ export default function Navbar({ lkrRate }: NavbarProps) {
             <header
                 className={cn(
                     "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-                    scrolled ? "bg-black/80 shadow-lg backdrop-blur-sm" : "bg-black/60 backdrop-blur-sm"
+                    scrolled ? "bg-black/80 shadow-lg backdrop-blur-sm" : "bg-black/70 backdrop-blur-sm"
                 )}
             >
                 {/* Utility row — language / currency only */}
-                <div className="border-b border-white/10">
-                    <Container className="flex h-9 items-center justify-end gap-6">
-                        <LanguageSwitcher />
-                        <CurrencySwitcher lkrRate={lkrRate} />
-                    </Container>
-                </div>
+                <Container className="flex h-9 items-center justify-end border-b border-white/10">
+                    <div className="flex items-center divide-x divide-white/15">
+                        <div className="pr-4">
+                            <LanguageSwitcher />
+                        </div>
 
+                        <div className="pl-4">
+                            <CurrencySwitcher lkrRate={lkrRate} />
+                        </div>
+                    </div>
+                </Container>
                 {/* Main nav row */}
                 <Container className="relative flex h-20 items-center justify-between">
                     <div className="flex-shrink-0">

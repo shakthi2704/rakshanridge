@@ -52,11 +52,11 @@ export default function ContactForm() {
     return (
         <div className="bg-ink px-8 py-10 lg:px-10 lg:py-12">
             <div className="mb-10">
-                <span className="font-sans text-xs tracking-[0.25em] text-white/60 uppercase">
+                <span className="font-sans text-md tracking-[0.25em] text-white/60 uppercase">
                     {t("heading")}
                 </span>
 
-                <p className="mt-4 max-w-md font-sans text-base leading-relaxed text-white/70">
+                <p className="mt-4 max-w-md font-sans text-xs leading-relaxed text-white/70">
                     {t("intro")}
                 </p>
             </div>
@@ -113,21 +113,21 @@ export default function ContactForm() {
                         id="topic"
                         value={topic}
                         onChange={(e) => setTopic(e.target.value as Topic)}
-                        className={`${fieldClass} cursor-pointer`}
+                        className={`${fieldClass} cursor-pointer appearance-none bg-black border-0 border-b border-white/20`}
                     >
-                        <option value="general">
+                        <option value="general" className="bg-ink text-white">
                             {t("topicGeneral")}
                         </option>
 
-                        <option value="consulting">
+                        <option value="consulting" className="bg-ink text-white">
                             {t("topicConsulting")}
                         </option>
 
-                        <option value="press">
+                        <option value="press" className="bg-ink text-white">
                             {t("topicPress")}
                         </option>
 
-                        <option value="other">
+                        <option value="other" className="bg-ink text-white">
                             {t("topicOther")}
                         </option>
                     </select>
@@ -161,7 +161,7 @@ export default function ContactForm() {
                     disabled={status === "submitting"}
                     className={buttonVariants({
                         variant: "white",
-                        size: "md",
+                        size: "sm",
                     })}
                 >
                     {status === "submitting" ? t("submitting") : t("submit")}

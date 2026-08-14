@@ -8,7 +8,6 @@ import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
 import { PROPERTY_TYPES, formatPrice, type PropertyType, type Currency } from "@/lib/properties";
 import type { adaptProperty } from "@/sanity/lib/adapters";
 
@@ -24,38 +23,47 @@ export default function PropertyCategoryBrowser({ currency, rate, properties }: 
     const tTypes = useTranslations("properties.types");
 
     const [activeType, setActiveType] = useState<PropertyType>(PROPERTY_TYPES[0]);
+    const [visibleCount, setVisibleCount] = useState(6);
 
     const matches = properties.filter((p) => p.type === activeType);
     const [highlight, ...rest] = matches;
+
+    const visibleProperties = rest.slice(0, visibleCount);
+    const hasMore = rest.length > visibleCount;
+
 
     return (
         <section className="bg-paper py-20 lg:py-28">
             <Container>
                 {/* Category tabs */}
-                {/* Category tabs */}
+
                 <div className="flex items-center justify-between gap-6 border-b border-ink/10">
                     <div className="flex items-center gap-8 sm:gap-14">
                         {PROPERTY_TYPES.map((type) => (
                             <button
                                 key={type}
                                 type="button"
-                                onClick={() => setActiveType(type)}
+                                onClick={() => {
+                                    setActiveType(type);
+                                    setVisibleCount(6);
+                                }}
                                 className={cn(
-                                    "relative pb-4 font-sans text-xs tracking-[0.2em] uppercase transition-colors",
-                                    activeType === type ? "text-ink" : "text-slate hover:text-charcoal"
+                                    "relative  font-sans text-xs tracking-[0.2em] uppercase transition-colors",
+                                    activeType === type
+                                        ? buttonVariants({ variant: "underline-ink", size: "sm" })
+                                        : "text-slate hover:text-charcoal"
                                 )}
                             >
                                 {tTypes(type)}
-                                {activeType === type && (
-                                    <span className="absolute inset-x-0 -bottom-px h-px bg-ink" />
-                                )}
                             </button>
                         ))}
                     </div>
 
+
+
                     <Link
                         href="/properties/all"
-                        className="mb-4 shrink-0 font-sans text-xs tracking-[0.2em] text-ink uppercase underline underline-offset-4 transition-colors hover:text-charcoal"
+                        className={cn(buttonVariants({ variant: "underline-ink", size: "sm" }))}
                     >
                         {t("viewAll")}
                     </Link>
@@ -80,6 +88,11 @@ export default function PropertyCategoryBrowser({ currency, rate, properties }: 
                                     fill
                                     className="object-cover"
                                 />
+                                <span className="absolute top-4 right-4 bg-ink/70 p-1.5 font-sans text-xs tracking-[0.1em] text-white uppercase">
+                                    {t("detail.fromPerNight", {
+                                        price: formatPrice(highlight.priceFrom, currency, rate),
+                                    })}
+                                </span>
                             </div>
 
                             <div className="flex flex-col justify-center">
@@ -98,63 +111,71 @@ export default function PropertyCategoryBrowser({ currency, rate, properties }: 
                                 <div className="mt-8">
                                     <Link
                                         href={`/properties/${highlight.slug}`}
-                                        className={buttonVariants({ variant: "ink", size: "sm" })}
+                                        className={buttonVariants({ variant: "underline-ink", size: "sm" })}
                                     >
                                         {t("detail.exploreProperty")}
+
                                     </Link>
                                 </div>
                             </div>
                         </div>
 
+
                         {/* Remaining properties in this category */}
                         {rest.length > 0 && (
-                            <div className="mt-20 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-                                {rest.map((property, i) => (
-                                    <Reveal key={property.slug} delay={i * 100}>
-                                        <Link href={`/properties/${property.slug}`} className="group block">
-                                            <div className="relative aspect-[4/3] w-full overflow-hidden shadow-md transition-shadow duration-500 group-hover:shadow-2xl">
-                                                <Image
-                                                    src={property.image}
-                                                    alt={property.name}
-                                                    fill
-                                                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                                                />
+                            <>
+                                <div className="mt-20 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+                                    {visibleProperties.map((property, i) => (
+                                        <Reveal key={property.slug} delay={i * 100}>
+                                            <Link href={`/properties/${property.slug}`} className="group block">
+                                                <div className="relative aspect-[4/3] w-full overflow-hidden shadow-md transition-shadow duration-500 group-hover:shadow-2xl">
+                                                    <Image
+                                                        src={property.image}
+                                                        alt={property.name}
+                                                        fill
+                                                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                                    />
 
-                                                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
+                                                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
 
-                                                {/* Price - Top */}
-                                                <span className="absolute top-4 right-4 font-sans text-xs tracking-[0.1em] text-white uppercase bg-ink/80 p-1.5">
-                                                    {t("detail.fromPerNight", {
-                                                        price: formatPrice(property.priceFrom, currency, rate),
-                                                    })}
-                                                </span>
-
-                                                {/* Property info - Bottom */}
-                                                <div className="absolute right-5 bottom-5 left-5 text-white">
-                                                    <span className="font-sans text-xs tracking-[0.2em] uppercase text-white/80">
-                                                        {property.location}
+                                                    <span className="absolute top-4 right-4 bg-ink/70 p-1.5 font-sans text-xs tracking-[0.1em] text-white uppercase">
+                                                        {t("detail.fromPerNight", {
+                                                            price: formatPrice(property.priceFrom, currency, rate),
+                                                        })}
                                                     </span>
 
-                                                    <h3 className="mt-2 font-serif text-3xl font-medium">
-                                                        {property.name}
-                                                    </h3>
+                                                    <div className="absolute right-5 bottom-5 left-5 text-white">
+                                                        <span className="font-sans text-xs tracking-[0.2em] text-white/80 uppercase">
+                                                            {property.location}
+                                                        </span>
 
-                                                    <span
-                                                        className="mt-8 inline-flex items-center gap-3 border-b border-white/40 pb-1 font-sans text-xs uppercase tracking-[0.2em] transition-colors hover:border-white"
+                                                        <h3 className="mt-2 font-serif text-3xl font-medium">
+                                                            {property.name}
+                                                        </h3>
 
-                                                    >
-                                                        {t("detail.exploreProperty")}
-                                                        <ArrowRight
-                                                            size={15}
-                                                            strokeWidth={1.5}
-                                                        />
-                                                    </span>
+                                                        <span className="mt-8 inline-flex items-center gap-3 border-b border-white/40 pb-1 font-sans text-xs tracking-[0.2em] uppercase transition-colors hover:border-white">
+                                                            {t("detail.exploreProperty")}
+
+                                                        </span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </Link>
-                                    </Reveal>
-                                ))}
-                            </div>
+                                            </Link>
+                                        </Reveal>
+                                    ))}
+                                </div>
+
+                                {hasMore && (
+                                    <div className="mt-14 flex justify-center">
+                                        <button
+                                            type="button"
+                                            onClick={() => setVisibleCount((count) => count + 6)}
+                                            className={buttonVariants({ variant: "ink", size: "sm" })}
+                                        >
+                                            Load More
+                                        </button>
+                                    </div>
+                                )}
+                            </>
                         )}
                     </>
                 )

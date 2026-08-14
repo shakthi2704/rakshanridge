@@ -102,12 +102,12 @@ export default function RoomOverview({
                                 >
                                     {bookLabel}
                                 </Link>
-                                <Link
+                                {/* <Link
                                     href={`/book?property=${propertySlug}&room=${roomKey}`}
                                     className={buttonVariants({ variant: "outline-ink", size: "sm" })}
                                 >
                                     {checkAvailabilityLabel}
-                                </Link>
+                                </Link> */}
                             </div>
                         </Reveal>
                     </div>

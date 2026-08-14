@@ -45,7 +45,7 @@ export default function SimilarRooms({
                     </div>
                 </Reveal>
 
-                <div className="mt-14 flex flex-wrap justify-center gap-8">
+                <div className="mt-14 flex flex-wrap justify-start gap-8">
                     {rooms.map((room, index) => (
                         <Reveal
                             key={room.key}
@@ -74,7 +74,7 @@ export default function SimilarRooms({
                                     </h3>
                                     <span className="mt-4 inline-flex items-center gap-2 font-sans text-xs tracking-[0.15em] text-white uppercase underline underline-offset-4 decoration-white/40 transition-colors group-hover:decoration-white">
                                         {exploreLabel}
-                                        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                                        {/* <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /> */}
                                     </span>
                                 </div>
                             </Link>

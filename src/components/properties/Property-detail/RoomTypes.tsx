@@ -51,18 +51,22 @@ export default function RoomTypes({
                     {rooms.map((room, index) => (
                         <Reveal key={room.key} delay={index * 100}>
                             <div className="flex h-full flex-col bg-paper">
-                                <Link href={`/properties/${propertySlug}/${slugifyRoomKey(room.key)}`}>
-                                    <div className="relative h-64 w-full overflow-hidden">
-                                        <Image
-                                            src={room.image}
-                                            alt={room.name}
-                                            fill
-                                            className="object-cover transition-transform duration-500 hover:scale-105"
-                                            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                                        />
-                                    </div>
-                                </Link>
 
+                                <div className="relative h-64 w-full overflow-hidden">
+                                    <Image
+                                        src={room.image}
+                                        alt={room.name}
+                                        fill
+                                        className="object-cover transition-transform duration-500 hover:scale-105"
+                                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                                    />
+
+                                    <div className="absolute right-4 top-4 bg-ink/70 p-1.5 font-sans text-xs tracking-[0.1em]">
+                                        <span className="font-sans text-xs  text-paper uppercase">
+                                            {room.priceLabel}
+                                        </span>
+                                    </div>
+                                </div>
                                 <div className="flex flex-1 flex-col p-6">
                                     <Link href={`/properties/${propertySlug}/${slugifyRoomKey(room.key)}`}>
                                         <h3 className="font-serif text-3xl font-medium text-ink hover:text-navy">
@@ -84,17 +88,34 @@ export default function RoomTypes({
                                     <p className="mt-4 flex-1 font-sans text-sm leading-relaxed text-charcoal">
                                         {room.description}
                                     </p>
-
-                                    <div className="mt-6 flex items-center justify-between border-t border-navy/10 pt-5">
-                                        <span className="font-sans text-xs tracking-[0.1em] text-ink uppercase">
+                                    {/* 
+                                    <div className="mt-6 flex items-center justify-between border-t border-ink/45 pt-5">
+                                        <span className="font-sans text-xs tracking-[0.1em] text-ink uppercase font-bold">
                                             {room.priceLabel}
                                         </span>
                                         <a
                                             href={`/book?room=${room.key}`}
-                                            className={buttonVariants({ variant: "outline-ink", size: "sm" })}
+                                            className={buttonVariants({ variant: "ink", size: "sm" })}
                                         >
                                             {bookLabel}
                                         </a>
+                                    </div> */}
+                                    <div className="mt-6 flex items-center justify-end border-t border-ink/45 pt-5">
+                                        <div className="flex items-center gap-3">
+                                            <Link
+                                                href={`/properties/${propertySlug}/${slugifyRoomKey(room.key)}`}
+                                                className={buttonVariants({ variant: "ghost", size: "sm" })}
+                                            >
+                                                View Room
+                                            </Link>
+
+                                            <a
+                                                href={`/book?room=${room.key}`}
+                                                className={buttonVariants({ variant: "ink", size: "sm" })}
+                                            >
+                                                {bookLabel}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

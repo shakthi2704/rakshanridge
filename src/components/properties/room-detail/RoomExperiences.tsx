@@ -106,7 +106,7 @@ export default function RoomExperiences({
                                     <Reveal key={amenity.key} delay={index * 80}>
                                         <div className="flex items-start gap-4 py-5">
                                             <Icon
-                                                className="mt-0.5 h-5 w-5 shrink-0 text-navy"
+                                                className="mt-0.5 h-5 w-5 shrink-0 text-ink"
                                                 strokeWidth={1.5}
                                             />
                                             <div>

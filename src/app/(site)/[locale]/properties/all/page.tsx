@@ -57,14 +57,17 @@ export default async function AllProperties({ searchParams }: Props) {
 
     return (
         <main className="flex flex-1 flex-col">
-            <PropertiesHero />
-            <PropertiesIntro />
 
-            <Suspense fallback={null}>
-                <PropertyFiltersBar resultsCount={filtered.length} />
-            </Suspense>
 
-            <section className="bg-paper pb-20 lg:pb-28">
+            <section className="pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-28 lg:pb-28 xl:pt-32 2xl:pt-36">
+                <PropertiesIntro />
+
+                <div className="mt-8 sm:mt-10 lg:mt-12">
+                    <Suspense fallback={null}>
+                        <PropertyFiltersBar resultsCount={filtered.length} />
+                    </Suspense>
+                </div>
+
                 <div className="mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-16">
                     <PropertyResultsGrid
                         properties={filtered}

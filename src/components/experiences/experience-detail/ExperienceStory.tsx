@@ -24,7 +24,7 @@ export default function ExperienceStory({
                     {/* Left — narrative text */}
                     <div>
                         <Reveal>
-                            <p className="font-serif text-2xl leading-[1.3] text-ink">
+                            <p className="font-sans text-base leading-[1.75] text-ink">
                                 <span className="float-left mr-3 mt-1 font-serif text-6xl leading-[0.85] text-ink sm:text-7xl">
                                     {openingFirstLetter}
                                 </span>
@@ -37,14 +37,14 @@ export default function ExperienceStory({
                                 <span className="absolute top-0 left-0 font-serif text-4xl leading-none text-ink/40 font-medium">
                                     &ldquo;
                                 </span>
-                                <p className="font-serif text-2xl leading-relaxed text-ink italic font-medium">
+                                <p className="font-serif text-3xl leading-relaxed text-ink italic font-medium">
                                     {quote}
                                 </p>
                             </div>
                         </Reveal>
 
                         <Reveal delay={150}>
-                            <p className="font-serif text-2xl leading-[1.3] text-ink font-medium">
+                            <p className="font-sans text-base leading-[1.75] text-ink">
                                 {closing}
                             </p>
                         </Reveal>

@@ -13,7 +13,7 @@ export default function ExperienceDetailHero({
     image: string;
 }) {
     return (
-        <section className="relative flex h-[70vh] min-h-[480px] items-center justify-center overflow-hidden bg-ink">
+        <section className="relative flex h-[65vh] min-h-[320px] items-center justify-center overflow-hidden bg-ink sm:h-[60vh] md:h-[65vh] lg:h-[70vh] xl:h-[75vh] 2xl:h-[65vh]">
             <Image
                 src={image}
                 alt={title}

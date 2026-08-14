@@ -17,9 +17,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function ConsultingPage() {
     return (
         <main className="flex flex-1 flex-col">
-            <ConsultingHero />
-            <ConsultingIntro />
-            <ConsultingServices />
+            <section className="bg-paper pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-28 lg:pb-28 xl:pt-32 2xl:pt-36">
+                <ConsultingIntro />
+                <ConsultingServices />
+            </section>
+
             {/* <MainCta /> */}
         </main>
     );

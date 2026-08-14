@@ -70,7 +70,7 @@ export default async function ContactDetails() {
                             />
 
                             <div>
-                                <span className="font-sans text-md tracking-[0.15em] text-ink uppercase">
+                                <span className="font-sans text-md tracking-[0.12em] text-ink uppercase font-bold">
                                     {row.label}
                                 </span>
 

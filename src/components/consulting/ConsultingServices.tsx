@@ -63,21 +63,24 @@ export default async function ConsultingServices() {
                                     </div>
                                 </Reveal>
 
-                                <Reveal
-                                    delay={100}
-                                    className={
-                                        reversed ? "lg:order-1" : "lg:order-2"
-                                    }
-                                >
-                                    <span className="font-serif text-5xl font-light text-ink">
-                                        {number}
-                                    </span>
-                                    <h3 className="mt-3 font-serif text-7xl font-medium text-ink sm:text-5xl">
-                                        {t(`${service.key}.title`)}
-                                    </h3>
-                                    <p className="mt-4 max-w-md font-sans text-md leading-relaxed text-ink">
-                                        {t(`${service.key}.description`)}
-                                    </p>
+                                <Reveal delay={100} className={reversed ? "lg:order-1" : "lg:order-2"}>
+                                    <div className="relative">
+                                        {/* Faded editorial number */}
+                                        <span className="pointer-events-none absolute -top-6 left-0 z-0 font-serif text-8xl font-light leading-none text-slate/35">
+                                            {number}
+                                        </span>
+
+                                        {/* Heading + description */}
+                                        <div className="relative z-10 pt-10">
+                                            <h3 className="mt-3 font-serif text-7xl font-medium text-ink sm:text-5xl">
+                                                {t(`${service.key}.title`)}
+                                            </h3>
+
+                                            <p className="mt-4 max-w-md font-sans text-md leading-relaxed text-ink">
+                                                {t(`${service.key}.description`)}
+                                            </p>
+                                        </div>
+                                    </div>
                                 </Reveal>
                             </div>
                         );

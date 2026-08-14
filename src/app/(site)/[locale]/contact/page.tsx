@@ -24,7 +24,7 @@ export default async function ContactPage() {
         <main className="flex flex-1 flex-col">
             <ContactHero />
 
-            <section className="relative overflow-hidden bg-paper py-20 lg:py-28">
+            <section className="bg-paper pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-28 lg:pb-28 xl:pt-32 2xl:pt-36">
                 <Image
                     src="/images/brand-story-mask.png"
                     alt=""
@@ -36,15 +36,22 @@ export default async function ContactPage() {
 
                 <Container>
                     <Reveal>
+
                         <div className="mb-14 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-center sm:gap-4">
                             <span className="font-sans text-sm text-charcoal">
                                 {t("bookingRedirect.text")}
                             </span>
+
                             <Link
                                 href="/book"
-                                className="font-sans text-sm tracking-[0.1em] text-ink uppercase underline underline-offset-4 decoration-ink/40 transition-colors hover:decoration-ink"
+                                className="group font-sans text-sm tracking-[0.1em] text-ink uppercase"
                             >
-                                {t("bookingRedirect.cta")} →
+                                <span className="underline underline-offset-4 decoration-ink/40 transition-colors group-hover:decoration-ink">
+                                    {t("bookingRedirect.cta")}
+                                </span>
+                                <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
+                                    →
+                                </span>
                             </Link>
                         </div>
                     </Reveal>

@@ -232,7 +232,7 @@ export default function BookingForm({ propertySlug, roomSlug }: BookingFormProps
                 <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className={buttonVariants({ variant: "white", size: "md" })}
+                    className={buttonVariants({ variant: "white", size: "sm" })}
                 >
                     {status === "submitting" ? t("submitting") : t("submit")}
                 </button>
