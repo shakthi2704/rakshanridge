@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Manrope, Playfair_Display_SC } from "next/font/goog
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import "../../globals.css";
 
 import { routing } from "@/i18n/routing";
@@ -55,8 +56,8 @@ export default async function RootLayout({
 
   const messages = await getMessages();
   const siteSettings = await getSiteSettings();
-  // console.log("SITE SETTINGS:", siteSettings);
-
+  const cookieStore = await cookies();
+  const initialCurrency = cookieStore.get("currency")?.value === "LKR" ? "LKR" : "USD";
   return (
     <html
       lang={locale}
@@ -64,7 +65,10 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider messages={messages}>
-          <Navbar lkrRate={siteSettings?.exchangeRates.find((r) => r.currencyCode === "LKR")?.rate} />
+          <Navbar
+            lkrRate={siteSettings?.exchangeRates.find((r) => r.currencyCode === "LKR")?.rate}
+            initialCurrency={initialCurrency}
+          />
           {children}
           <Footer />
         </NextIntlClientProvider>

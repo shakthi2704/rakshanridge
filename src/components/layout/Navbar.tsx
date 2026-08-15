@@ -45,9 +45,10 @@ function Monogram() {
 
 type NavbarProps = {
     lkrRate?: number;
+    initialCurrency?: "USD" | "LKR";
 };
 
-export default function Navbar({ lkrRate }: NavbarProps) {
+export default function Navbar({ lkrRate, initialCurrency }: NavbarProps) {
     const t = useTranslations("navigation");
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -82,7 +83,7 @@ export default function Navbar({ lkrRate }: NavbarProps) {
                         </div>
 
                         <div className="pl-4">
-                            <CurrencySwitcher lkrRate={lkrRate} />
+                            <CurrencySwitcher lkrRate={lkrRate} initialCurrency={initialCurrency} />
                         </div>
                     </div>
                 </Container>
