@@ -35,7 +35,7 @@ function Monogram() {
             />
 
             <span className="leading-tight">
-                <span className="block font-display text-[20px] text-white sm:text-[px] lg:text-[20px]">
+                <span className="block font-display text-[20px] text-white lg:text-[20px]">
                     {t("logoTitle")}
                 </span>
             </span>

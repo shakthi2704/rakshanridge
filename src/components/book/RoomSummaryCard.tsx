@@ -28,7 +28,7 @@ export default function RoomSummaryCard({
     return (
         <div className="border border-ink/10 bg-paper">
             <div className="relative aspect-[4/3] w-full overflow-hidden">
-                <Image src={image} alt={room.name} fill className="object-cover" />
+                <Image src={image} alt={room.name} fill sizes="(min-width: 1024px) 480px, 100vw" className="object-cover" />
             </div>
 
             <div className="p-6">
