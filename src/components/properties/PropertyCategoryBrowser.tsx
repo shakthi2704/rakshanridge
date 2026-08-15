@@ -85,6 +85,7 @@ export default function PropertyCategoryBrowser({ currency, rate, properties }: 
                                 <Image
                                     src={highlight.image}
                                     alt={highlight.name}
+                                    fill
                                     sizes="(min-width: 1024px) 50vw, 100vw"
                                     className="object-cover"
                                 />
