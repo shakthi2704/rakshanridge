@@ -4,13 +4,7 @@ export const SITE_TAGLINE = 'Discover Sri Lanka in Luxury' as const;
 // Update with real contact details when available
 export const CONTACT_WHATSAPP = '+94 77 712 4568';
 export const CONTACT_EMAIL = 'info@rakshanridge.com';
-//E2B76StiqF4[;q
-
-// export const SOCIAL_LINKS = {
-//     instagram: '',
-//     facebook: '',
-//     whatsapp: `https://wa.me/${CONTACT_WHATSAPP.replace('+', '')}`,
-// } as const;
+export const RESERVATION_EMAIL = 'reservation@rakshanridge.com';
 
 export const LOCALES = ['en', 'ru', 'de'] as const;
 export const DEFAULT_LOCALE = 'en' as const;

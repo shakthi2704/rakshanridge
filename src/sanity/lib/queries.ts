@@ -62,13 +62,13 @@ export type SanityProperty = {
     type: "hotel" | "resort" | "villa";
     region: string;
     priceFrom: number;
-    address: string;
-    amenityKeys: string[];
+    address?: string;
+    amenityKeys?: string[];
     featured: boolean;
     heroImage: SanityImageSource;
-    gallery: SanityImageSource[];
-    rooms: SanityRoom[];
-    experiences: SanityExperience[];
+    gallery?: SanityImageSource[];
+    rooms?: SanityRoom[];
+    experiences?: SanityExperience[];
 };
 export type SanityExperience = {
     _id: string;
@@ -141,6 +141,36 @@ const PROPERTY_BY_SLUG_QUERY = defineQuery(`
         ${PROPERTY_FIELDS}
     }
 `);
+
+// Lean projection for list/card/nav contexts (Footer, FeaturedProperties, listing
+// pages) that only ever render card-level fields — never rooms, dereferenced
+// experiences, gallery, amenities, or address. Keep in sync with what
+// PropertyResultsGrid / PropertyCategoryBrowser / FeaturedProperties actually read.
+const PROPERTY_CARD_FIELDS = `
+    _id,
+    name,
+    slug,
+    tagline,
+    description,
+    location,
+    type,
+    region,
+    priceFrom,
+    featured,
+    heroImage
+`;
+
+const PROPERTIES_LIST_QUERY = defineQuery(`
+    *[_type == "property"] | order(featured desc, name.en asc){
+        ${PROPERTY_CARD_FIELDS}
+    }
+`);
+
+export async function getPropertiesForListing(): Promise<SanityProperty[]> {
+    const { data } = await sanityFetch({ query: PROPERTIES_LIST_QUERY });
+    return (data as SanityProperty[]) ?? [];
+}
+
 
 export async function getProperties(): Promise<SanityProperty[]> {
     const { data } = await sanityFetch({ query: PROPERTIES_QUERY });
@@ -258,6 +288,26 @@ const EXPERIENCE_BY_SLUG_QUERY = defineQuery(`
         ${EXPERIENCE_FIELDS}
     }
 `);
+
+export type SanityExperienceLink = {
+    _id: string;
+    title: LocaleString;
+    slug: { current: string };
+};
+
+const EXPERIENCE_LINK_FIELDS = `_id, title, slug`;
+
+const EXPERIENCES_LIST_QUERY = defineQuery(`
+    *[_type == "experience"] | order(featured desc, title.en asc){
+        ${EXPERIENCE_LINK_FIELDS}
+    }
+`);
+
+export async function getExperiencesForListing(): Promise<SanityExperienceLink[]> {
+    const { data } = await sanityFetch({ query: EXPERIENCES_LIST_QUERY });
+    return (data as SanityExperienceLink[]) ?? [];
+}
+
 
 export async function getExperiences(): Promise<SanityExperience[]> {
     const { data } = await sanityFetch({ query: EXPERIENCES_QUERY });

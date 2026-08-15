@@ -4,7 +4,7 @@ import PropertyCategoryBrowser from "@/components/properties/PropertyCategoryBro
 import type { Metadata } from "next";
 import { getTranslations, getLocale } from "next-intl/server";
 import { getCurrencyContext } from "@/lib/currency";
-import { getProperties } from "@/sanity/lib/queries";
+import { getPropertiesForListing } from "@/sanity/lib/queries";
 import { adaptProperty } from "@/sanity/lib/adapters";
 import type { AppLocale } from "@/sanity/lib/locale";
 
@@ -21,7 +21,7 @@ export default async function Properties() {
     const { currency, rate } = await getCurrencyContext();
     const locale = (await getLocale()) as AppLocale;
 
-    const sanityProperties = await getProperties();
+    const sanityProperties = await getPropertiesForListing();
     const properties = sanityProperties.map((p) => adaptProperty(p, locale));
 
     return (

@@ -19,7 +19,7 @@ type Props = {
 export async function generateStaticParams() {
     const properties = await getProperties();
     return properties.flatMap((property) =>
-        property.rooms.map((room) => ({
+        (property.rooms ?? []).map((room) => ({
             slug: property.slug.current,
             room: room.slug.current,
         }))

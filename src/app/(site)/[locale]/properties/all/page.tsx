@@ -6,7 +6,7 @@ import PropertiesIntro from "@/components/properties/PropertiesIntro";
 import PropertyFiltersBar from "@/components/properties/PropertyFiltersBar";
 import PropertyResultsGrid from "@/components/properties/PropertyResultsGrid";
 import { getCurrencyContext } from "@/lib/currency";
-import { getProperties } from "@/sanity/lib/queries";
+import { getPropertiesForListing } from "@/sanity/lib/queries";
 import { adaptProperty } from "@/sanity/lib/adapters";
 import type { AppLocale } from "@/sanity/lib/locale";
 import {
@@ -38,7 +38,7 @@ export default async function AllProperties({ searchParams }: Props) {
     const { currency, rate } = await getCurrencyContext();
     const locale = (await getLocale()) as AppLocale;
 
-    const sanityProperties = await getProperties();
+    const sanityProperties = await getPropertiesForListing();
     const properties = sanityProperties.map((p) => adaptProperty(p, locale));
 
     const filters = {

@@ -92,7 +92,7 @@ export function adaptProperty(sanityProperty: SanityProperty, locale: AppLocale)
         type: sanityProperty.type as PropertyType,
         region: sanityProperty.region,
         priceFrom: sanityProperty.priceFrom,
-        address: sanityProperty.address,
+        address: sanityProperty.address ?? "",
         image: urlFor(sanityProperty.heroImage).width(1600).url(),
         gallery: (sanityProperty.gallery ?? []).map((img) => urlFor(img).width(1600).url()),
         amenityKeys: sanityProperty.amenityKeys ?? [],

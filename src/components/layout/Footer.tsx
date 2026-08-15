@@ -5,8 +5,8 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { Mail, Phone, MessageCircle, MapPin } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { InstagramIcon, FacebookIcon } from '@/components/ui/SocialIcons';
-import { SOCIAL_LINKS } from '@/lib/constants';
-import { getProperties, getExperiences } from "@/sanity/lib/queries";
+import { SOCIAL_LINKS, CONTACT_EMAIL } from '@/lib/constants';
+import { getPropertiesForListing, getExperiencesForListing } from "@/sanity/lib/queries";
 import { pickLocale, type AppLocale } from "@/sanity/lib/locale";
 
 const exploreLinks = [
@@ -36,8 +36,8 @@ export default async function Footer() {
     const locale = (await getLocale()) as AppLocale;
 
     const [sanityProperties, sanityExperiences] = await Promise.all([
-        getProperties(),
-        getExperiences(),
+        getPropertiesForListing(),
+        getExperiencesForListing(),
     ]);
 
     const propertyLinks = sanityProperties.slice(0, FOOTER_PROPERTY_LIMIT).map((p) => ({
@@ -201,11 +201,11 @@ export default async function Footer() {
                             <ul className="mt-5 flex flex-col gap-3 font-sans text-sm text-white/80">
                                 <li>
                                     <Link
-                                        href="mailto:stay@rakshaandridge.com"
+                                        href={`mailto:${CONTACT_EMAIL}`}
                                         className="flex items-center gap-2.5 transition-colors hover:text-white"
                                     >
                                         <Mail className="h-4 w-4 shrink-0" strokeWidth={1.5} />
-                                        stay@rakshaandridge.com
+                                        {CONTACT_EMAIL}
                                     </Link>
                                 </li>
                                 <li>

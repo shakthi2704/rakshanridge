@@ -41,6 +41,16 @@ export default async function Experiences() {
                         </p>
                     </div>
                 </Reveal>
+                <Reveal delay={100}>
+                    <div className="mt-10 flex justify-end">
+                        <Link
+                            href="/experiences"
+                            className={buttonVariants({ variant: "underline-ink", size: "sm" })}
+                        >
+                            {t("viewAll")}
+                        </Link>
+                    </div>
+                </Reveal>
 
                 <div className="mt-16 grid gap-6 lg:grid-cols-12">
                     {/* Featured experience — spans full height, wider column */}
@@ -89,16 +99,7 @@ export default async function Experiences() {
                         ))}
                     </div>
                 </div>
-                <Reveal delay={rest.length * 150 + 150}>
-                    <div className="mt-14 flex justify-center">
-                        <Link
-                            href="/experiences"
-                            className={buttonVariants({ variant: "ink", size: "sm" })}
-                        >
-                            {t("viewAll")}
-                        </Link>
-                    </div>
-                </Reveal>
+
             </Container>
         </section>
     );

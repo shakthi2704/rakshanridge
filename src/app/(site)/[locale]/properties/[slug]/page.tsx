@@ -11,7 +11,7 @@ import { getCurrencyContext } from "@/lib/currency";
 import { getProperties, getSanityPropertyBySlug } from "@/sanity/lib/queries";
 import { adaptProperty } from "@/sanity/lib/adapters";
 import type { AppLocale } from "@/sanity/lib/locale";
-
+import { RESERVATION_EMAIL } from "@/lib/constants";
 
 type Props = {
     params: Promise<{ locale: string; slug: string }>;
@@ -118,7 +118,7 @@ export default async function PropertyDetailPage({ params }: Props) {
                 phoneLabel={t("detail.phoneLabel")}
                 phone="+94 11 234 5678"
                 emailLabel={t("detail.emailLabel")}
-                email="stay@rakshaandridge.com"
+                email={RESERVATION_EMAIL}
                 directionsLabel={t("detail.getDirections")}
                 reserveLabel={t("detail.reserveYourStay")}
                 image={property.gallery[1] ?? property.image}

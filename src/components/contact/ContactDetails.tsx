@@ -1,8 +1,9 @@
 import { Mail, Phone, MessageCircle, MapPin, Clock } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import { getTranslations } from "next-intl/server";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
-const EMAIL = "stay@rakshaandridge.com";
+const EMAIL = CONTACT_EMAIL;
 const PHONE_DISPLAY = "+94 11 234 5678";
 const PHONE_HREF = "+94112345678";
 const WHATSAPP_HREF = "https://wa.me/94112345678";
