@@ -12,10 +12,11 @@ import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import CurrencySwitcher from "@/components/ui/CurrencySwitcher";
 
 const navLinks = [
+    { labelKey: "home", href: "/" },
     { labelKey: "about", href: "/about" },
     { labelKey: "properties", href: "/properties" },
     { labelKey: "experiences", href: "/experiences" },
-    { labelKey: "consulting", href: "/consulting" },
+    // { labelKey: "consulting", href: "/consulting" },
     { labelKey: "contact", href: "/contact" },
 ];
 
@@ -161,7 +162,7 @@ export default function Navbar({ lkrRate }: NavbarProps) {
                     <Link
                         href="/book"
                         onClick={() => setMenuOpen(false)}
-                        className={buttonVariants({ variant: "outline-white", size: "lg", className: "mt-4" })}
+                        className={buttonVariants({ variant: "ink", size: "lg", className: "mt-4" })}
                     >
                         {t("bookNow")}
                     </Link>

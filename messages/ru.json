@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "home": "Главная",
     "properties": "Объекты",
     "experiences": "Впечатления",
     "offers": "Предложения",
@@ -800,6 +801,21 @@
       "paymentMethodLabel": "Предпочтительный способ оплаты",
       "paymentPayAtProperty": "Оплата на месте",
       "paymentBankDeposit": "Банковский перевод"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "eyebrow": "Page Not Found",
+      "heading": "This page has wandered off the map.",
+      "body": "The page you're looking for may have been moved, renamed, or no longer exists.",
+      "cta": "Return Home"
+    },
+    "error": {
+      "eyebrow": "Something Went Wrong",
+      "heading": "We hit an unexpected error.",
+      "body": "Please try again. If the problem continues, reach out to us directly and we'll help sort it out.",
+      "retryCta": "Try Again",
+      "homeCta": "Return Home"
     }
   }
 }
