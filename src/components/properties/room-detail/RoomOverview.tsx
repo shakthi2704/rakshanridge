@@ -21,6 +21,7 @@ export default function RoomOverview({
     checkAvailabilityLabel,
     roomKey,
     propertySlug,
+    offerSlug,
     image,
     secondaryImage,
     roomName,
@@ -41,10 +42,14 @@ export default function RoomOverview({
     checkAvailabilityLabel: string;
     roomKey: string;
     propertySlug: string;
+    offerSlug?: string
     image: string;
     secondaryImage: string;
     roomName: string;
 }) {
+    const bookHref = offerSlug
+        ? `/book?property=${propertySlug}&room=${roomKey}&offer=${offerSlug}`
+        : `/book?property=${propertySlug}&room=${roomKey}`;
     const stats = [
         { value: String(occupancy), caption: guestsCaption },
         { value: sizeLabel, caption: sizeCaption },
@@ -97,7 +102,7 @@ export default function RoomOverview({
                                     {priceLabel}
                                 </span> */}
                                 <Link
-                                    href={`/book?property=${propertySlug}&room=${roomKey}`}
+                                    href={bookHref}
                                     className={buttonVariants({ variant: "ink", size: "sm" })}
                                 >
                                     {bookLabel}

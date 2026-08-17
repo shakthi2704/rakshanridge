@@ -802,7 +802,8 @@
       "submitted": "Thank you. Our concierge team will be in touch shortly.",
       "paymentMethodLabel": "Preferred Payment Method",
       "paymentPayAtProperty": "Pay at Property",
-      "paymentBankDeposit": "Bank Deposit"
+      "paymentBankDeposit": "Bank Deposit",
+      "offerMessagePrefix": "Regarding: {offer}"
     }
   },
   "errors": {

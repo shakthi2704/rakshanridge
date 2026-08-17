@@ -13,12 +13,13 @@ const fieldClass =
 type BookingFormProps = {
     propertySlug?: string;
     roomSlug?: string;
+    initialMessage?: string;
 };
 
 type Status = "idle" | "submitting" | "success" | "error";
 type PaymentMethod = "pay_at_property" | "bank_deposit" | "";
 
-export default function BookingForm({ propertySlug, roomSlug }: BookingFormProps) {
+export default function BookingForm({ propertySlug, roomSlug, initialMessage }: BookingFormProps) {
     const t = useTranslations("bookPage.form");
     const locale = useLocale();
 
@@ -30,7 +31,7 @@ export default function BookingForm({ propertySlug, roomSlug }: BookingFormProps
     const [checkOut, setCheckOut] = useState("");
     const [guests, setGuests] = useState("");
     const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("");
-    const [message, setMessage] = useState("");
+    const [message, setMessage] = useState(initialMessage ?? "");
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();

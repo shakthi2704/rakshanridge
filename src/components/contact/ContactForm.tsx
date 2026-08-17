@@ -19,6 +19,7 @@ export default function ContactForm() {
     const [email, setEmail] = useState("");
     const [topic, setTopic] = useState<Topic>("general");
     const [message, setMessage] = useState("");
+    const [website, setWebsite] = useState(""); // honeypot — stays empty for real users
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
@@ -28,7 +29,7 @@ export default function ContactForm() {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, topic, message, locale }),
+                body: JSON.stringify({ name, email, topic, message, locale, website }),
             });
 
             if (!res.ok) throw new Error("Request failed");
@@ -62,6 +63,22 @@ export default function ContactForm() {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-10">
+                {/* Honeypot — hidden from sighted users and screen readers, but
+                    left in the DOM/tab order path bots typically fill blindly.
+                    Positioned off-screen rather than display:none, which bots
+                    are known to specifically detect and skip. */}
+                <div className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden" aria-hidden="true">
+                    <label htmlFor="website">Leave this field empty</label>
+                    <input
+                        id="website"
+                        name="website"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={website}
+                        onChange={(e) => setWebsite(e.target.value)}
+                    />
+                </div>
                 <div>
                     <label
                         htmlFor="name"

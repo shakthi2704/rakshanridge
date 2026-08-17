@@ -18,6 +18,7 @@ type BookingRequestBody = {
     paymentMethod?: "pay_at_property" | "bank_deposit" | "";
     message?: string;
     locale?: string;
+    website?: string; // honeypot — real users never fill this in
 };
 
 export async function POST(request: Request) {
@@ -41,11 +42,36 @@ export async function POST(request: Request) {
         paymentMethod,
         message,
         locale,
+        website,
     } = body;
+
+
+    // Honeypot: a real visitor never sees or fills this field (hidden via CSS,
+    // not display:none). If it's populated, silently pretend success so the
+    // bot doesn't learn to adapt, without writing anything to Sanity or
+    // sending any email.
+
+    if (website) {
+        return NextResponse.json({ success: true, id: "ok" });
+    }
 
     if (!name || !email || !message) {
         return NextResponse.json(
             { error: "Name, email, and message are required." },
+            { status: 400 }
+        );
+    }
+
+    if (name.length > 200 || message.length > 5000) {
+        return NextResponse.json(
+            { error: "One of your fields is too long. Please shorten it and try again." },
+            { status: 400 }
+        );
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return NextResponse.json(
+            { error: "Please enter a valid email address." },
             { status: 400 }
         );
     }
@@ -73,7 +99,8 @@ export async function POST(request: Request) {
             }
         }
     }
-
+    const parsedGuests = guests ? Number(guests) : undefined;
+    const safeGuests = Number.isFinite(parsedGuests) ? parsedGuests : undefined;
     let created;
     try {
         created = await writeClient.create({
@@ -85,7 +112,7 @@ export async function POST(request: Request) {
             roomSlug: roomSlug || undefined,
             checkIn: checkIn || undefined,
             checkOut: checkOut || undefined,
-            guests: guests ? Number(guests) : undefined,
+            guests: safeGuests,
             paymentMethod: paymentMethod || undefined,
             message,
             status: "new",

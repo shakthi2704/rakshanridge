@@ -15,6 +15,7 @@ import { RESERVATION_EMAIL } from "@/lib/constants";
 
 type Props = {
     params: Promise<{ locale: string; slug: string }>;
+    searchParams: Promise<{ offer?: string }>;
 };
 
 export async function generateStaticParams() {
@@ -35,8 +36,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default async function PropertyDetailPage({ params }: Props) {
+export default async function PropertyDetailPage({ params, searchParams }: Props) {
     const { slug, locale } = await params;
+    const { offer: offerSlug } = await searchParams;
     const raw = await getSanityPropertyBySlug(slug);
 
     if (!raw) notFound();
@@ -103,6 +105,8 @@ export default async function PropertyDetailPage({ params }: Props) {
                 rooms={rooms}
                 bookLabel={t("detail.bookNow")}
                 propertySlug={property.slug}
+
+
             />
             <PropertyFacilities
                 eyebrow={t("detail.facilitiesEyebrow")}
@@ -123,6 +127,9 @@ export default async function PropertyDetailPage({ params }: Props) {
                 reserveLabel={t("detail.reserveYourStay")}
                 image={property.gallery[1] ?? property.image}
                 name={property.name}
+                propertySlug={property.slug}
+                offerSlug={offerSlug}
+
             />
 
         </main>

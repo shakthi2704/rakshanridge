@@ -17,6 +17,8 @@ export default function PropertyLocation({
     reserveLabel,
     image,
     name,
+    propertySlug,
+    offerSlug,
 }: {
     eyebrow: string;
     heading: string;
@@ -30,7 +32,13 @@ export default function PropertyLocation({
     reserveLabel: string;
     image: string;
     name: string;
+    propertySlug: String,
+    offerSlug: String
+
 }) {
+    const bookHref = offerSlug
+        ? `/book?property=${propertySlug}&offer=${offerSlug}`
+        : `/book?property=${propertySlug}`;
     const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
         `${name}, ${address}`
     )}`;
@@ -76,7 +84,7 @@ export default function PropertyLocation({
                         <div className="mt-9 flex flex-wrap justify-center gap-4">
 
                             <Link
-                                href="/book"
+                                href={bookHref}
                                 className={buttonVariants({ variant: "white", size: "md" })}
                             >
                                 {reserveLabel}

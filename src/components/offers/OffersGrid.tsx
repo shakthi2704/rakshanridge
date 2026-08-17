@@ -36,8 +36,8 @@ export default async function OffersGrid({ offers, currency, rate }: OffersGridP
                 <div className="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
                     {offers.map((offer, i) => {
                         const href = offer.roomSlug
-                            ? `/properties/${offer.propertySlug}/${offer.roomSlug}`
-                            : `/properties/${offer.propertySlug}`;
+                            ? `/properties/${offer.propertySlug}/${offer.roomSlug}?offer=${offer.slug}`
+                            : `/properties/${offer.propertySlug}?offer=${offer.slug}`;
 
                         return (
                             <Reveal key={offer.slug} delay={i * 100}>

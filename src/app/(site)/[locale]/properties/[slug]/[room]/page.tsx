@@ -14,6 +14,7 @@ import type { AppLocale } from "@/sanity/lib/locale";
 
 type Props = {
     params: Promise<{ locale: string; slug: string; room: string }>;
+    searchParams: Promise<{ offer?: string }>;
 };
 
 export async function generateStaticParams() {
@@ -41,8 +42,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default async function RoomDetailPage({ params }: Props) {
+export default async function RoomDetailPage({ params, searchParams }: Props) {
     const { slug, room: roomSlug, locale } = await params;
+    const { offer: offerSlug } = await searchParams;
     const raw = await getSanityPropertyBySlug(slug);
 
     if (!raw) notFound();
@@ -126,6 +128,7 @@ export default async function RoomDetailPage({ params }: Props) {
                 checkAvailabilityLabel={t("detail.checkAvailability")}
                 roomKey={room.slug}
                 propertySlug={property.slug}
+                offerSlug={offerSlug}
                 image={roomImage}
                 secondaryImage={roomSecondaryImage}
                 roomName={room.name}

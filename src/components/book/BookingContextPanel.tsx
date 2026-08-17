@@ -20,6 +20,7 @@ type BookingExperienceProps = {
     properties: AdaptedProperty[];
     initialPropertySlug?: string;
     initialRoomSlug?: string;
+    initialMessage?: string;
     currency: Currency;
     rate?: number;
 };
@@ -28,6 +29,7 @@ export default function BookingExperience({
     properties,
     initialPropertySlug,
     initialRoomSlug,
+    initialMessage,
     currency,
     rate,
 }: BookingExperienceProps) {
@@ -161,7 +163,11 @@ export default function BookingExperience({
                 )}
             </div>
 
-            <BookingForm propertySlug={selectedProperty?.slug} roomSlug={selectedRoom?.slug} />
+            <BookingForm
+                propertySlug={selectedProperty?.slug}
+                roomSlug={selectedRoom?.slug}
+                initialMessage={initialMessage}
+            />
         </div>
     );
 }

@@ -802,7 +802,8 @@
             "submitted": "Vielen Dank. Unser Concierge-Team wird sich in Kürze bei Ihnen melden.",
             "paymentMethodLabel": "Bevorzugte Zahlungsmethode",
             "paymentPayAtProperty": "Zahlung vor Ort",
-            "paymentBankDeposit": "Banküberweisung"
+            "paymentBankDeposit": "Banküberweisung",
+            "offerMessagePrefix": "Bezüglich: {offer}"
         }
     },
     "errors": {

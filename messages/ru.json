@@ -800,7 +800,8 @@
       "submitted": "Спасибо. Наша команда консьержей свяжется с вами в ближайшее время.",
       "paymentMethodLabel": "Предпочтительный способ оплаты",
       "paymentPayAtProperty": "Оплата на месте",
-      "paymentBankDeposit": "Банковский перевод"
+      "paymentBankDeposit": "Банковский перевод",
+      "offerMessagePrefix": "Относительно: {offer}"
     }
   },
   "errors": {

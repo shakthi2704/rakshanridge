@@ -109,12 +109,14 @@ export default function RoomTypes({
                                                 View Room
                                             </Link>
 
-                                            <a
-                                                href={`/book?room=${room.key}`}
+
+                                            <Link
+                                                href={`/book?property=${propertySlug}&room=${slugifyRoomKey(room.key)}`}
                                                 className={buttonVariants({ variant: "ink", size: "sm" })}
                                             >
                                                 {bookLabel}
-                                            </a>
+                                                -
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -123,6 +125,6 @@ export default function RoomTypes({
                     ))}
                 </div>
             </Container>
-        </section>
+        </section >
     );
 }

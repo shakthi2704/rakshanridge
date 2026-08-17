@@ -11,6 +11,7 @@ type ContactRequestBody = {
     topic?: "general" | "consulting" | "press" | "other" | "";
     message?: string;
     locale?: string;
+    website?: string; // honeypot — real users never fill this in
 };
 
 export async function POST(request: Request) {
@@ -22,11 +23,32 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
     }
 
-    const { name, email, topic, message, locale } = body;
+    const { name, email, topic, message, locale, website } = body;
+
+    // Honeypot: a real visitor never sees or fills this field. If it's
+    // populated, silently pretend success without writing to Sanity or
+    // sending any email.
+    if (website) {
+        return NextResponse.json({ success: true, id: "ok" });
+    }
 
     if (!name || !email || !message) {
         return NextResponse.json(
             { error: "Name, email, and message are required." },
+            { status: 400 }
+        );
+    }
+
+    if (name.length > 200 || message.length > 5000) {
+        return NextResponse.json(
+            { error: "One of your fields is too long. Please shorten it and try again." },
+            { status: 400 }
+        );
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return NextResponse.json(
+            { error: "Please enter a valid email address." },
             { status: 400 }
         );
     }
