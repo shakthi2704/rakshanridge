@@ -59,14 +59,66 @@ function bookingConfirmationEn(data: BookingConfirmationData): EmailContent {
     };
 }
 
-// TODO: translate — mirrors bookingConfirmationEn exactly, Russian copy.
 function bookingConfirmationRu(data: BookingConfirmationData): EmailContent {
-    return bookingConfirmationEn(data);
+    const stayLine = data.propertyName
+        ? `${data.propertyName}${data.roomName ? ` — ${data.roomName}` : ""}`
+        : null;
+
+    const bankBlock =
+        data.paymentMethod === "bank_deposit" ? formatBankDetailsBlock(data.bankDetails) : "";
+
+    return {
+        subject: "Ваш запрос — Raksha & Ridge",
+        text: [
+            `Уважаемый(ая) ${data.name},`,
+            "",
+            "Благодарим вас за обращение в Raksha & Ridge. Мы получили ваш запрос, и наша консьерж-служба свяжется с вами в течение 24 часов, чтобы подтвердить детали вашего пребывания.",
+            "",
+            stayLine ? `Объект размещения: ${stayLine}` : null,
+            data.checkIn ? `Заезд: ${data.checkIn}` : null,
+            data.checkOut ? `Выезд: ${data.checkOut}` : null,
+            data.guests ? `Количество гостей: ${data.guests}` : null,
+            data.paymentMethod === "pay_at_property" ? "Оплата: при заселении" : null,
+            data.paymentMethod === "bank_deposit" ? "Оплата: банковский перевод" : null,
+            bankBlock,
+            "",
+            "С уважением,",
+            "The Raksha & Ridge Team",
+        ]
+            .filter((line) => line !== null)
+            .join("\n"),
+    };
 }
 
-// TODO: translate — mirrors bookingConfirmationEn exactly, German copy.
 function bookingConfirmationDe(data: BookingConfirmationData): EmailContent {
-    return bookingConfirmationEn(data);
+    const stayLine = data.propertyName
+        ? `${data.propertyName}${data.roomName ? ` — ${data.roomName}` : ""}`
+        : null;
+
+    const bankBlock =
+        data.paymentMethod === "bank_deposit" ? formatBankDetailsBlock(data.bankDetails) : "";
+
+    return {
+        subject: "Ihre Anfrage — Raksha & Ridge",
+        text: [
+            `Liebe(r) ${data.name},`,
+            "",
+            "vielen Dank für Ihre Anfrage bei Raksha & Ridge. Wir haben Ihre Anfrage erhalten, und unser Concierge-Team wird sich innerhalb von 24 Stunden bei Ihnen melden, um die Details Ihres Aufenthalts zu bestätigen.",
+            "",
+            stayLine ? `Unterkunft: ${stayLine}` : null,
+            data.checkIn ? `Anreise: ${data.checkIn}` : null,
+            data.checkOut ? `Abreise: ${data.checkOut}` : null,
+            data.guests ? `Gäste: ${data.guests}` : null,
+            data.paymentMethod === "pay_at_property" ? "Zahlung: Vor Ort in der Unterkunft" : null,
+            data.paymentMethod === "bank_deposit" ? "Zahlung: Banküberweisung" : null,
+            bankBlock,
+            "",
+            "Mit freundlichen Grüßen,",
+            "The Raksha & Ridge Team",
+        ]
+            .filter((line) => line !== null)
+            .join("\n"),
+    };
 }
 
 export function getBookingConfirmationEmail(
@@ -102,14 +154,32 @@ function contactConfirmationEn(data: ContactConfirmationData): EmailContent {
     };
 }
 
-// TODO: translate — mirrors contactConfirmationEn exactly, Russian copy.
 function contactConfirmationRu(data: ContactConfirmationData): EmailContent {
-    return contactConfirmationEn(data);
+    return {
+        subject: "Ваше сообщение получено — Raksha & Ridge",
+        text: [
+            `Уважаемый(ая) ${data.name},`,
+            "",
+            "Благодарим вас за обращение в Raksha & Ridge. Мы получили ваше сообщение, и наша команда ответит вам в течение 24 часов.",
+            "",
+            "С уважением,",
+            "The Raksha & Ridge Team",
+        ].join("\n"),
+    };
 }
 
-// TODO: translate — mirrors contactConfirmationEn exactly, German copy.
 function contactConfirmationDe(data: ContactConfirmationData): EmailContent {
-    return contactConfirmationEn(data);
+    return {
+        subject: "Ihre Nachricht ist eingegangen — Raksha & Ridge",
+        text: [
+            `Liebe(r) ${data.name},`,
+            "",
+            "vielen Dank für Ihre Nachricht an Raksha & Ridge. Wir haben sie erhalten, und unser Team wird sich innerhalb von 24 Stunden bei Ihnen melden.",
+            "",
+            "Mit freundlichen Grüßen,",
+            "The Raksha & Ridge Team",
+        ].join("\n"),
+    };
 }
 
 export function getContactConfirmationEmail(

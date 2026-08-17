@@ -6,6 +6,7 @@ import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import DateMaskInput from "@/components/book/DateMaskInput";
 import { CreditCard, Landmark } from "lucide-react";
+import { validateStayDates } from "@/lib/dateValidation";
 
 const fieldClass =
     "w-full border-0 border-b border-white/20 bg-transparent px-0 py-4 font-sans text-sm text-white placeholder:text-white/40 transition-colors focus:border-white focus:outline-none focus:ring-0";
@@ -24,6 +25,8 @@ export default function BookingForm({ propertySlug, roomSlug, initialMessage }: 
     const locale = useLocale();
 
     const [status, setStatus] = useState<Status>("idle");
+    const [dateError, setDateError] = useState<string | null>(null);
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -35,6 +38,21 @@ export default function BookingForm({ propertySlug, roomSlug, initialMessage }: 
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
+        setDateError(null);
+
+        const dateCheck = validateStayDates(checkIn, checkOut);
+        if (!dateCheck.valid) {
+            const errorKey =
+                dateCheck.reason === "past"
+                    ? "dateErrorPast"
+                    : dateCheck.reason === "order"
+                        ? "dateErrorOrder"
+                        : dateCheck.reason === "invalid"
+                            ? "dateErrorInvalid"
+                            : "dateErrorFormat";
+            setDateError(t(errorKey));
+            return;
+        }
         setStatus("submitting");
 
         try {
@@ -239,7 +257,9 @@ export default function BookingForm({ propertySlug, roomSlug, initialMessage }: 
                         className={`${fieldClass} resize-none`}
                     />
                 </div>
-
+                {dateError && (
+                    <p className="font-sans text-sm text-red-400">{dateError}</p>
+                )}
                 {status === "error" && (
                     <p className="font-sans text-sm text-red-400">{t("error")}</p>
                 )}

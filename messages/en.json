@@ -803,7 +803,11 @@
       "paymentMethodLabel": "Preferred Payment Method",
       "paymentPayAtProperty": "Pay at Property",
       "paymentBankDeposit": "Bank Deposit",
-      "offerMessagePrefix": "Regarding: {offer}"
+      "offerMessagePrefix": "Regarding: {offer}",
+      "dateErrorFormat": "Please enter a valid date in DD/MM/YYYY format.",
+      "dateErrorInvalid": "That date doesn't exist — please check and try again.",
+      "dateErrorPast": "Please choose a date that isn't in the past.",
+      "dateErrorOrder": "Check-out must be after check-in."
     }
   },
   "errors": {

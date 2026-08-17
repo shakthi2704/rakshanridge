@@ -48,16 +48,21 @@ export default async function Hero() {
                 <h1 className="mt-6 font-display text-4xl leading-[1.15] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-6xl  xl:text-7xl 2xl:text-8xl"> */}
                 <h1
                     className={cn(
-                        "mt-6 max-w-5xl font-display text-[clamp(2.5rem,5vw,5.8rem)] leading-[1.1] tracking-wide text-white",
-                        locale === "de" && "text-[clamp(2.3rem,4.5vw,5rem)]",
-                        locale === "ru" && "text-[clamp(2.4rem,4.8vw,5.2rem)]"
+                        "mt-6 w-full px-4 font-display text-[clamp(2.2rem,4vw,5.25rem)] leading-[1.08] tracking-wide text-white",
+                        locale === "de" &&
+                        "text-[clamp(2rem,3.7vw,4.8rem)]",
+                        locale === "ru" &&
+                        "text-[clamp(2.1rem,3.8vw,5rem)]"
                     )}
                 >
-                    {t("headlineLine1")}
-                    <br />
-                    {t("headlineLine2")}
-                </h1>
+                    <span className="block sm:whitespace-nowrap">
+                        {t("headlineLine1")}
+                    </span>
 
+                    <span className="block sm:whitespace-nowrap">
+                        {t("headlineLine2")}
+                    </span>
+                </h1>
                 <p className="mt-6 max-w-3xl font-serif text-[clamp(1.1rem,1.8vw,1.5rem)] font-light italic leading-relaxed text-white/85">
                     {t("subheadline")}
                 </p>

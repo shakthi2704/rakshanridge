@@ -3,6 +3,8 @@ import { Resend } from "resend";
 import { writeClient } from "@/sanity/lib/writeClient";
 import { getSiteSettings } from "@/sanity/lib/queries";
 import { getBookingConfirmationEmail } from "@/lib/emailTemplates";
+import { validateStayDates } from "@/lib/dateValidation";
+
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -76,6 +78,15 @@ export async function POST(request: Request) {
         );
     }
 
+    if (checkIn && checkOut) {
+        const dateCheck = validateStayDates(checkIn, checkOut);
+        if (!dateCheck.valid) {
+            return NextResponse.json(
+                { error: "Please provide valid, non-past check-in and check-out dates." },
+                { status: 400 }
+            );
+        }
+    }
     // Resolve the property slug (if provided) to a Sanity document reference,
     // and grab its display name for the confirmation email while we're at it.
     let propertyRef: { _type: "reference"; _ref: string } | undefined;

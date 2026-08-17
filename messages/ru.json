@@ -801,7 +801,11 @@
       "paymentMethodLabel": "Предпочтительный способ оплаты",
       "paymentPayAtProperty": "Оплата на месте",
       "paymentBankDeposit": "Банковский перевод",
-      "offerMessagePrefix": "Относительно: {offer}"
+      "offerMessagePrefix": "Относительно: {offer}",
+      "dateErrorFormat": "Пожалуйста, введите дату в формате ДД/ММ/ГГГГ.",
+      "dateErrorInvalid": "Такой даты не существует — пожалуйста, проверьте и попробуйте снова.",
+      "dateErrorPast": "Пожалуйста, выберите дату не в прошлом.",
+      "dateErrorOrder": "Дата выезда должна быть позже даты заезда."
     }
   },
   "errors": {

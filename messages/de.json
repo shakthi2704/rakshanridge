@@ -803,7 +803,11 @@
             "paymentMethodLabel": "Bevorzugte Zahlungsmethode",
             "paymentPayAtProperty": "Zahlung vor Ort",
             "paymentBankDeposit": "Banküberweisung",
-            "offerMessagePrefix": "Bezüglich: {offer}"
+            "offerMessagePrefix": "Bezüglich: {offer}",
+            "dateErrorFormat": "Bitte geben Sie ein gültiges Datum im Format TT/MM/JJJJ ein.",
+            "dateErrorInvalid": "Dieses Datum existiert nicht – bitte überprüfen Sie Ihre Eingabe.",
+            "dateErrorPast": "Bitte wählen Sie ein Datum, das nicht in der Vergangenheit liegt.",
+            "dateErrorOrder": "Das Abreisedatum muss nach dem Anreisedatum liegen."
         }
     },
     "errors": {

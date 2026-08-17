@@ -33,7 +33,7 @@ export default function PropertyLocation({
     image: string;
     name: string;
     propertySlug: String,
-    offerSlug: String
+    offerSlug?: string;
 
 }) {
     const bookHref = offerSlug
