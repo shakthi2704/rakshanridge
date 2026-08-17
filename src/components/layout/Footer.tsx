@@ -202,7 +202,7 @@ export default async function Footer() {
                                 <li>
                                     <Link
                                         href={`mailto:${CONTACT_EMAIL}`}
-                                        className="flex items-center gap-2.5 transition-colors hover:text-white"
+                                        className="flex items-start gap-2.5 transition-colors hover:text-white"
                                     >
                                         <Mail className="h-4 w-4 shrink-0" strokeWidth={1.5} />
                                         {CONTACT_EMAIL}
@@ -211,7 +211,7 @@ export default async function Footer() {
                                 <li>
                                     <Link
                                         href="tel:+94112345678"
-                                        className="flex items-center gap-2.5 transition-colors hover:text-white"
+                                        className="flex items-start gap-2.5 transition-colors hover:text-white"
                                     >
                                         <Phone className="h-4 w-4 shrink-0" strokeWidth={1.5} />
                                         +94 11 234 5678
@@ -220,13 +220,13 @@ export default async function Footer() {
                                 <li>
                                     <Link
                                         href="https://wa.me/94112345678"
-                                        className="flex items-center gap-2.5 transition-colors hover:text-white"
+                                        className="flex items-start gap-2.5 transition-colors hover:text-white"
                                     >
                                         <MessageCircle className="h-4 w-4 shrink-0" strokeWidth={1.5} />
                                         {t("whatsappUs")}
                                     </Link>
                                 </li>
-                                <li className="flex items-center gap-2.5 pt-1 text-white/60">
+                                <li className="flex items-start gap-2.5 pt-1 text-white/60">
                                     <MapPin className="h-4 w-4 shrink-0" strokeWidth={1.5} />
                                     {t("addressCity")}
                                 </li>
