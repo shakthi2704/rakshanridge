@@ -11,6 +11,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { SanityLive } from "@/sanity/lib/live";
 import { getSiteSettings } from "@/sanity/lib/queries";
+import { Analytics } from "@vercel/analytics/next";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -73,6 +74,7 @@ export default async function RootLayout({
           <Footer />
         </NextIntlClientProvider>
         <SanityLive onWelcome={false} />
+        <Analytics />
       </body>
     </html>
   );
