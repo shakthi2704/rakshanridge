@@ -74,7 +74,7 @@ export async function POST(request: Request) {
     // Internal notification email — never fails the whole request.
     try {
         await resend.emails.send({
-            from: process.env.CONTACT_FROM_EMAIL!,
+            from: `Raksha & Ridge <${process.env.CONTACT_FROM_EMAIL}>`,
             to: process.env.CONTACT_NOTIFICATION_EMAIL!,
             subject: `New contact inquiry — ${name}`,
             text: [
@@ -101,7 +101,7 @@ export async function POST(request: Request) {
         });
 
         await resend.emails.send({
-            from: process.env.CONTACT_FROM_EMAIL!,
+            from: `Raksha & Ridge <${process.env.CONTACT_FROM_EMAIL}>`,
             to: email,
             subject,
             text,
