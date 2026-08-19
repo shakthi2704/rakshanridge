@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   title: "Raksha & Ridge | Authentic Sri Lankan Hospitality",
   description:
     "Raksha & Ridge creates exceptional hotel, resort, and villa experiences where genuine hospitality, personalized service, and thoughtfully curated stays transform every journey into a meaningful and unforgettable experience.",
+  manifest: "/site.webmanifest",
 };
 
 export function generateStaticParams() {
