@@ -2,32 +2,7 @@ import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { getTranslations } from "next-intl/server";
 
-// const reasons = [
-//     {
-//         number: "01",
-//         title: "Personalized Service",
-//         description:
-//             "Every stay is shaped around you — from arrival preferences to quiet requests only a dedicated host would notice.",
-//     },
-//     {
-//         number: "02",
-//         title: "Authentic Experiences",
-//         description:
-//             "No generic itineraries. Every excursion is rooted in real Sri Lankan culture, craft, and place.",
-//     },
-//     {
-//         number: "03",
-//         title: "Best Rate, Direct",
-//         description:
-//             "Booking with us directly always guarantees our best available rate — no third-party markup, ever.",
-//     },
-//     {
-//         number: "04",
-//         title: "A Considered Collection",
-//         description:
-//             "Every property is chosen for character, not scale — each one distinct, each one unmistakably ours.",
-//     },
-// ];
+
 
 const reasons = [
     { number: "01", key: "personalizedService" },
@@ -47,6 +22,7 @@ export default async function WhyChooseUs() {
                             src="/images/hero.jpg"
                             alt="A member of the Raksha & Ridge team welcoming a guest"
                             fill
+                            sizes="(min-width: 1024px) 50vw, 100vw"
                             className="object-cover"
                         />
                     </div>

@@ -60,6 +60,7 @@ export default async function Experiences() {
                                 src={featured.image}
                                 alt={featured.title}
                                 fill
+                                sizes="(min-width: 1024px) 58vw, 100vw"
                                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                             />
                             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
@@ -83,6 +84,7 @@ export default async function Experiences() {
                                         src={exp.image}
                                         alt={exp.title}
                                         fill
+                                        sizes="(min-width: 1024px) 42vw, 100vw"
                                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                     />
                                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent" />

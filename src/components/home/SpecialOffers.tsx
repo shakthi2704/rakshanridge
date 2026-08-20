@@ -51,6 +51,7 @@ export default async function SpecialOffers() {
                                 src="/images/brand-story-mask-dark.png"
                                 alt="Experience"
                                 fill
+                                sizes="256px"
                                 className="object-cover opacity-30"
                             />
 

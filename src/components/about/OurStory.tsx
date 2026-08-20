@@ -62,6 +62,7 @@ export default async function OurStory() {
                                     src="/images/about-01.webp"
                                     alt="A restored planter's bungalow in the Sri Lankan hill country"
                                     fill
+                                    sizes="(min-width: 1024px) 50vw, 100vw"
                                     className="object-cover"
                                 />
                             </div>

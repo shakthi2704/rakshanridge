@@ -114,7 +114,7 @@ export default async function Footer() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label={label}
-                                        className="w-9 h-9 rounded-full border border-[#B68A2D]/20 flex items-center justify-center text-[#CFCFCF]/70 hover:border-slate hover:text-slate hover:bg-slate/10 transition-all duration-200"
+                                        className="w-9 h-9 rounded-full border border-slate/50 flex items-center justify-center text-[#CFCFCF]/70 hover:border-slate hover:text-slate hover:bg-slate/10 transition-all duration-200"
                                     >
                                         <Icon className="w-4 h-4" />
                                     </Link>
