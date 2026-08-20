@@ -2,7 +2,7 @@ import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
 import { getTranslations } from "next-intl/server";
 
-const ADDRESS = "No 318/1 Dutugamunu Mw, Enderamulla Wattala, Sri Lanka";
+import { ADDRESS } from '@/lib/constants';
 
 export default async function ContactLocation() {
     const t = await getTranslations("contactPage.details");

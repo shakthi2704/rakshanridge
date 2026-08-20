@@ -5,6 +5,8 @@ export const SITE_TAGLINE = 'Discover Sri Lanka in Luxury' as const;
 export const CONTACT_WHATSAPP = '+94 77 712 4568';
 export const CONTACT_EMAIL = 'info@rakshanridge.com';
 export const RESERVATION_EMAIL = 'reservation@rakshanridge.com';
+export const ADDRESS = "No 318/1 Dutugamunu Mw, Enderamulla Wattala, Sri Lanka";
+
 
 export const LOCALES = ['en', 'ru', 'de'] as const;
 export const DEFAULT_LOCALE = 'en' as const;
